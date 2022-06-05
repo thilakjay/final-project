@@ -1,0 +1,121 @@
+[
+    {
+        "_id": 1,
+        "name": "Wild Willy's",
+        "address": "20 Cartier Ave, Pointe-Claire, Quebec H9S 5L5",
+        "url": "https://www.wildwillys.ca/",
+        "googleRating": "4.7",
+        "fbRating": "4.9",
+        "iceCreams": [
+            {
+                "flavour": "Mint Chocolate Chip",
+                "description": "",
+                "tags": ["mint", "chocolate", "hard"],
+                "imageSrc": "images/icecreams/wild-willys/mint-chocolate.jpg"
+            },
+            {
+                "flavour": "Bubble Gum",
+                "description": "",
+                "tags": ["bubble, gum, candy", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/bubble-gum.jpg"
+                
+            },
+            {
+                "flavour": "Tongo Bongo",
+                "description": "Vanilla ice cream with mini Reese's pieces and a swirl of chocolate sauce and peanut butter.",
+                "tags": ["vanilla", "chocolate", "reese", "peanut", "butter", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/tongo-bongo.jpg"            
+            },
+            {
+                "flavour":"Creamsicle",
+                "description": "",
+                "tags": ["orange", "vanilla", "cream", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/creamsicle.jpg"
+            },
+            {
+                "flavour":"Cookie Dough Bites",
+                "description": "",
+                "tags": ["cookie", "dough", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/cookie-dough-bites.jpg"
+            },
+            {
+                "flavour":"Triple Chocolate",
+                "description": "",
+                "tags": ["triple", "chocolate", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/triple-chocolate.jpg"
+            },
+            {
+                "flavour":"Kalahari Crunch",
+                "description": "Caramel swirl and crunchy pieces of caramel and chocolate.",
+                "tags": ["kalahari", "crunchy", "caramel", "chocolate", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/kalahari-crunch.jpg"
+            },
+            {
+                "flavour":"Coconut",
+                "description": "",
+                "tags": ["coconut, hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/coconut.jpg"
+            },
+            {
+                "flavour":"Pumpkin Spice",
+                "description": "",
+                "tags": ["pumpkin", "spice", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/pumpkin-spice.jpg"
+            },
+            {
+                "flavour":"Chocolate Hazelnut",
+                "description": "",
+                "tags": ["chocolate", "hazelnut", "nut", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/chocolate-hazelnut.jpg"
+            },
+            {
+                "flavour":"Chocolate",
+                "description": "",
+                "tags": ["chocolate", "vegan", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/chocolate-vegan.jpg"
+            },
+            {
+                "flavour":"Kahlua Oreo",
+                "description": "",
+                "tags": ["coffee", "kahlua", "oreo"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/kahlua oreo.jpg"
+            },
+            {
+                "flavour":"Brownie Batter",
+                "description": "",
+                "tags": ["brownie", "batter", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/brownie-batter.jpg"
+            }, 
+            {
+                "flavour":"Peanut Butter & Jelly",
+                "description": "",
+                "tags": ["peanut", "butter", "jelly", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/peanut-butter-jelly.jpg"
+            },
+            {
+                "flavour":"Peanut Butter & Salted Caramel Swirl",
+                "description": "",
+                "tags": ["peanut", "butter", "salt", "caramel", "swirl", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/peanut-butter-salted-caramel-swirl.jpg"
+            },
+            {
+                "flavour":"Lemon Pie",
+                "description": "Tangy lemon with pieces of graham crust.",
+                "tags": ["tangy", "lemon", "pie", "graham", "crust", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/lemon-pie.jpg"
+            },
+            {
+                "flavour":"Matcha",
+                "description": "",
+                "tags": ["green", "tea", "matcha", "japan","asia","hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/matcha.jpg"
+            },
+            {
+                "flavour":"Hey Batter Batter",
+                "description": "Chocolate ice cream, brownie batter, and brownie pieces.",
+                "tags": ["chocolate", "brownie", "batter", "hard"],
+                "imageSrc": "client/public/images/icecreams/wild-willys/hey-batter-batter.jpg"
+            }
+        ]
+    }
+]
