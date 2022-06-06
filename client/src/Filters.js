@@ -1,11 +1,18 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-const Filters = ({data, setFiltered, activeFilters, setActiveFilters}) => {
+const Filters = ({shops, setFiltered, activeFilters, setActiveFilters}) => {
     
     useEffect(() => {
-        
-    })
+        if(activeFilters === "") {
+            setFiltered = shops;
+            return;
+        }
+        const filtered = shops.map(shop => {
+            return shop.iceCreams.filter(iceCream => iceCream.tags.includes(activeFilters));
+        });
+        setFiltered(filtered);
+    }, [activeFilters]);
 
     return (
         <div>

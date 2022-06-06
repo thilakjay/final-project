@@ -6,7 +6,7 @@ import Filters from "../Filters";
 const Test = () => {
     const [shops, setShops] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered info
-    const [activeFilters, setActiveFilters] = useState(null); //keeping track of what the current filters are
+    const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
 
     //fetching all ice creams from BE
     useEffect(() => {
@@ -21,9 +21,9 @@ const Test = () => {
 
     return (
         <div>
-            <Filters data={shops} setFiltered={setFiltered} activeFilters={activeFilters} setActiveFilters={setActiveFilters}/>
+            <Filters shops={shops} setFiltered={setFiltered} activeFilters={activeFilters} setActiveFilters={setActiveFilters}/>
             <GridDiv>
-            {shops && shops.map(shop => 
+            {filtered && filtered.map(shop => 
                 <>
                     <h1>{shop.name}</h1>
                     {shop.iceCreams.map(iceCream => 
