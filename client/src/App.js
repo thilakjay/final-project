@@ -13,8 +13,27 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Test />
+          {/* landing page/main page */}
+          <Test /> 
         </Route>
+        <Route exact path="/ice-creams">
+          {/* listing of all ice creams & filters */}
+        </Route>
+        <Route exact path="/user/">
+          {/* landing page/main page */}
+        </Route> 
+        <Route exact path="/locator">
+          {/* shows location of shops in map */}
+        </Route>  
+        <Route exact path="/shop/:shopId">
+          {/* shop page*/}
+        </Route>  
+        <Route exact path="/signup">
+          {/* signup page */}
+        </Route>  
+        <Route exact path="/login">
+          {/* login page */}
+        </Route>                                 
       </Switch>
     </Router>
   );
