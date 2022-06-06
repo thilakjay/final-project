@@ -4,37 +4,35 @@ import styled from "styled-components";
 import Filters from "../Filters";
 
 const Test = () => {
-    const [shops, setShops] = useState(null); //for holding all fetched info
+    const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered info
     const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
 
     //fetching all ice creams from BE
     useEffect(() => {
         const fetchIceCreams = async () => {
-            const data = await fetch("/api/all");   
+            const data = await fetch("/api/ice-creams");   
             const json = await data.json();
-            setShops(json.data);
+            setIceCreams(json.data);
             setFiltered(json.data);
         };    
         fetchIceCreams();
     }, []);
 
     return (
-        <div>
-            <Filters shops={shops} setFiltered={setFiltered} activeFilters={activeFilters} setActiveFilters={setActiveFilters}/>
-            <GridDiv>
-            {filtered && filtered.map(shop => 
-                <>
-                    <h1>{shop.name}</h1>
-                    {shop.iceCreams.map(iceCream => 
-                        <IceCream iceCream={iceCream}/>
-                    )}
-                </>
-            )}
-            </GridDiv>
-        </div>
+        <>
+        {iceCreams && (
+            <div>               
+                <Filters iceCreams={iceCreams} setFiltered={setFiltered} activeFilters={activeFilters} setActiveFilters={setActiveFilters}/>
+                <GridDiv>
+                {filtered && filtered.map(iceCream => 
+                    <IceCream key={iceCream._id} iceCream={iceCream}/>     
+                )}
+                </GridDiv>
+            </div>            
+        )}
+        </>
     );
-
 }
 export default Test;
 

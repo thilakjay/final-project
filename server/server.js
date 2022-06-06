@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 
-const {getAllInfo} = require("./handlers/getAllInfo");
+const {getIceCreams} = require("./handlers/getIceCreams");
 
-app.get("/api/all", getAllInfo);
+app.get("/api/ice-creams", getIceCreams);
 // app.get("api/ice-creams, getIceCreams");
 // app.get("/api/shops", getShops)
 // app.get("/api/shops/:shopId", getShop)

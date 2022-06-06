@@ -115,7 +115,7 @@
     {
         "flavour":"Matcha",
         "description": "",
-        "tags": ["green", "tea", "matcha", "japan","asia","hard"],
+        "tags": ["green", "tea", "matcha", "japan","asia","international","hard"],
         "imageSrc": "images/icecreams/wild-willys/matcha.jpg",
         "shopId": 1
     },
@@ -129,14 +129,14 @@
     {
         "flavour": "Achta With Pistachio.",
         "description": "",
-        "tags": ["achta", "pistachio", "middle east", "hard"],
+        "tags": ["achta", "pistachio", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/achta-pistachio.jpg",
         "shopId": 2
     },
     {
         "flavour": "Almonds",
         "description": "",
-        "tags": ["almond", "nut", "middle east", "hard"],
+        "tags": ["almond", "nut", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/almonds.jpg",
         "shopId": 2
     },
@@ -150,119 +150,119 @@
     {
         "flavour": "Bouza Kaek",
         "description": "",
-        "tags": ["bread", "middle east", "hard"],
+        "tags": ["bread", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/bouza-kaek.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Bouza Oreo",
         "description": "",
-        "tags": ["oreo","cookie","middle east", "hard", "confection"],
+        "tags": ["oreo","cookie","middle east", "international", "hard", "confection"],
         "imageSrc": "images/icecreams/bouza/bouza-oreo.jpg",
         "shopId": 2
     },
     {
         "flavour": "Cherry",
         "description": "",
-        "tags": ["cherry","fruit","middle east", "hard"],
+        "tags": ["cherry","fruit","middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/cherry.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Chocolate",
         "description": "",
-        "tags": ["chocolate", "middle east", "hard"],
+        "tags": ["chocolate", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/chocolate.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Lemon",
         "description": "",
-        "tags": ["lemon", "fruit", "middle east", "hard"],
+        "tags": ["lemon", "fruit", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/lemon.jpg",
         "shopId": 2
     },
     {
         "flavour": "Mango",
         "description": "",
-        "tags": ["mango", "fruit", "middle east", "hard"],
+        "tags": ["mango", "fruit", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/mango.jpg",
         "shopId": 2
     },
     {
         "flavour": "Strawberry",
         "description": "",
-        "tags": ["strawberry", "fruit", "middle east", "hard"],
+        "tags": ["strawberry", "fruit", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/strawberry.jpg",
         "shopId": 2
     },
     {
         "flavour": "Peanut Butter",
         "description": "",
-        "tags": ["peanut", "butter", "nut", "hard", "middle east"],
+        "tags": ["peanut", "butter", "nut", "hard", "middle east", "international"],
         "imageSrc": "images/icecreams/bouza/peanutbutter.jpg",
         "shopId": 2
     },
     {
         "flavour": "Pistachio",
         "description": "",
-        "tags": ["pistachio","nut","middle east","hard"],
+        "tags": ["pistachio","nut","middle east", "international","hard"],
         "imageSrc": "images/icecreams/bouza/pistachio.jpg",
         "shopId": 2
     },
     {
         "flavour": "Rose Water",
         "description": "",
-        "tags": ["rose", "plant", "middle east", "hard"],
+        "tags": ["rose", "plant", "middle east", "international", "hard"],
         "imageSrc": "images/icecreams/bouza/rosewater.jpg",
         "shopId": 2
     },
     {
         "flavour": "Jalebi",
         "description": "",
-        "tags": ["saffron", "cardamom", "syrup", "jalebi", "pistachio", "india", "hard", "asia", "nut", "spice"],
+        "tags": ["saffron", "cardamom", "syrup", "jalebi", "pistachio", "india", "hard", "asia","international", "nut", "spice"],
         "imageSrc": "images/icecreams/meetha/jalebi.jpg",
         "shopId": 3
     },
     {
         "flavour": "Falooda",
         "description": "",
-        "tags": ["hard", "india", "rose", "basil", "milkshake", "asia", "flower", "spice","plant"],
+        "tags": ["hard", "india", "rose", "basil", "milkshake", "asia","international", "flower", "spice","plant"],
         "imageSrc": "images/icecreams/meetha/falooda.jpg",
         "shopId": 3
     },
     {
         "flavour": "Mango Rasmalai",
         "description": "",
-        "tags": ["hard", "cardamom", "saffron", "rasmalai", "mango", "india", "asia", "fruit", "spice"],
+        "tags": ["hard", "cardamom", "saffron", "rasmalai", "mango", "india", "asia","international", "fruit", "spice"],
         "imageSrc": "images/icecreams/meetha/mango-rasmalai.jpg",
         "shopId": 3
     },           
     {
         "flavour": "Gulab Jamun",
         "description": "",
-        "tags": ["hard", "india", "asia", "cardamom", "saffron", "syrup", "gulab", "jamun", "spice"],
+        "tags": ["hard", "india", "asia","international", "cardamom", "saffron", "syrup", "gulab", "jamun", "spice"],
         "imageSrc": "images/icecreams/meetha/gulab-jamun.jpg",
         "shopId": 3
     },
     {
         "flavour": "Masala Chai-g",
         "description": "",
-        "tags": ["hard","india","asia","masala","chai", "spice"],
+        "tags": ["hard","india","asia","international","masala","chai", "spice"],
         "imageSrc": "images/icecreams/meetha/masala-chai.jpg",
         "shopId": 3
     },
     {
         "flavour": "Elachai Pista",
         "description": "",
-        "tags": ["hard", "india", "asia", "cardamom", "pistachio", "nut", "spice"],
+        "tags": ["hard", "india", "asia","international", "cardamom", "pistachio", "nut", "spice"],
         "imageSrc": "images/icecreams/meetha/elaichi-pista.jpg",
         "shopId": 3
     },
     {
         "flavour": "Taro",
         "description": "",
-        "tags": ["hard", "taro", "asia", "vegetable", "purple"],
+        "tags": ["hard", "taro", "asia","international", "vegetable", "purple"],
         "imageSrc": "images/icecreams/ca-lem/taro.jpg",
         "shopId": 4
     },
@@ -276,7 +276,7 @@
     {
         "flavour": "Viet Coffee",
         "description": "",
-        "tags": ["hard", "asia", "vietnam", "coffee"],
+        "tags": ["hard", "asia","international", "vietnam", "coffee"],
         "imageSrc": "images/icecreams/ca-lem/viet-coffee.jpg",
         "shopId": 4
     },
@@ -388,7 +388,7 @@
     {
         "flavour": "Pumpkin, Apple, Graham, & Masala",
         "description": "",
-        "tags": ["pumpkin", "apple", "graham", "masala", "india", "soft", "spice", "vegan", "asia"],
+        "tags": ["pumpkin", "apple", "graham", "masala", "india", "soft", "spice", "vegan", "international","asia"],
         "imageSrc": "images/icecreams/iconoglace/pumpkin-apple-graham-masala.jpg",
         "shopId": 5
     },
@@ -437,7 +437,7 @@
     {
         "flavour": "Chai Tea & Orange",
         "description": "",
-        "tags": ["chai", "tea", "spice", "orange", "india", "asia", "soft"],
+        "tags": ["chai", "tea", "spice", "orange", "india", "asia","international", "soft"],
         "imageSrc": "images/icecreams/iconoglace/chai-tea-and-orange.jpg",
         "shopId": 5
     },
@@ -451,7 +451,7 @@
     {
         "flavour": "Fig & Ricotta",
         "description": "",
-        "tags": ["fig", "ricotta", "cheese", "italy", "europe", "gelato", "hard"],
+        "tags": ["fig", "ricotta", "cheese", "italy","international", "europe", "gelato", "hard"],
         "imageSrc": "images/icecreams/larmoire-a-glaces/fig-ricotta.jpg",
         "shopId": 6
     },
@@ -472,7 +472,7 @@
     {
         "flavour": "Tiramisu",
         "description": "",
-        "tags": ["coffee", "italy","europe", "gelato", "hard"],
+        "tags": ["coffee", "italy","international","europe", "gelato", "hard"],
         "imageSrc": "images/icecreams/larmoire-a-glaces/tiramisu.jpg",
         "shopId": 6
     },
@@ -605,7 +605,7 @@
     {
         "flavour": "Chai & Ginger",
         "description": "",
-        "tags": ["chai", "ginger", "soft", "vegan", "india", "spice", "asia"],
+        "tags": ["chai", "ginger", "soft", "vegan", "india", "spice", "international","asia"],
         "imageSrc": "images/icecreams/larmoire-a-glaces/chai-and-ginger.jpg",
         "shopId": 6
     },
@@ -759,7 +759,7 @@
     {
         "flavour": "Quebec Raspberry Stracciatella",
         "description": "",
-        "tags": ["quebec", "local", "raspberry", "stracciatella", "gelato", "hard", "europe", "italy"],
+        "tags": ["quebec", "local", "raspberry", "stracciatella", "gelato", "hard", "europe","international", "italy"],
         "imageSrc": "images/icecreams/dalla-rose/raspberry-stracciatella.jpg",
         "shopId": 8
     },
@@ -836,7 +836,7 @@
     {
         "flavour": "Thai Milk Tea & Tahitian Vanilla",
         "description": "",
-        "tags": ["thai", "thailand", "tahiti", "vanilla", "milk", "tea", "asia", "soft"],
+        "tags": ["thai", "thailand", "tahiti", "vanilla", "milk", "tea", "asia","international", "soft"],
         "imageSrc": "images/icecreams/dalla-rose/thai-milk-tea-and-tahitian-vanilla.jpg",
         "shopId": 8
     },
@@ -850,7 +850,7 @@
     {
         "flavour": "Mochi Matcha",
         "description": "",
-        "tags": ["soft", "mochi", "matcha", "green", "tea", "japan", "asia"],
+        "tags": ["soft", "mochi", "matcha", "green", "tea", "japan", "international","asia"],
         "imageSrc": "images/icecreams/unicone/mochi-matcha.jpg",
         "shopId": 9
     },
@@ -871,7 +871,7 @@
     {
         "flavour": "Pandan & Pineapple",
         "description": "",
-        "tags": ["soft", "pandan", "pineapple", "fruit", "asia", "fruit"],
+        "tags": ["soft", "pandan", "pineapple", "fruit", "asia","international", "fruit"],
         "imageSrc": "images/icecreams/unicone/pandan-pineapple.jpg",
         "shopId": 9
     },
@@ -885,35 +885,35 @@
     {
         "flavour": "Tiramisu Marsala & Cherry Strawberry",
         "description": "",
-        "tags": ["tiramiu", "coffee", "marsala", "cherry", "strawberry", "soft", "fruit", "cake", "italy", "europe"],
+        "tags": ["tiramiu", "coffee", "marsala", "cherry", "strawberry", "soft", "fruit", "cake", "italy","international", "europe","international"],
         "imageSrc": "images/icecreams/unicone/tiramisu-marsala-and-strawberry-cherry-sorbet.jpg",
         "shopId": 9
     },
     {
         "flavour": "Ube Halaya",
         "description": "",
-        "tags": ["ube", "halaya", "philippines","asia", "purple", "hard"],
+        "tags": ["ube", "halaya", "philippines","asia","international", "purple", "hard"],
         "imageSrc": "images/icecreams/unicone/ube-halaya.jpg",
         "shopId": 9
     },
     {
         "flavour": "Pista Kulfi",
         "description": "",
-        "tags": ["pista", "kulfi", "saffron", "cardamom", "rosewater", "pistachio", "mango", "banana", "india", "asia"],
+        "tags": ["pista", "kulfi", "saffron", "cardamom", "rosewater", "pistachio", "mango", "banana", "india","international", "asia"],
         "imageSrc": "images/icecreams/unicone/pista-kulfi.jpg",
         "shopId": 9
     },
     {
         "flavour": "Ube & Pandan",
         "description": "",
-        "tags": ["ube", "pandan", "vegetable", "fruit", "philippines", "asia", "soft"],
+        "tags": ["ube", "pandan", "vegetable", "fruit", "philippines", "asia","international", "soft"],
         "imageSrc": "images/icecreams/unicone/ube-and-pandan.jpg",
         "shopId": 9
     },
     {
         "flavour": "Hojicha & Yuzu",
         "description": "",
-        "tags": ["japan", "green", "tea", "hojicha", "asia", "yuzu", "fruit", "soft"],
+        "tags": ["japan", "green", "tea", "hojicha", "asia","international", "yuzu", "fruit", "soft"],
         "imageSrc": "images/icecreams/unicone/hojicha-and-yuzu-coulis.jpg",
         "shopId": 9
     },
@@ -948,7 +948,7 @@
     {
         "flavour": "Hojicha Tea & Coffee",
         "description": "",
-        "tags": ["soft", "hojicha", "japan", "tea", "green", "coffee", "asia"],
+        "tags": ["soft", "hojicha", "japan", "tea", "green", "coffee","international", "asia"],
         "imageSrc": "images/icecreams/sachere-desserts/hochija-tea-and-coffee-twist.jpg",
         "shopId": 10
     },
@@ -962,7 +962,7 @@
     {
         "flavour": "Mandarin Passion Fruit & Matcha with Candied Kumquat",
         "description": "",
-        "tags": ["soft","mandarin","passion","fruit","matcha","japan","asia","candy","kumquat","confection"],
+        "tags": ["soft","mandarin","passion","fruit","matcha","japan","asia","international","candy","kumquat","confection"],
         "imageSrc": "images/icecreams/sachere-desserts/mandarin-passion-fruit-and-matcha-with-candied-kumquat.jpg",
         "shopId": 10
     },
@@ -983,14 +983,14 @@
     {
         "flavour": "Mango Lassi & Coconut-Ginger",
         "description": "",
-        "tags": ["soft", "mango", "lassi", "india", "asia", "coconut", "ginger"],
+        "tags": ["soft", "mango", "lassi", "india", "asia","international", "coconut", "ginger"],
         "imageSrc": "images/icecreams/sachere-desserts/mango-lassi-and-coconut-ginger.jpg",
         "shopId": 10
     },
     {
         "flavour": "Cranberry & Chai Tea",
         "description": "",
-        "tags": ["soft", "cranberry", "chai", "tea", "india", "asia"],
+        "tags": ["soft", "cranberry", "chai", "tea", "india", "international","asia"],
         "imageSrc": "images/icecreams/sachere-desserts/cranberry-and-chai-tea-twist.jpg",
         "shopId": 10
     },

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const IceCream = ({iceCream}) => {
     return (
         <div>
-            <Image src={iceCream.imageSrc} alt="" />
+            <Image src={iceCream.imageSrc} alt={iceCream.name} />
         </div>
     );
 }
