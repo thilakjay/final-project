@@ -3,7 +3,7 @@ import IceCream from "./IceCream";
 import styled from "styled-components";
 import Filters from "../Filters";
 
-const Test = () => {
+const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered info
     const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
@@ -34,7 +34,7 @@ const Test = () => {
         </>
     );
 }
-export default Test;
+export default Home;
 
 const GridDiv = styled.div`
     display: grid;

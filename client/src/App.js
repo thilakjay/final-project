@@ -4,7 +4,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Test from "./components/Test";
+import Home from "./components/Home";
 
 
 const App = () => {
@@ -14,10 +14,13 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           {/* landing page/main page */}
-          <Test /> 
+          <Home /> 
         </Route>
         <Route exact path="/ice-creams">
           {/* listing of all ice creams & filters */}
+        </Route>
+        <Route exact path="/ice-creams/:_id">
+          {/* Ice Cream Info */}
         </Route>
         <Route exact path="/user/">
           {/* landing page/main page */}

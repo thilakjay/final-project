@@ -21,6 +21,7 @@ const Filters = ({iceCreams, setFiltered, activeFilters, setActiveFilters}) => {
 
         setFiltered(filtered);
         console.log("tags:", tagsList);
+        console.log(filtered);
         
     }, [tagsList, iceCreams]);
 

@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 
 const {getIceCreams} = require("./handlers/getIceCreams");
+const {getIceCream} = require("./handlers/getIceCream"); 
 
 app.get("/api/ice-creams", getIceCreams);
-// app.get("api/ice-creams, getIceCreams");
+app.get("/api/ice-creams/:id", getIceCream);
 // app.get("/api/shops", getShops)
 // app.get("/api/shops/:shopId", getShop)
 // app.get("/api/user/login", login)

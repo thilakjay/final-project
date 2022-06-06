@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const IceCream = ({iceCream}) => {
     return (
         <div>
-            <Image src={iceCream.imageSrc} alt={iceCream.name} />
+            <Link to={`/ice-creams/${iceCream._id}`}><Image src={iceCream.imageSrc} alt={iceCream.name} /></Link>
         </div>
     );
 }
