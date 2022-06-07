@@ -10,14 +10,13 @@ const options = {
 
 const getIceCream = async (req, res) => {
     const {id} = req.params;
-    console.log("id:", id);
+
     try {
         const client = new MongoClient(MONGO_URI, options);
         await client.connect();
         const db = client.db("final-project");
         
         const iceCreamResult = await db.collection("ice-creams").findOne({_id: id});
-        console.log(iceCreamResult);
         const shopIdQuery = {_id: iceCreamResult.shopId}; 
         const shopResult = await db.collection("shops").findOne(shopIdQuery)
 

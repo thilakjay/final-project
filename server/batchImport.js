@@ -22,7 +22,6 @@ const batchImport = async () => {
       iceCream.rating = (Math.round(Math.random() * 9) + 1) / 2;
   });
 
-
   try {
     const client = new MongoClient(MONGO_URI, options);
     await client.connect();
