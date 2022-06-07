@@ -11,8 +11,7 @@
         "description": "",
         "tags": ["bubble", "gum","hard", "confection"],
         "imageSrc": "images/icecreams/wild-willys/bubble-gum.jpg",
-        "shopId": 1
-        
+        "shopId": 1       
     },
     {
         "flavour": "Tongo Bongo",

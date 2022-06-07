@@ -25,11 +25,11 @@ const IceCreamProfile = () => {
     }, []);
 
     const handleAfterPublishReview = () => {
-        fetch("/api/me/home-feed")
+        fetch(`/api/ice-creams/${_id}`)
           .then(res => res.json())
           .then(data => {
-            // setTweetIds(data.tweetIds);
-            // setTweetsById(data.tweetsById);
+            setIceCream(data.data.iceCream);
+            setShop(data.data.shop);
           })
           .catch((error) => {
             console.log("Error message from /api/me/home-feed:", error);
@@ -37,6 +37,32 @@ const IceCreamProfile = () => {
             // setErrorStatus(true);            
           })
     }    
+
+    const submitReview = (review) => {
+        console.log(review);
+        fetch(`/api/ice-creams/${_id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                "name": "Tony Soprano",
+                "review": review,
+                "userRating": 5
+            })
+        })                
+            .then(res => res.json())
+            .then(data => {
+                handleAfterPublishReview();         
+            })
+            .catch((error) => {
+                console.log("Error message from /api/ice-creams/  :", error);
+                // setErrorMessage("Oops, a minor hiccup.. our bad! Please refresh to view your review.");
+                // setErrorStatus(true);               
+            })
+            textAreaRef.current.value = "";
+    }
 
     const handleTextAreaChange= (e) => {
         setReviewMessage(e.target.value);
@@ -54,28 +80,7 @@ const IceCreamProfile = () => {
             submitRef.current.style.backgroundColor = "hsl(266, 92%, 95%)";  //change colour later
             charCount.current.style.color = "red";            
         }          
-    }    
-
-    const submitReview = (review) => {
-        fetch("/api/tweet", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify({status: review})
-        })                
-            .then(res => res.json())
-            .then(data => {
-                // handleAfterPublishReview();         
-            })
-            .catch((error) => {
-                console.log("Error message from /api/tweet:", error);
-                // setErrorMessage("Oops, a minor hiccup.. our bad! Please refresh to view your review.");
-                // setErrorStatus(true);               
-            })
-            textAreaRef.current.value = "";
-    }    
+    }     
 
     return (
         <>
@@ -108,7 +113,11 @@ const IceCreamProfile = () => {
                             <CharacterCount ref={charCount}>{(150 - reviewMessage.length)}</CharacterCount>
                             <Button 
                                 ref={submitRef} 
-                                onClick={() => {submitReview(reviewMessage)}}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    submitReview(reviewMessage)
+                                }}
                             >
                                 Submit
                             </Button>
@@ -116,10 +125,16 @@ const IceCreamProfile = () => {
                     </InfoContainer>                    
                 </ImageAndInfoWrapper>
 
-                <ReviewsContainer>
+                <ReviewsWrapper>
                     <h2>Reviews</h2>
-
-                </ReviewsContainer>
+                    {iceCream.reviews.map((review, i) => 
+                        <ReviewContainer key={i}>
+                            <div className="user">{review.name}</div>
+                            <div className="review">{review.review}</div>
+                            <div className="rating">{review.userRating}</div>
+                        </ReviewContainer>    
+                    )}
+                </ReviewsWrapper>
 
             </Wrapper>                
         )}        
@@ -135,8 +150,8 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 50px;
-    border: 2px black solid;
-    height: 95vh;
+    /* border: 2px black solid; */
+    /* height: 95vh; */
 `;
 
 const ImageAndInfoWrapper = styled.div`
@@ -205,9 +220,33 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-const ReviewsContainer = styled.div`
+const ReviewsWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     border: 1px solid red;
     width: 80%;
 `;
+
+const ReviewContainer = styled.div`
+    display: flex;
+    /* border: 1px solid red; */
+    width: 80%;
+    gap: 10px;
+
+    .user {
+        width: 20%;
+        font-weight: bold;
+    }
+
+    .review {
+        width: 60%;
+        font-style: italic;
+    }
+
+    .userRating {
+        width: 20%;
+    }
+`;
+
 

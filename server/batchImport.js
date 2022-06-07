@@ -15,10 +15,30 @@ const options = {
 const { v4: uuidv4 } = require("uuid");
 
 const batchImport = async () => {
-  //adds a random rating to each flavour of ice cream
+  //adds a random rating and _id to each flavour of ice cream
   iceCreams.forEach(iceCream => {
       const _id = uuidv4();
-      iceCream._id = _id
+      iceCream.reviews = [
+        {
+          name: "Homer Simpson",
+          review: "Marriage is like soft-serve ice cream. And trust is the hard chocolate shell that keeps it from melting onto our carpet.",
+          userRating: 5
+        }, 
+        {
+          name: "Wayne Gretzky",
+          review: "You miss 100% of the ice cream you don't scoop",
+          userRating: 5
+        },
+        {
+          name: "Eddie Murphy",
+          review: `There's something about the icecream truck that makes kids lose it. 
+                    And they can hear that sh*t from ten blocks away. They don't hear 
+                    their mothers calling, but they hear that ice cream truck.`,
+          userRating: 4.5
+        },        
+      ];
+
+      iceCream._id = _id;
       iceCream.rating = (Math.round(Math.random() * 9) + 1) / 2;
   });
 

@@ -3,9 +3,12 @@ const app = express();
 
 const {getIceCreams} = require("./handlers/getIceCreams");
 const {getIceCream} = require("./handlers/getIceCream"); 
+const {postReview} = require("./handlers/postReview"); 
 
+app.use(express.json())
 app.get("/api/ice-creams", getIceCreams);
 app.get("/api/ice-creams/:id", getIceCream);
+app.post("/api/ice-creams/:id", postReview);
 // app.get("/api/shops", getShops)
 // app.get("/api/shops/:shopId", getShop)
 // app.get("/api/user/login", login)
@@ -39,7 +42,6 @@ app.listen(8000);
 //     next();
 //   })
 //   .use(morgan("tiny"))
-//   .use(express.static("./server/assets"))
 //   .use(express.json())
 //   .use(express.urlencoded({ extended: false }))
 //   .use("/", express.static(__dirname + "/"))
