@@ -5,6 +5,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Home from "./components/Home";
+import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
 
 
@@ -12,6 +13,7 @@ const App = () => {
 
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/">
           {/* landing page/main page */}

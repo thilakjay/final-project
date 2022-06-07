@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-
+import { Rating } from '@mui/material';
 
 const IceCreamProfile = () => {
     const [iceCream, setIceCream] = useState(null);
     const [reviewMessage, setReviewMessage] = useState("");
+    const [rating, setRating] = useState(null);
     const [shop, setShop] = useState(null);
     
     const {_id} = useParams();
@@ -49,7 +50,7 @@ const IceCreamProfile = () => {
             body: JSON.stringify({
                 "name": "Tony Soprano",
                 "review": review,
-                "userRating": 5
+                "userRating": rating
             })
         })                
             .then(res => res.json())
@@ -92,9 +93,10 @@ const IceCreamProfile = () => {
                     </ImageContainer> 
 
                     <InfoContainer>
-                        <h2>{iceCream.flavour}</h2>
-                        <div>Inserting ratings component here: Read-Only {iceCream.rating}</div>
-                        <div>Inserting ratings component here: User-Controlled {iceCream.rating}</div>
+                        <h2>
+                            {iceCream.flavour}
+                            <Rating value={iceCream.rating} precision={0.5} readOnly />
+                        </h2>
                         <div>Google Rating: {shop.googleRating}</div>
                         <div>FB Rating:{shop.fbRating}</div>
                         <div>Shop Name: {shop.name}</div>
@@ -110,6 +112,9 @@ const IceCreamProfile = () => {
                             />
                         </TextAreaWrapper>
                         <BottomAreaWrapper>
+                            <Rating value={rating} 
+                                    precision={0.5}
+                                    onChange={(e, newRating) => {setRating(newRating)}} />
                             <CharacterCount ref={charCount}>{(150 - reviewMessage.length)}</CharacterCount>
                             <Button 
                                 ref={submitRef} 
@@ -131,7 +136,9 @@ const IceCreamProfile = () => {
                         <ReviewContainer key={i}>
                             <div className="user">{review.name}</div>
                             <div className="review">{review.review}</div>
-                            <div className="rating">{review.userRating}</div>
+                            <div className="rating">
+                                <Rating size="small" value={review.userRating} precision={0.5} readOnly />
+                            </div>
                         </ReviewContainer>    
                     )}
                 </ReviewsWrapper>
@@ -180,6 +187,7 @@ const InfoContainer = styled.div`
 
 const Image = styled.img`
     width: 400px;
+    max-height: 500px;
 `;
 
 const TextAreaWrapper = styled.div`
