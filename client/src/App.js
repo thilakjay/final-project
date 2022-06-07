@@ -5,6 +5,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Home from "./components/Home";
+import IceCreamProfile from "./components/IceCreamProfile";
 
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
           {/* listing of all ice creams & filters */}
         </Route>
         <Route exact path="/ice-creams/:_id">
-          {/* Ice Cream Info */}
+          <IceCreamProfile />
         </Route>
         <Route exact path="/user/">
           {/* landing page/main page */}

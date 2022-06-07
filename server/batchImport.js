@@ -12,9 +12,13 @@ const options = {
   useUnifiedTopology: true
 };
 
+const { v4: uuidv4 } = require("uuid");
+
 const batchImport = async () => {
   //adds a random rating to each flavour of ice cream
   iceCreams.forEach(iceCream => {
+      const _id = uuidv4();
+      iceCream._id = _id
       iceCream.rating = (Math.round(Math.random() * 9) + 1) / 2;
   });
 
