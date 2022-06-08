@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const IceCream = ({iceCream}) => {
     return (
         <div>
-            <Link to={`/ice-creams/${iceCream._id}`}><Image src={iceCream.imageSrc} alt={iceCream.name} /></Link>
+            <Link to={`/ice-creams/${iceCream._id}`}>
+                <Image src={iceCream.imageSrc} alt={iceCream.name} />
+            </Link>
         </div>
     );
 }

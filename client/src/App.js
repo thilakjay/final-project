@@ -7,6 +7,7 @@ import {
 import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
+import Login from "./components/Login";
 
 
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
           {/* signup page */}
         </Route>  
         <Route exact path="/login">
-          {/* login page */}
+          <Login />
         </Route>                                 
       </Switch>
     </Router>
