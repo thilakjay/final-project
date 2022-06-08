@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const path = require("path");
+// const path = require("path");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
@@ -21,7 +21,7 @@ const getIceCreams = async (req, res) => {
     client.close();
   } catch (err) {
     res.status(500).json({ status: 500, message: err.message });
-  } 
+  }
 };
 
 module.exports = { getIceCreams };

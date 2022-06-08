@@ -1,13 +1,15 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
-const {getIceCreams} = require("./handlers/getIceCreams");
-const {getIceCream} = require("./handlers/getIceCream"); 
-const {postReview} = require("./handlers/postReview"); 
+const { getIceCreams } = require("./handlers/getIceCreams");
+const { getIceCream } = require("./handlers/getIceCream");
+const { getShops } = require("./handlers/getShops");
+const { postReview } = require("./handlers/postReview");
 
-app.use(express.json())
+app.use(express.json());
 app.get("/api/ice-creams", getIceCreams);
 app.get("/api/ice-creams/:id", getIceCream);
+app.get("/api/shops", getShops);
 app.post("/api/ice-creams/:id", postReview);
 // app.get("/api/shops", getShops)
 // app.get("/api/shops/:shopId", getShop)
@@ -15,7 +17,6 @@ app.post("/api/ice-creams/:id", postReview);
 // app.get("/api/user/register", register)
 
 app.listen(8000);
-
 
 // "use strict";
 
@@ -46,10 +47,8 @@ app.listen(8000);
 //   .use(express.urlencoded({ extended: false }))
 //   .use("/", express.static(__dirname + "/"))
 
-
 //   // ITEMS: display all and by id //
 //   //Get all items and all item's information
 //   .get("/api/items", getAllItems)
-
 
 //   .listen(PORT, () => console.info(`Listening on port ${PORT}`));

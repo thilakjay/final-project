@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
 import Login from "./components/Login";
+import FindShop from "./components/FindShop";
 
 const App = () => {
   return (
@@ -29,8 +30,8 @@ const App = () => {
         <Route exact path="/user/">
           {/* landing page/main page */}
         </Route>
-        <Route exact path="/locator">
-          {/* shows location of shops in map */}
+        <Route exact path="/find-shop">
+          <FindShop />
         </Route>
         <Route exact path="/shop/:shopId">
           {/* shop page*/}

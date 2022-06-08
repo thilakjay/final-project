@@ -1,0 +1,156 @@
+{
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 1,
+            "name": "Wild Willy's",
+            "address": "20 Cartier Ave, Pointe-Claire, Quebec H9S 5L5",
+            "url": "https://www.wildwillys.ca/",
+            "googleRating": "4.7",
+            "fbRating": "4.9"
+        },
+        "geometry": {
+          "coordinates": [-73.82375, 45.43026],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 2,
+            "name": "Bouza",
+            "address": "3821 Boulevard Saint-Martin W, Laval, Quebec H7T 1B2",
+            "url": "http://bouza.ca/index.php",
+            "googleRating": "4.7",
+            "fbRating": "5"
+        },
+        "geometry": {
+          "coordinates": [-73.75861, 45.55278],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 3,
+            "name": "Meetha",
+            "address": "787A Rue de Liège O, Montréal, QC H3N 1B1",
+            "url": "https://www.instagram.com/meethamtl/",
+            "googleRating": "4.7",
+            "fbRating": "4.8"
+        },
+        "geometry": {
+          "coordinates": [-73.64292, 45.53184],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 4,
+            "name": "Ca Lem",
+            "address": "6926 Sherbrooke St W, Montreal, Quebec H4B 1P9",
+            "url": "https://calemmontreal.ca/",
+            "googleRating": "4.6",
+            "fbRating": "4.6"
+        },
+        "geometry": {
+          "coordinates": [-73.63553, 45.46021],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 5,
+            "name": "Iconoglace",
+            "address": "1320 Rue Bélanger, Montréal, QC H2G 1A1",
+            "url": "https://iconoglace.ca/en/",
+            "googleRating": "4.7",
+            "fbRating": "4.7"
+        },
+        "geometry": {
+          "coordinates": [-73.60599, 45.54344],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 6,
+            "name": "L'Armoire A Glaces",
+            "address": "6220 Rue St-Hubert, Montréal, QC H2S 2M2",
+            "url": "https://larmoireaglaces.com/en/",
+            "googleRating": "4.7",
+            "fbRating": "4.5"
+        },
+        "geometry": {
+          "coordinates": [-73.60038, 45.53487],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 7,
+            "name": "Kem Coba",
+            "address": "60 Av. Fairmount W, Montréal, QC H2T 2M2",
+            "url": "https://kemcoba.com/",
+            "googleRating": "4.7",
+            "fbRating": "4.8"
+        },
+        "geometry": {
+          "coordinates": [-73.990593, 40.74012],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 8,
+            "name": "dalla rose",
+            "address": "4609 Notre-Dame St W, Montreal, Quebec H4C 1S5",
+            "url": "https://www.dallarose.ca/",
+            "googleRating": "4.7",
+            "fbRating": "4.9"
+        },
+        "geometry": {
+          "coordinates": [-73.59507, 45.52319],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 9,
+            "name": "Unicone",
+            "address": "3873 Saint Denis St, Montreal, Quebec H2W 2M4",
+            "url": "https://www.unicone.ca/",
+            "googleRating": "4.7",
+            "fbRating": "4.7"
+        },
+        "geometry": {
+          "coordinates": [-73.57361, 45.52003],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "_id": 10,
+            "name": "Sachere Desserts",
+            "address": "3873 Saint Denis St, Montreal, Quebec H2W 2M4",
+            "url": "https://www.sachere.com/",
+            "googleRating": "4.8",
+            "fbRating": "5"
+        },
+        "geometry": {
+          "coordinates": [-73.55687, 45.51980],
+          "type": "Point"
+        }
+      }            
+    ],
+    "type": "FeatureCollection"
+  }
+  
