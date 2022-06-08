@@ -1,16 +1,14 @@
-// const { v4: uuidv4 } = require("uuid");
 const { MongoClient } = require("mongodb");
 // const path = require("path");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 };
 
 const postReview = async (req, res) => {
     const {id} = req.params;
-    const { review } = req.body;
 
     try {
         const client = new MongoClient(MONGO_URI, options);

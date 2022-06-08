@@ -23,7 +23,12 @@ const Home = () => {
         <>
         {iceCreams && (
             <div>               
-                <Filters iceCreams={iceCreams} setFiltered={setFiltered} activeFilters={activeFilters} setActiveFilters={setActiveFilters}/>
+                <Filters 
+                    iceCreams={iceCreams} 
+                    setFiltered={setFiltered} 
+                    activeFilters={activeFilters} 
+                    setActiveFilters={setActiveFilters}
+                />
                 <GridDiv>
                 {filtered && filtered.map(iceCream => 
                     <IceCream key={iceCream._id} iceCream={iceCream}/>     

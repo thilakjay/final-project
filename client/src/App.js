@@ -4,21 +4,21 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import GlobalStyles from "./components/GlobalStyles";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
 import Login from "./components/Login";
 
-
 const App = () => {
-
   return (
     <Router>
+      <GlobalStyles />
       <Header />
       <Switch>
         <Route exact path="/">
           {/* landing page/main page */}
-          <Home /> 
+          <Home />
         </Route>
         <Route exact path="/ice-creams">
           {/* listing of all ice creams & filters */}
@@ -28,22 +28,22 @@ const App = () => {
         </Route>
         <Route exact path="/user/">
           {/* landing page/main page */}
-        </Route> 
+        </Route>
         <Route exact path="/locator">
           {/* shows location of shops in map */}
-        </Route>  
+        </Route>
         <Route exact path="/shop/:shopId">
           {/* shop page*/}
-        </Route>  
+        </Route>
         <Route exact path="/signup">
           {/* signup page */}
-        </Route>  
+        </Route>
         <Route exact path="/login">
           <Login />
-        </Route>                                 
+        </Route>
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
