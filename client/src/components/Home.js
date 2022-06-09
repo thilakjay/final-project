@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import IceCream from "./IceCream";
 import styled from "styled-components";
 import Filters from "../Filters";
+import {motion, AnimatePresence} from "framer-motion";
 
 const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
@@ -29,10 +30,12 @@ const Home = () => {
                     activeFilters={activeFilters} 
                     setActiveFilters={setActiveFilters}
                 />
-                <GridDiv>
-                {filtered && filtered.map(iceCream => 
-                    <IceCream key={iceCream._id} iceCream={iceCream}/>     
-                )}
+                <GridDiv layout>
+                    <AnimatePresence>
+                    {filtered && filtered.map(iceCream => 
+                        <IceCream key={iceCream._id} iceCream={iceCream}/>     
+                    )}
+                    </AnimatePresence>
                 </GridDiv>
             </div>            
         )}
@@ -41,7 +44,7 @@ const Home = () => {
 }
 export default Home;
 
-const GridDiv = styled.div`
+const GridDiv = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-column-gap: 1rem;

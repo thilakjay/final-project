@@ -504,13 +504,6 @@
         "shopId": 6
     },
     {
-        "flavour": "Ontario Peach",
-        "description": "",
-        "tags": ["ontario", "peach", "local", "fruit", "hard", "gelato"],
-        "imageSrc": "larmoire-a-glaces/ontario-peach-and-coconut.jpg",
-        "shopId": 6
-    },
-    {
         "flavour": "Black Sesame",
         "description": "",
         "tags": ["nut", "sesame", "hard", "gelato"],
@@ -611,7 +604,7 @@
     {
         "flavour": "Ontario Peaches & Coconut",
         "description": "",
-        "tags": ["ontario", "local", "coconut", "fruit", "soft", "vegan"],
+        "tags": ["ontario", "local", "coconut", "fruit", "soft", "vegan", "peach"],
         "imageSrc": "larmoire-a-glaces/ontario-peach-and-coconut.jpg",
         "shopId": 6
     },
@@ -787,7 +780,7 @@
         "flavour": "Salted Caramel",
         "description": "dalla-rose/salted-caramel.jpg",
         "tags": ["salt", "caramel", "confection", "hard"],
-        "imageSrc": "",
+        "imageSrc": "dalla-rose/salted-caramel.jpg",
         "shopId": 8
     },
     {

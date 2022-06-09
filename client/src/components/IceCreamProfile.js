@@ -104,11 +104,10 @@ const IceCreamProfile = () => {
                 <h2>{iceCream.flavour}</h2>
                 <Rating value={iceCream.rating} precision={0.5} readOnly />
               </div>
-              <div>Google Rating: {shop.googleRating}</div>
-              <div>FB Rating:{shop.fbRating}</div>
+              <div>CrèM-T-L: {iceCream.rating}</div>
               <div>Shop Name: {shop.name}</div>
               <div>Address: {shop.address}</div>
-              <div>Website: {shop.url}</div>
+              <a href={shop.url}>{shop.url}</a>
               <TextAreaWrapper>
                 <div></div>
                 <TextArea

@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <HeaderSection>
             <NavLink exact to="/"> 
-                <h1>CreM-T-L</h1>
+                <h1>CrèM-T-L</h1>
             </NavLink>
             <div className="align-right">
                 <NavLink exact to="/shop-locations"> 

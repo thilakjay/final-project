@@ -1,14 +1,14 @@
 // import * as React from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import {MdOutlineIcecream} from "react-icons/md";
 import { Rating } from "@mui/material";
 
 const ShopLocations = () => {
     const [shops, setShops] = useState(null);
-    // const [popupInfo, setPopupInfo] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
+    const mapRef = useRef(null);
 
     const [viewport, setViewport] = useState({
         longitude: -73.7004,
@@ -30,6 +30,7 @@ const ShopLocations = () => {
         <Wrapper>
         <MapContainer>
             <Map
+                ref={mapRef}
                 initialViewState={viewport}
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
@@ -41,27 +42,42 @@ const ShopLocations = () => {
                     latitude={shop.coordinates[1]} 
                     onClick={(e) => {
                         e.originalEvent.stopPropagation();
-                        setSelectedShop(shop);
-                        setViewport({
-                            longitude: shop.coordinates[0],
-                            latitude: shop.coordinates[1],
-                            zoom: 15
+                        mapRef.current.easeTo({
+                            center: [shop.coordinates[0], shop.coordinates[1]],
+                            zoom: 13,
+                            speed: 0.2,
+                            duration: 1000,
+                            easing(t) {
+                                return t;
+                            }
                         });
+                        setSelectedShop(shop);
                     }}
                 >
-                    <MdOutlineIcecream size={25} fill="purple"/>
+                    <MdOutlineIcecream size={25} fill="purple" style={{cursor: "pointer"}}/>
                     {selectedShop && (
                         <Popup 
                             anchor="bottom"
                             longitude={selectedShop.coordinates[0]}
                             latitude={selectedShop.coordinates[1]}
-                            onClose={() => setSelectedShop(null)}
+                            onClose={() => {
+                                setSelectedShop(null);
+                                mapRef.current.easeTo({
+                                    center: [viewport.longitude, viewport.latitude],
+                                    zoom: viewport.zoom,
+                                    speed: 0.2,
+                                    duration: 1000,
+                                    easing(t) {
+                                        return t;
+                                    }
+                                });
+                            }}
                         >                            
                             <div>
                                 {selectedShop.name}
                                 <Rating 
                                     size="small" 
-                                    value={selectedShop.googleRating} 
+                                    value={parseFloat(selectedShop.googleRating)} 
                                     precision={0.5} 
                                     readOnly />
                                 </div>
@@ -74,14 +90,16 @@ const ShopLocations = () => {
         </MapContainer>
 
         
-        {selectedShop && (
         <ShopContainer>
+        {!selectedShop ? <h1>Click a shop for more info</h1> : (
+        <>
             <h1>{selectedShop.name}</h1>
             <div>{selectedShop.address}</div>
             <a href={selectedShop.url}>{selectedShop.url}</a>
             <img src={`/images/shops/${selectedShop.imageSrc}`} alt={selectedShop.name} />
-        </ShopContainer>
+        </>
         )}                      
+        </ShopContainer>
 
         </Wrapper>    
   );
