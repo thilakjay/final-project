@@ -8,7 +8,7 @@ const Header = () => {
                 <h1>CreM-T-L</h1>
             </NavLink>
             <div className="align-right">
-                <NavLink exact to="/find-shop"> 
+                <NavLink exact to="/shop-locations"> 
                     <div>Find a shop</div>
                 </NavLink>                
                 <NavLink exact to="/login"> 

@@ -5,7 +5,7 @@ const IceCream = ({iceCream}) => {
     return (
         <div>
             <Link to={`/ice-creams/${iceCream._id}`}>
-                <Image src={iceCream.imageSrc} alt={iceCream.name} />
+                <Image src={`/images/icecreams/${iceCream.imageSrc}`} alt={iceCream.name} />
             </Link>
         </div>
     );

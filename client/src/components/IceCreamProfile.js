@@ -96,7 +96,7 @@ const IceCreamProfile = () => {
         <Wrapper>
           <ImageAndInfoWrapper>
             <ImageContainer>
-              <Image src={`/${iceCream.imageSrc}`} alt={iceCream.flavour} />
+              <Image src={`/images/icecreams/${iceCream.imageSrc}`} alt={iceCream.flavour} />
             </ImageContainer>
 
             <InfoContainer>

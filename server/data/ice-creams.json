@@ -3,789 +3,789 @@
         "flavour": "Mint Chocolate Chip",
         "description": "",
         "tags": ["mint", "chocolate", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/mint-chocolate.jpg",
+        "imageSrc": "wild-willys/mint-chocolate.jpg",
         "shopId": 1
     },
     {
         "flavour": "Bubble Gum",
         "description": "",
         "tags": ["bubble", "gum","hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/bubble-gum.jpg",
+        "imageSrc": "wild-willys/bubble-gum.jpg",
         "shopId": 1       
     },
     {
         "flavour": "Tongo Bongo",
         "description": "Vanilla ice cream with mini Reese's pieces and a swirl of chocolate sauce and peanut butter.",
         "tags": ["vanilla", "chocolate", "reese", "peanut", "butter", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/tongo-bongo.jpg",
+        "imageSrc": "wild-willys/tongo-bongo.jpg",
         "shopId": 1
     },
     {
         "flavour":"Creamsicle",
         "description": "",
         "tags": ["orange", "vanilla", "cream", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/creamsicle.jpg",
+        "imageSrc": "wild-willys/creamsicle.jpg",
         "shopId": 1
     },
     {
         "flavour":"Cookie Dough Bites",
         "description": "",
         "tags": ["cookie", "dough", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/cookie-dough-bites.jpg",
+        "imageSrc": "wild-willys/cookie-dough-bites.jpg",
         "shopId": 1
     },
     {
         "flavour":"Triple Chocolate",
         "description": "",
         "tags": ["triple", "chocolate", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/triple-chocolate.jpg",
+        "imageSrc": "wild-willys/triple-chocolate.jpg",
         "shopId": 1
     },
     {
         "flavour":"Kalahari Crunch",
         "description": "Caramel swirl and crunchy pieces of caramel and chocolate.",
         "tags": ["kalahari", "crunchy", "caramel", "chocolate", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/kalahari-crunch.jpg",
+        "imageSrc": "wild-willys/kalahari-crunch.jpg",
         "shopId": 1
     },
     {
         "flavour":"Coconut",
         "description": "",
         "tags": ["coconut, hard"],
-        "imageSrc": "images/icecreams/wild-willys/coconut.jpg",
+        "imageSrc": "wild-willys/coconut.jpg",
         "shopId": 1
     },
     {
         "flavour":"Pumpkin Spice",
         "description": "",
         "tags": ["pumpkin", "spice", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/pumpkin-spice.jpg",
+        "imageSrc": "wild-willys/pumpkin-spice.jpg",
         "shopId": 1
     },
     {
         "flavour":"Chocolate Hazelnut",
         "description": "",
         "tags": ["chocolate", "hazelnut", "nut", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/chocolate-hazelnut.jpg",
+        "imageSrc": "wild-willys/chocolate-hazelnut.jpg",
         "shopId": 1
     },
     {
         "flavour":"Chocolate",
         "description": "",
         "tags": ["chocolate", "vegan", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/chocolate-vegan.jpg",
+        "imageSrc": "wild-willys/chocolate-vegan.jpg",
         "shopId": 1
     },
     {
         "flavour":"Kahlua Oreo",
         "description": "",
         "tags": ["coffee", "kahlua", "oreo", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/kahlua-oreo.jpg",
+        "imageSrc": "wild-willys/kahlua-oreo.jpg",
         "shopId": 1
     },
     {
         "flavour":"Brownie Batter",
         "description": "",
         "tags": ["brownie", "batter", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/brownie-batter.jpg",
+        "imageSrc": "wild-willys/brownie-batter.jpg",
         "shopId": 1
     }, 
     {
         "flavour":"Peanut Butter & Jelly",
         "description": "",
         "tags": ["peanut", "butter", "jelly", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/peanut-butter-jelly.jpg",
+        "imageSrc": "wild-willys/peanut-butter-jelly.jpg",
         "shopId": 1
     },
     {
         "flavour":"Peanut Butter & Salted Caramel Swirl",
         "description": "",
         "tags": ["peanut", "butter", "salt", "caramel", "swirl", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/peanut-butter-salted-caramel-swirl.jpg",
+        "imageSrc": "wild-willys/peanut-butter-salted-caramel-swirl.jpg",
         "shopId": 1
     },
     {
         "flavour":"Lemon Pie",
         "description": "Tangy lemon with pieces of graham crust.",
         "tags": ["tangy", "lemon", "pie", "graham", "crust", "hard"],
-        "imageSrc": "images/icecreams/wild-willys/lemon-pie.jpg",
+        "imageSrc": "wild-willys/lemon-pie.jpg",
         "shopId": 1
     },
     {
         "flavour":"Matcha",
         "description": "",
         "tags": ["green", "tea", "matcha", "japan","asia","international","hard"],
-        "imageSrc": "images/icecreams/wild-willys/matcha.jpg",
+        "imageSrc": "wild-willys/matcha.jpg",
         "shopId": 1
     },
     {
         "flavour":"Hey Batter Batter",
         "description": "Chocolate ice cream, brownie batter, and brownie pieces.",
         "tags": ["chocolate", "brownie", "batter", "hard", "confection"],
-        "imageSrc": "images/icecreams/wild-willys/hey-batter-batter.jpg",
+        "imageSrc": "wild-willys/hey-batter-batter.jpg",
         "shopId": 1
     },
     {
         "flavour": "Achta With Pistachio.",
         "description": "",
         "tags": ["achta", "pistachio", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/achta-pistachio.jpg",
+        "imageSrc": "bouza/achta-pistachio.jpg",
         "shopId": 2
     },
     {
         "flavour": "Almonds",
         "description": "",
         "tags": ["almond", "nut", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/almonds.jpg",
+        "imageSrc": "bouza/almonds.jpg",
         "shopId": 2
     },
     {
         "flavour": "Banana & Chocolate Chips",
         "description": "",
         "tags": ["banana", "chocolate", "chips", "fruit", "hard", "confection"],
-        "imageSrc": "images/icecreams/bouza/banana-chocolate-chips.jpg",
+        "imageSrc": "bouza/banana-chocolate-chips.jpg",
         "shopId": 2
     },
     {
         "flavour": "Bouza Kaek",
         "description": "",
         "tags": ["bread", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/bouza-kaek.jpg",
+        "imageSrc": "bouza/bouza-kaek.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Bouza Oreo",
         "description": "",
         "tags": ["oreo","cookie","middle east", "international", "hard", "confection"],
-        "imageSrc": "images/icecreams/bouza/bouza-oreo.jpg",
+        "imageSrc": "bouza/bouza-oreo.jpg",
         "shopId": 2
     },
     {
         "flavour": "Cherry",
         "description": "",
         "tags": ["cherry","fruit","middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/cherry.jpg",
+        "imageSrc": "bouza/cherry.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Chocolate",
         "description": "",
         "tags": ["chocolate", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/chocolate.jpg",
+        "imageSrc": "bouza/chocolate.jpg",
         "shopId": 2
     }, 
     {
         "flavour": "Lemon",
         "description": "",
         "tags": ["lemon", "fruit", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/lemon.jpg",
+        "imageSrc": "bouza/lemon.jpg",
         "shopId": 2
     },
     {
         "flavour": "Mango",
         "description": "",
         "tags": ["mango", "fruit", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/mango.jpg",
+        "imageSrc": "bouza/mango.jpg",
         "shopId": 2
     },
     {
         "flavour": "Strawberry",
         "description": "",
         "tags": ["strawberry", "fruit", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/strawberry.jpg",
+        "imageSrc": "bouza/strawberry.jpg",
         "shopId": 2
     },
     {
         "flavour": "Peanut Butter",
         "description": "",
         "tags": ["peanut", "butter", "nut", "hard", "middle east", "international"],
-        "imageSrc": "images/icecreams/bouza/peanutbutter.jpg",
+        "imageSrc": "bouza/peanutbutter.jpg",
         "shopId": 2
     },
     {
         "flavour": "Pistachio",
         "description": "",
         "tags": ["pistachio","nut","middle east", "international","hard"],
-        "imageSrc": "images/icecreams/bouza/pistachio.jpg",
+        "imageSrc": "bouza/pistachio.jpg",
         "shopId": 2
     },
     {
         "flavour": "Rose Water",
         "description": "",
         "tags": ["rose", "plant", "middle east", "international", "hard"],
-        "imageSrc": "images/icecreams/bouza/rosewater.jpg",
+        "imageSrc": "bouza/rosewater.jpg",
         "shopId": 2
     },
     {
         "flavour": "Jalebi",
         "description": "",
         "tags": ["saffron", "cardamom", "syrup", "jalebi", "pistachio", "india", "hard", "asia","international", "nut", "spice"],
-        "imageSrc": "images/icecreams/meetha/jalebi.jpg",
+        "imageSrc": "meetha/jalebi.jpg",
         "shopId": 3
     },
     {
         "flavour": "Falooda",
         "description": "",
         "tags": ["hard", "india", "rose", "basil", "milkshake", "asia","international", "flower", "spice","plant"],
-        "imageSrc": "images/icecreams/meetha/falooda.jpg",
+        "imageSrc": "meetha/falooda.jpg",
         "shopId": 3
     },
     {
         "flavour": "Mango Rasmalai",
         "description": "",
         "tags": ["hard", "cardamom", "saffron", "rasmalai", "mango", "india", "asia","international", "fruit", "spice"],
-        "imageSrc": "images/icecreams/meetha/mango-rasmalai.jpg",
+        "imageSrc": "meetha/mango-rasmalai.jpg",
         "shopId": 3
     },           
     {
         "flavour": "Gulab Jamun",
         "description": "",
         "tags": ["hard", "india", "asia","international", "cardamom", "saffron", "syrup", "gulab", "jamun", "spice"],
-        "imageSrc": "images/icecreams/meetha/gulab-jamun.jpg",
+        "imageSrc": "meetha/gulab-jamun.jpg",
         "shopId": 3
     },
     {
         "flavour": "Masala Chai-g",
         "description": "",
         "tags": ["hard","india","asia","international","masala","chai", "spice"],
-        "imageSrc": "images/icecreams/meetha/masala-chai.jpg",
+        "imageSrc": "meetha/masala-chai.jpg",
         "shopId": 3
     },
     {
         "flavour": "Elachai Pista",
         "description": "",
         "tags": ["hard", "india", "asia","international", "cardamom", "pistachio", "nut", "spice"],
-        "imageSrc": "images/icecreams/meetha/elaichi-pista.jpg",
+        "imageSrc": "meetha/elaichi-pista.jpg",
         "shopId": 3
     },
     {
         "flavour": "Taro",
         "description": "",
         "tags": ["hard", "taro", "asia","international", "vegetable", "purple"],
-        "imageSrc": "images/icecreams/ca-lem/taro.jpg",
+        "imageSrc": "ca-lem/taro.jpg",
         "shopId": 4
     },
     {
         "flavour": "Dark Chocolate",
         "description": "",
         "tags": ["hard", "dark", "chocolate"],
-        "imageSrc": "images/icecreams/ca-lem/dark-chocolate.jpg",
+        "imageSrc": "ca-lem/dark-chocolate.jpg",
         "shopId": 4
     },
     {
         "flavour": "Viet Coffee",
         "description": "",
         "tags": ["hard", "asia","international", "vietnam", "coffee"],
-        "imageSrc": "images/icecreams/ca-lem/viet-coffee.jpg",
+        "imageSrc": "ca-lem/viet-coffee.jpg",
         "shopId": 4
     },
     {
         "flavour": "Nutella",
         "description": "",
         "tags": ["hard", "nut", "hazelnut", "nutella"],
-        "imageSrc": "images/icecreams/ca-lem/nutella.jpg",
+        "imageSrc": "ca-lem/nutella.jpg",
         "shopId": 4
     },
     {
         "flavour": "Honey Melon & Strawberry Twist",
         "description": "",
         "tags": ["soft", "honey melon", "strawberry", "fruit"],
-        "imageSrc": "images/icecreams/ca-lem/melon-strawberry.jpg",
+        "imageSrc": "ca-lem/melon-strawberry.jpg",
         "shopId": 4
     },
     {
         "flavour": "Skors Chocolate & Caramel",
         "description": "",
         "tags": ["soft", "chocolate", "caramel", "nut", "confection"],
-        "imageSrc": "images/icecreams/ca-lem/skors-chocolate-caramel.jpg",
+        "imageSrc": "ca-lem/skors-chocolate-caramel.jpg",
         "shopId": 4
     },
     {
         "flavour": "Donkey Kong",
         "description": "Chocolate and banana",
         "tags": ["chocolate", "banana", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/donkey-kong.jpg",
+        "imageSrc": "iconoglace/donkey-kong.jpg",
         "shopId": 5
     },
     {
         "flavour": "La Belle Provence",
         "description": "Apricot and almond paste.",
         "tags": ["apricot", "fruit", "almond", "nut", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/la-belle-provence.jpg",
+        "imageSrc": "iconoglace/la-belle-provence.jpg",
         "shopId": 5
     },
     {
         "flavour": "Rocket",
         "description": "Cherry and rose.",
         "tags": ["cherry", "rose", "soft", "fruit", "vegan","plant"],
-        "imageSrc": "images/icecreams/iconoglace/rockets.jpg",
+        "imageSrc": "iconoglace/rockets.jpg",
         "shopId": 5
     },
     {
         "flavour": "Shirley Temple",
         "description": "Lime and pomegranate",
         "tags": ["lime", "pomegranate", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/shirley-temple.jpg",
+        "imageSrc": "iconoglace/shirley-temple.jpg",
         "shopId": 5
     },
     {
         "flavour": "Creamsicle",
         "description": "Vanilla and orange",
         "tags": ["popsicle", "vanilla", "orange", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/creamsicle.jpg",
+        "imageSrc": "iconoglace/creamsicle.jpg",
         "shopId": 5
     },
     {
         "flavour": "Chocolate & Pear",
         "description": "",
         "tags": ["chocolate", "pear", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/chocolate-and-pear.jpg",
+        "imageSrc": "iconoglace/chocolate-and-pear.jpg",
         "shopId": 5
     },
     {
         "flavour": "Tonka & Sour Cherries",
         "description": "",
         "tags": ["latin", "south america", "tonka", "sour", "cherry", "fruit"],
-        "imageSrc": "images/icecreams/iconoglace/tonka-and-sour-cherries.jpg",
+        "imageSrc": "iconoglace/tonka-and-sour-cherries.jpg",
         "shopId": 5
     },
     {
         "flavour": "Vanilla & Quebec Blueberries",
         "description": "",
         "tags": ["vanilla", "blueberry", "soft", "fruit", "local", "quebec"],
-        "imageSrc": "images/icecreams/iconoglace/vanilla-and-quebec-blueberries.jpg",
+        "imageSrc": "iconoglace/vanilla-and-quebec-blueberries.jpg",
         "shopId": 5
     },
     {
         "flavour": "Vanilla & Apple Caramel",
         "description": "",
         "tags": ["vanilla", "apple", "caramel", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/vanilla-and-apple-caramel.jpg",
+        "imageSrc": "iconoglace/vanilla-and-apple-caramel.jpg",
         "shopId": 5
     },
     {
         "flavour": "Mint & Chocolate",
         "description": "",
         "tags": ["mint", "chocolate", "soft", "vegan","plant"],
-        "imageSrc": "images/icecreams/iconoglace/chocolate-and-mint.jpg",
+        "imageSrc": "iconoglace/chocolate-and-mint.jpg",
         "shopId": 5
     },
     {
         "flavour": "Pear, Tonka, & Cardamom",
         "description": "",
         "tags": ["pear", "tonka", "cardamom", "fruit", "soft", "vegan", "spice", "latin"],
-        "imageSrc": "images/icecreams/iconoglace/pear-tonka-caradamom.jpg",
+        "imageSrc": "iconoglace/pear-tonka-caradamom.jpg",
         "shopId": 5
     },
     {
         "flavour": "Chocolate, Hazelnut, & Banana",
         "description": "",
         "tags": ["chocolate", "hazelnut", "nut", "banana", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/chocolate-hazelnut-and-banana.jpg",
+        "imageSrc": "iconoglace/chocolate-hazelnut-and-banana.jpg",
         "shopId": 5
     },
     {
         "flavour": "Pumpkin, Apple, Graham, & Masala",
         "description": "",
         "tags": ["pumpkin", "apple", "graham", "masala", "india", "soft", "spice", "vegan", "international","asia"],
-        "imageSrc": "images/icecreams/iconoglace/pumpkin-apple-graham-masala.jpg",
+        "imageSrc": "iconoglace/pumpkin-apple-graham-masala.jpg",
         "shopId": 5
     },
     {
         "flavour": "Quebec, Blueberry, & Chocolate",
         "description": "",
         "tags": ["quebec", "blueberry", "chocolate", "fruit", "local", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/quebec-blueberry-and-chocolate.jpg",
+        "imageSrc": "iconoglace/quebec-blueberry-and-chocolate.jpg",
         "shopId": 5
     },
     {
         "flavour": "Oreo & Strawberry",
         "description": "",
         "tags": ["oreo", "strawberry", "cookie", "fruit", "soft", "confection"],
-        "imageSrc": "images/icecreams/iconoglace/oreo-and-strawberry.jpg",
+        "imageSrc": "iconoglace/oreo-and-strawberry.jpg",
         "shopId": 5
     },
     {
         "flavour": "Mandarin Orange & Cassis",
         "description": "",
         "tags": ["mandarin", "orange", "cassis", "fruit", "soft", "vegan", "black", "syrup"],
-        "imageSrc": "images/icecreams/iconoglace/mandarin-orange-and-cassis.jpg",
+        "imageSrc": "iconoglace/mandarin-orange-and-cassis.jpg",
         "shopId": 5
     },
     {
         "flavour": "Apricot & Almond Praline",
         "description": "",
         "tags": ["apricot", "almond", "praline", "nut", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/apricot-and-almond-praline.jpg",
+        "imageSrc": "iconoglace/apricot-and-almond-praline.jpg",
         "shopId": 5
     },
     {
         "flavour": "Pineapple & Chocolate",
         "description": "",
         "tags": ["pineapple", "chocolate", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/pineapple-and-chocolate.jpg",
+        "imageSrc": "iconoglace/pineapple-and-chocolate.jpg",
         "shopId": 5
     },
     {
         "flavour": "Ginger, Lemon, Iced Tea, & Peach",
         "description": "",
         "tags": ["ginger","lemon","tea","peach", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/ginger-lemon-iced-tea-and-peach.jpg",
+        "imageSrc": "iconoglace/ginger-lemon-iced-tea-and-peach.jpg",
         "shopId": 5
     },
     {
         "flavour": "Chai Tea & Orange",
         "description": "",
         "tags": ["chai", "tea", "spice", "orange", "india", "asia","international", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/chai-tea-and-orange.jpg",
+        "imageSrc": "iconoglace/chai-tea-and-orange.jpg",
         "shopId": 5
     },
     {
         "flavour": "Strawberry & Passion Fruit",
         "description": "",
         "tags": ["strawberry", "passion", "fruit", "soft"],
-        "imageSrc": "images/icecreams/iconoglace/strawberry-and-passion-fruit.jpg",
+        "imageSrc": "iconoglace/strawberry-and-passion-fruit.jpg",
         "shopId": 5
     },
     {
         "flavour": "Fig & Ricotta",
         "description": "",
         "tags": ["fig", "ricotta", "cheese", "italy","international", "europe", "gelato", "hard"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/fig-ricotta.jpg",
+        "imageSrc": "larmoire-a-glaces/fig-ricotta.jpg",
         "shopId": 6
     },
     {
         "flavour": "Matcha & Coconut",
         "description": "",
         "tags": ["matcha", "coconut", "hard", "vegan", "green", "tea", "japan", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/matcha-and-coconut.jpg",
+        "imageSrc": "larmoire-a-glaces/matcha-and-coconut.jpg",
         "shopId": 6
     },
     {
         "flavour": "Pure Madagascar Vanilla",
         "description": "",
         "tags": ["madagascar", "vanilla", "gelato", "hard", "africa"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/pure-madagascar-vanilla.jpg",
+        "imageSrc": "larmoire-a-glaces/pure-madagascar-vanilla.jpg",
         "shopId": 6
     },
     {
         "flavour": "Tiramisu",
         "description": "",
         "tags": ["coffee", "italy","international","europe", "gelato", "hard"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/tiramisu.jpg",
+        "imageSrc": "larmoire-a-glaces/tiramisu.jpg",
         "shopId": 6
     },
     {
         "flavour": "Quebec Strawberry",
         "description": "",
         "tags": ["quebec", "local", "strawberry", "fruit", "gelato", "hard", "vegan"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/quebec-strawberry.jpg",
+        "imageSrc": "larmoire-a-glaces/quebec-strawberry.jpg",
         "shopId": 6
     },
     {
         "flavour": "Lemon Tart",
         "description": "",
         "tags": ["lemon", "fruit", "tart", "gelato", "hard"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/lemon-tart.jpg",
+        "imageSrc": "larmoire-a-glaces/lemon-tart.jpg",
         "shopId": 6
     },
     {
         "flavour": "Espresso",
         "description": "",
         "tags": ["espresso", "coffee", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/espresso.jpg",
+        "imageSrc": "larmoire-a-glaces/espresso.jpg",
         "shopId": 6
     },
     {
         "flavour": "Maple Butter",
         "description": "",
         "tags": ["maple", "butter", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/maple.jpg",
+        "imageSrc": "larmoire-a-glaces/maple.jpg",
         "shopId": 6
     },
     {
         "flavour": "Ontario Peach",
         "description": "",
         "tags": ["ontario", "peach", "local", "fruit", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/ontario-peach-and-coconut.jpg",
+        "imageSrc": "larmoire-a-glaces/ontario-peach-and-coconut.jpg",
         "shopId": 6
     },
     {
         "flavour": "Black Sesame",
         "description": "",
         "tags": ["nut", "sesame", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/black-sesame.jpg",
+        "imageSrc": "larmoire-a-glaces/black-sesame.jpg",
         "shopId": 6
     },
     {
         "flavour": "Dulce de Leche",
         "description": "",
         "tags": ["latin", "south america", "dulce", "leche", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/dulce-de-leche.jpg",
+        "imageSrc": "larmoire-a-glaces/dulce-de-leche.jpg",
         "shopId": 6
     },
     {
         "flavour": "Banana Caramel",
         "description": "",
         "tags": ["banana", "caramel", "fruit", "hard", "gelato", "confection"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/banana-caramel.jpg",
+        "imageSrc": "larmoire-a-glaces/banana-caramel.jpg",
         "shopId": 6
     },
     {
         "flavour": "Gianduja",
         "description": "",
         "tags": ["chocolate", "hazelnut", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/gianduja.jpg",
+        "imageSrc": "larmoire-a-glaces/gianduja.jpg",
         "shopId": 6
     },
     {
         "flavour": "White Chocolate",
         "description": "",
         "tags": ["white", "chocolate", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/white-chocolate.jpg",
+        "imageSrc": "larmoire-a-glaces/white-chocolate.jpg",
         "shopId": 6
     }, 
     {
         "flavour": "White Chocolate & Raspberry",
         "description": "",
         "tags": ["white", "chocolate", "raspberry", "gelato", "hard"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/white-chocolate-raspberry.jpg",
+        "imageSrc": "larmoire-a-glaces/white-chocolate-raspberry.jpg",
         "shopId": 6
     },
     {
         "flavour": "Pistachio",
         "description": "",
         "tags": ["hard", "gelato", "nut", "pistachio"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/pistachio.jpg",
+        "imageSrc": "larmoire-a-glaces/pistachio.jpg",
         "shopId": 6
     },
     {
         "flavour": "Quebec Corn",
         "description": "",
         "tags": ["quebec", "local", "corn", "vegetable", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/quebec-corn.jpg",
+        "imageSrc": "larmoire-a-glaces/quebec-corn.jpg",
         "shopId": 6
     },
     {
         "flavour": "Hazelnut Butter",
         "description": "",
         "tags": ["hazelbut", "butter", "nut", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/hazelnut-butter.jpg",
+        "imageSrc": "larmoire-a-glaces/hazelnut-butter.jpg",
         "shopId": 6
     },
     {
         "flavour": "Almond Butter",
         "description": "",
         "tags": ["almond", "butter", "nut", "hard", "gelato"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/almond-butter.jpg",
+        "imageSrc": "larmoire-a-glaces/almond-butter.jpg",
         "shopId": 6
     }, 
     {
         "flavour": "Coconut & Mango",
         "description": "",
         "tags": ["coconut", "mango", "fruit", "vegan", "soft"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/coconut-and-mango.jpg",
+        "imageSrc": "larmoire-a-glaces/coconut-and-mango.jpg",
         "shopId": 6
     },
     {
         "flavour": "Pumpkin Spice Latte",
         "description": "",
         "tags": ["pumpkin", "vegetable", "spice", "latte", "soft"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/pumpkin-spice-latte.jpg",
+        "imageSrc": "larmoire-a-glaces/pumpkin-spice-latte.jpg",
         "shopId": 6
     },
     {
         "flavour": "Apple Caramel",
         "description": "",
         "tags": ["soft", "apple", "caramel", "confection", "fruit"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/apple-caramel.jpg",
+        "imageSrc": "larmoire-a-glaces/apple-caramel.jpg",
         "shopId": 6
     },
     {
         "flavour": "Chai & Ginger",
         "description": "",
         "tags": ["chai", "ginger", "soft", "vegan", "india", "spice", "international","asia"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/chai-and-ginger.jpg",
+        "imageSrc": "larmoire-a-glaces/chai-and-ginger.jpg",
         "shopId": 6
     },
     {
         "flavour": "Ontario Peaches & Coconut",
         "description": "",
         "tags": ["ontario", "local", "coconut", "fruit", "soft", "vegan"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/ontario-peach-and-coconut.jpg",
+        "imageSrc": "larmoire-a-glaces/ontario-peach-and-coconut.jpg",
         "shopId": 6
     },
     {
         "flavour": "Strawberry & Chocolate",
         "description": "",
         "tags": ["strawberry", "chocolate", "confection", "fruit", "soft", "vegan"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/strawberry-and-chocolate.jpg",
+        "imageSrc": "larmoire-a-glaces/strawberry-and-chocolate.jpg",
         "shopId": 6
     },
     {
         "flavour": "Passion Fruit & Coconut",
         "description": "",
         "tags": ["soft", "vegan", "passion", "fruit", "coconut"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/passion-fruit-and-coconut.jpg",
+        "imageSrc": "larmoire-a-glaces/passion-fruit-and-coconut.jpg",
         "shopId": 6
     },
     {
         "flavour": "Vanilla & Dark Chocolate",
         "description": "",
         "tags": ["vanilla", "dark", "chocolate", "soft", "vegan"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/vanilla-and-dark-chocolate.jpg",
+        "imageSrc": "larmoire-a-glaces/vanilla-and-dark-chocolate.jpg",
         "shopId": 6
     },
     {
         "flavour": "Ground Cherry & Maple Butter",
         "description": "",
         "tags": ["cherry", "maple", "butter", "fruit", "soft"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/ground-cherry-and-maple-butter.jpg",
+        "imageSrc": "larmoire-a-glaces/ground-cherry-and-maple-butter.jpg",
         "shopId": 6
     },
     {
         "flavour": "Dark Chocolate",
         "description": "",
         "tags": ["dark", "chocolate", "vegan", "hard"],
-        "imageSrc": "images/icecreams/larmoire-a-glaces/dark-chocolate.jpg",
+        "imageSrc": "larmoire-a-glaces/dark-chocolate.jpg",
         "shopId": 6
     },
     {
         "flavour": "Passion Fruit Mango & Pandan Leaf",
         "description": "",
         "tags": ["passion", "fruit", "mango", "pandan", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/passion-fruit-mango-and-pandan-leaf.jpg",
+        "imageSrc": "kem-coba/passion-fruit-mango-and-pandan-leaf.jpg",
         "shopId": 7
     },
     {
         "flavour": "Raspberry & Chocolate",
         "description": "",
         "tags": ["raspberry", "chocolate", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/raspberry-and-chocolate.jpg",
+        "imageSrc": "kem-coba/raspberry-and-chocolate.jpg",
         "shopId": 7
     },
     {
         "flavour": "Blueberry & Honey",
         "description": "",
         "tags": ["blueberry", "honey", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/blueberry-and-honey.jpg",
+        "imageSrc": "kem-coba/blueberry-and-honey.jpg",
         "shopId": 7
     },
     {
         "flavour": "Lime & Passion Fruit",
         "description": "",
         "tags": ["lime", "passion", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/lime-and-passion-fruit.jpg",
+        "imageSrc": "kem-coba/lime-and-passion-fruit.jpg",
         "shopId": 7
     },
     {
         "flavour": "Raspberry, Lychee, & Rosewater",
         "description": "",
         "tags": ["raspberry", "lychee", "rose", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/raspberry-lychee-and-rosewater.jpg",
+        "imageSrc": "kem-coba/raspberry-lychee-and-rosewater.jpg",
         "shopId": 7
     },
     {
         "flavour": "Coconut & Orange",
         "description": "",
         "tags": ["coconut", "orange", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/coconut-and-orange.jpg",
+        "imageSrc": "kem-coba/coconut-and-orange.jpg",
         "shopId": 7
     },
     {
         "flavour": "Orange, Cardamom, & Sour Cherry",
         "description": "",
         "tags": ["orange", "sour", "cardamom", "spice", "cherry", "fruit", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/orange-cardamom-and-sour-cherry.jpg",
+        "imageSrc": "kem-coba/orange-cardamom-and-sour-cherry.jpg",
         "shopId": 7
     },
     {
         "flavour": "Dark Chocolate & Raspberry",
         "description": "",
         "tags": ["dark", "chocolate", "raspberry", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/dark-chocolate-and-raspberry.jpg",
+        "imageSrc": "kem-coba/dark-chocolate-and-raspberry.jpg",
         "shopId": 7
     },
     {
         "flavour": "The Latina",
         "description": "Mango and dulce de leche.",
         "tags": ["latin", "mango", "south america", "soft", "fruit"],
-        "imageSrc": "images/icecreams/kem-coba/mango-and-dulce-de-leche.jpg",
+        "imageSrc": "kem-coba/mango-and-dulce-de-leche.jpg",
         "shopId": 7
     },
     {
         "flavour": "Sour Cherry & Almond",
         "description": "",
         "tags": ["sour", "cherry", "almond", "nut", "soft"],
-        "imageSrc": "images/icecreams/kem-coba/sour-cherry-and-almond.jpg",
+        "imageSrc": "kem-coba/sour-cherry-and-almond.jpg",
         "shopId": 7
     },
     {
         "flavour": "Black Sesame",
         "description": "",
         "tags": ["black", "sesame", "nut", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/black-sesame.jpg",
+        "imageSrc": "dalla-rose/black-sesame.jpg",
         "shopId": 8
     },
     {
         "flavour": "Brown Butter",
         "description": "Brown butter infused custard base with toasted, salty brown butter solids folded in.",
         "tags": ["butter", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/brown-butter.jpg",
+        "imageSrc": "dalla-rose/brown-butter.jpg",
         "shopId": 8
     },
     {
         "flavour": "Saguenay Blueberry Swirl",
         "description": "",
         "tags": ["quebec", "local", "blueberry", "fruit", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/saguenay-blueberry-swirl.jpg",
+        "imageSrc": "dalla-rose/saguenay-blueberry-swirl.jpg",
         "shopId": 8
     },
     {
         "flavour": "S'More",
         "description": "Vanilla ice cream mixed with graham, marshmellows, and chocolate",
         "tags": ["vanilla", "graham", "marshmellow","chocolate", "confection", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/smore.jpg",
+        "imageSrc": "dalla-rose/smore.jpg",
         "shopId": 8
     },
     {
         "flavour": "Quebec Strawberry",
         "description": "",
         "tags": ["quebec", "local", "strawberry", "fruit", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/quebec-strawberry.jpg",
+        "imageSrc": "dalla-rose/quebec-strawberry.jpg",
         "shopId": 8
     },
     {
         "flavour": "Quebec Raspberry Stracciatella",
         "description": "",
         "tags": ["quebec", "local", "raspberry", "stracciatella", "gelato", "hard", "europe","international", "italy"],
-        "imageSrc": "images/icecreams/dalla-rose/raspberry-stracciatella.jpg",
+        "imageSrc": "dalla-rose/raspberry-stracciatella.jpg",
         "shopId": 8
     },
     {
         "flavour": "Moroccan Mint Stracciatella",
         "description": "",
         "tags": ["moroccan", "morocco", "mint", "gelato", "hard", "stracciatella"],
-        "imageSrc": "images/icecreams/dalla-rose/moroccan-mint-stracciatella.jpg",
+        "imageSrc": "dalla-rose/moroccan-mint-stracciatella.jpg",
         "shopId": 8
     },
     {
         "flavour": "Hazelnut",
         "description": "",
         "tags": ["nut", "hazelnut", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/hazelnut.jpg",
+        "imageSrc": "dalla-rose/hazelnut.jpg",
         "shopId": 8
     },
     {
         "flavour": "Cookie Cookie Biscuit",
         "description": "Three types of home-made cookies and creamy custard base.",
         "tags": ["cookie", "biscuit", "hard", "confection"],
-        "imageSrc": "images/icecreams/dalla-rose/cookie-cookie-biscuit.jpg",
+        "imageSrc": "dalla-rose/cookie-cookie-biscuit.jpg",
         "shopId": 8
     },
     {
         "flavour": "Salted Caramel",
-        "description": "images/icecreams/dalla-rose/salted-caramel.jpg",
+        "description": "dalla-rose/salted-caramel.jpg",
         "tags": ["salt", "caramel", "confection", "hard"],
         "imageSrc": "",
         "shopId": 8
@@ -794,224 +794,224 @@
         "flavour": "Espresso",
         "description": "",
         "tags": ["espresso", "coffee", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/espresso.jpg",
+        "imageSrc": "dalla-rose/espresso.jpg",
         "shopId": 8
     },
     {
         "flavour": "Snickerdoodle",
         "description": "Brown sugar and cinnamon ice cream folded with bits of sugar and graham cookies.",
         "tags": ["brown", "sugar", "cinnamon", "spice", "graham", "cookie", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/snickerdoodle.jpg",
+        "imageSrc": "dalla-rose/snickerdoodle.jpg",
         "shopId": 8
     },
     {
         "flavour": "Squash Spice",
         "description": "",
         "tags": ["squash", "spice", "vegetable", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/squash-spice.jpg",
+        "imageSrc": "dalla-rose/squash-spice.jpg",
         "shopId": 8
     },
     {
         "flavour": "Tahitian Vanilla",
         "description": "",
         "tags": ["tahiti", "vanilla", "hard"],
-        "imageSrc": "images/icecreams/dalla-rose/tahitian-vanilla.jpg",
+        "imageSrc": "dalla-rose/tahitian-vanilla.jpg",
         "shopId": 8
     },
     {
         "flavour": "Strawberry Shortcake",
         "description": "",
         "tags": ["strawberry", "fruit", "hard", "shortcake", "confection"],
-        "imageSrc": "images/icecreams/dalla-rose/strawberry-shortcake.jpg",
+        "imageSrc": "dalla-rose/strawberry-shortcake.jpg",
         "shopId": 8
     },
     {
         "flavour": "Sponge Toffee",
         "description": "Homemade Sponge Toffee",
         "tags": ["sponge", "toffee", "confection", "hard", "brown", "sugar", "syrup", "molasses"],
-        "imageSrc": "images/icecreams/dalla-rose/sponge-toffee.jpg",
+        "imageSrc": "dalla-rose/sponge-toffee.jpg",
         "shopId": 8
     },
     {
         "flavour": "Thai Milk Tea & Tahitian Vanilla",
         "description": "",
         "tags": ["thai", "thailand", "tahiti", "vanilla", "milk", "tea", "asia","international", "soft"],
-        "imageSrc": "images/icecreams/dalla-rose/thai-milk-tea-and-tahitian-vanilla.jpg",
+        "imageSrc": "dalla-rose/thai-milk-tea-and-tahitian-vanilla.jpg",
         "shopId": 8
     },
     {
         "flavour": "Hibiscus Banana",
         "description": "",
         "tags": ["soft", "hibiscus", "banana","plant", "fruit", "soft"],
-        "imageSrc": "images/icecreams/unicone/hibiscus-banana.jpg",
+        "imageSrc": "unicone/hibiscus-banana.jpg",
         "shopId": 9
     },
     {
         "flavour": "Mochi Matcha",
         "description": "",
         "tags": ["soft", "mochi", "matcha", "green", "tea", "japan", "international","asia"],
-        "imageSrc": "images/icecreams/unicone/mochi-matcha.jpg",
+        "imageSrc": "unicone/mochi-matcha.jpg",
         "shopId": 9
     },
     {
         "flavour": "Red Velvet & Cassis",
         "description": "",
         "tags": ["soft", "red", "velvet", "cassis", "blackcurrant", "fruit", "cake"],
-        "imageSrc": "images/icecreams/unicone/red-velvet-and-cassis.jpg",
+        "imageSrc": "unicone/red-velvet-and-cassis.jpg",
         "shopId": 9
     },
     {
         "flavour": "Strawberry Cheesecake",
         "description": "",
         "tags": ["soft", "strawberry", "cheesecake", "fruit", "cake"],
-        "imageSrc": "images/icecreams/unicone/strawberry-cheesecake.jpg",
+        "imageSrc": "unicone/strawberry-cheesecake.jpg",
         "shopId": 9
     },
     {
         "flavour": "Pandan & Pineapple",
         "description": "",
         "tags": ["soft", "pandan", "pineapple", "fruit", "asia","international", "fruit"],
-        "imageSrc": "images/icecreams/unicone/pandan-pineapple.jpg",
+        "imageSrc": "unicone/pandan-pineapple.jpg",
         "shopId": 9
     },
     {
         "flavour": "Orange Blossom & Apricot",
         "description": "",
         "tags": ["soft", "orange", "blossom", "plant", "fruit", "apricot"],
-        "imageSrc": "images/icecreams/unicone/orange-blossom-and-apricot.jpg",
+        "imageSrc": "unicone/orange-blossom-and-apricot.jpg",
         "shopId": 9
     },
     {
         "flavour": "Tiramisu Marsala & Cherry Strawberry",
         "description": "",
         "tags": ["tiramiu", "coffee", "marsala", "cherry", "strawberry", "soft", "fruit", "cake", "italy","international", "europe","international"],
-        "imageSrc": "images/icecreams/unicone/tiramisu-marsala-and-strawberry-cherry-sorbet.jpg",
+        "imageSrc": "unicone/tiramisu-marsala-and-strawberry-cherry-sorbet.jpg",
         "shopId": 9
     },
     {
         "flavour": "Ube Halaya",
         "description": "",
         "tags": ["ube", "halaya", "philippines","asia","international", "purple", "hard"],
-        "imageSrc": "images/icecreams/unicone/ube-halaya.jpg",
+        "imageSrc": "unicone/ube-halaya.jpg",
         "shopId": 9
     },
     {
         "flavour": "Pista Kulfi",
         "description": "",
         "tags": ["pista", "kulfi", "saffron", "cardamom", "rosewater", "pistachio", "mango", "banana", "india","international", "asia"],
-        "imageSrc": "images/icecreams/unicone/pista-kulfi.jpg",
+        "imageSrc": "unicone/pista-kulfi.jpg",
         "shopId": 9
     },
     {
         "flavour": "Ube & Pandan",
         "description": "",
         "tags": ["ube", "pandan", "vegetable", "fruit", "philippines", "asia","international", "soft"],
-        "imageSrc": "images/icecreams/unicone/ube-and-pandan.jpg",
+        "imageSrc": "unicone/ube-and-pandan.jpg",
         "shopId": 9
     },
     {
         "flavour": "Hojicha & Yuzu",
         "description": "",
         "tags": ["japan", "green", "tea", "hojicha", "asia","international", "yuzu", "fruit", "hard"],
-        "imageSrc": "images/icecreams/unicone/hojicha-and-yuzu-coulis.jpg",
+        "imageSrc": "unicone/hojicha-and-yuzu-coulis.jpg",
         "shopId": 9
     },
     {
         "flavour": "Banoffee Pie",
         "description": "",
         "tags": ["banana", "toffee", "pie", "soft", "vegan"],
-        "imageSrc": "images/icecreams/unicone/banoffee-pie.jpg",
+        "imageSrc": "unicone/banoffee-pie.jpg",
         "shopId": 9
     },
     {
         "flavour": "Rum Raisin",
         "description": "",
         "tags": ["rum", "raisin", "hard", "fruit"],
-        "imageSrc": "images/icecreams/unicone/rum-raisin.jpg",
+        "imageSrc": "unicone/rum-raisin.jpg",
         "shopId": 9
     },
     {
         "flavour": "Cucumbert, Mint, & Strawberries",
         "description": "",
         "tags": ["soft", "cucumber", "vegetable", "mint", "strawberry", "plant"],
-        "imageSrc": "images/icecreams/sachere-desserts/cucumber-mint-and-strawberries.jpg",
+        "imageSrc": "sachere-desserts/cucumber-mint-and-strawberries.jpg",
         "shopId": 10
     },
     {
         "flavour": "Black Sesame & Passion Fruit",
         "description": "",
         "tags": ["soft", "black", "sesame", "nut", "passion", "fruit"],
-        "imageSrc": "images/icecreams/sachere-desserts/black-sesame-and-passion-fruit.jpg",
+        "imageSrc": "sachere-desserts/black-sesame-and-passion-fruit.jpg",
         "shopId": 10
     },
     {
         "flavour": "Hojicha Tea & Coffee",
         "description": "",
         "tags": ["soft", "hojicha", "japan", "tea", "green", "coffee","international", "asia"],
-        "imageSrc": "images/icecreams/sachere-desserts/hochija-tea-and-coffee-twist.jpg",
+        "imageSrc": "sachere-desserts/hochija-tea-and-coffee-twist.jpg",
         "shopId": 10
     },
     {
         "flavour": "Hibiscus Flower & Oat Milk with Vanilla Bean",
         "description": "",
         "tags": ["soft", "hibiscus", "flower", "plant", "oat", "milk", "vanilla"],
-        "imageSrc": "images/icecreams/sachere-desserts/hibiscus-flower-and-oat-milk-with-vanilla-bean.jpg",
+        "imageSrc": "sachere-desserts/hibiscus-flower-and-oat-milk-with-vanilla-bean.jpg",
         "shopId": 10
     },
     {
         "flavour": "Mandarin Passion Fruit & Matcha with Candied Kumquat",
         "description": "",
         "tags": ["soft","mandarin","passion","fruit","matcha","japan","asia","international","candy","kumquat","confection"],
-        "imageSrc": "images/icecreams/sachere-desserts/mandarin-passion-fruit-and-matcha-with-candied-kumquat.jpg",
+        "imageSrc": "sachere-desserts/mandarin-passion-fruit-and-matcha-with-candied-kumquat.jpg",
         "shopId": 10
     },
     {
         "flavour": "Lavender & Blueberry",
         "description": "",
         "tags": ["soft", "lavender", "blueberry", "fruit", "plant", "flower"],
-        "imageSrc": "images/icecreams/sachere-desserts/lavender-and-blueberry.jpg",
+        "imageSrc": "sachere-desserts/lavender-and-blueberry.jpg",
         "shopId": 10
     },
     {
         "flavour": "Pumpkin Spice & Buckwheat",
         "description": "",
         "tags": ["soft", "pumpkin", "spice", "buckwheat"],
-        "imageSrc": "images/icecreams/sachere-desserts/pumpkin-spice-and-buckwheat.jpg",
+        "imageSrc": "sachere-desserts/pumpkin-spice-and-buckwheat.jpg",
         "shopId": 10
     },
     {
         "flavour": "Mango Lassi & Coconut-Ginger",
         "description": "",
         "tags": ["soft", "mango", "lassi", "india", "asia","international", "coconut", "ginger"],
-        "imageSrc": "images/icecreams/sachere-desserts/mango-lassi-and-coconut-ginger.jpg",
+        "imageSrc": "sachere-desserts/mango-lassi-and-coconut-ginger.jpg",
         "shopId": 10
     },
     {
         "flavour": "Cranberry & Chai Tea",
         "description": "",
         "tags": ["soft", "cranberry", "chai", "tea", "india", "international","asia"],
-        "imageSrc": "images/icecreams/sachere-desserts/cranberry-and-chai-tea-twist.jpg",
+        "imageSrc": "sachere-desserts/cranberry-and-chai-tea-twist.jpg",
         "shopId": 10
     },
     {
         "flavour": "Concorde Grape & Coconut with Lemongrass",
         "description": "",
         "tags": ["soft", "concorde", "grape", "coconut", "lemongrass"],
-        "imageSrc": "images/icecreams/sachere-desserts/twist-concorde-grape-and-coconut-sorbet-with-lemongrass.jpg",
+        "imageSrc": "sachere-desserts/twist-concorde-grape-and-coconut-sorbet-with-lemongrass.jpg",
         "shopId": 10
     },
     {
         "flavour": "Sour Cherry, Tonka Bean, & Caramelized Chocolate",
         "description": "",
         "tags": ["soft", "sour", "cherry", "tonka", "chocolate", "latin", "south america"],
-        "imageSrc": "images/icecreams/sachere-desserts/sour-cherry-tonka-bean-and-caramelized-chocolate.jpg",
+        "imageSrc": "sachere-desserts/sour-cherry-tonka-bean-and-caramelized-chocolate.jpg",
         "shopId": 10
     },
     {
         "flavour": "Salted Caramel & Popcorn",
         "description": "",
         "tags": ["soft", "salt", "caramel", "popcorn"],
-        "imageSrc": "images/icecreams/sachere-desserts/salted-caramel-and-popcorn.jpg",
+        "imageSrc": "sachere-desserts/salted-caramel-and-popcorn.jpg",
         "shopId": 10
     }
 ]
