@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
 import Login from "./components/Login";
 import FindShop from "./components/FindShop";
+import ShopLocations from "./components/ShopLocations";
 
 const App = () => {
   return (
@@ -33,8 +34,8 @@ const App = () => {
         <Route exact path="/find-shop">
           <FindShop />
         </Route>
-        <Route exact path="/shop/:shopId">
-          {/* shop page*/}
+        <Route exact path="/shop-locations">
+        <ShopLocations />
         </Route>
         <Route exact path="/signup">
           {/* signup page */}

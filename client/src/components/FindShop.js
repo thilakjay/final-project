@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, createRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import { Rating } from "@mui/material";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from "mapbox-gl"; 
 import "mapbox-gl/dist/mapbox-gl.css";
 import geoJSON from "./montreal-shops.json";
 import {MdOutlineIcecream} from "react-icons/md";
@@ -26,25 +26,25 @@ const Marker = ({onClick, children, feature}) => {
 const FindShop = () => {
     const [shops, setShops] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
-    const mapContainerRef = useRef(null);
+    const mapContainerRef = useRef();
     // const map = useRef(null);
-    const [lng, setLng] = useState(-73.5673);
-    const [lat, setLat] = useState(45.5017);
+    const [lng, setLng] = useState(-73.7004);
+    const [lat, setLat] = useState(45.5336);
     const [zoom, setZoom] = useState(10);
 
     //fetching all shops from BE
     useEffect(() => {
         const fetchShops = async () => {
-        const data = await fetch("/api/shops");
-        const json = await data.json();
-        setShops(json.data);
+            const data = await fetch("/api/shops");
+            const json = await data.json();
+            setShops(json.data);
         };
         fetchShops();
     }, []);
 
     useEffect(() => {
         // if(map.current) return;
-        const map = new mapboxgl.Map({
+         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [lng, lat],
@@ -54,7 +54,7 @@ const FindShop = () => {
         // create default markers
         geoJSON.features.map(feature => {     
             // create a react ref for each marker
-            const ref = createRef();
+            const ref = React.createRef();
 
             //create a mew DOM node amd save it to the ref
             ref.current = document.createElement("div");
@@ -76,8 +76,9 @@ const FindShop = () => {
                 )
                 .addTo(map)
         });
+        
         return () => map.remove();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const markerClicked = (shop) => {
         // window.alert(shop.name);
@@ -86,18 +87,20 @@ const FindShop = () => {
 
   return (
     <>  
-        {selectedShop && (
+        
          <Wrapper>
-            <div ref={mapContainerRef} className="map-container" />
-            <div className="shop-container">
-                <div>{selectedShop.name}</div>
-                <div>{selectedShop.address}</div>
-                <div>{selectedShop.url}</div>
-                <div>{selectedShop.googleRating}</div>
-                <div>{selectedShop.fbRating}</div>
-            </div>
+            <div ref={mapContainerRef} className="map-container"></div>
+            {selectedShop && (
+                <div className="shop-container">
+                    <div>{selectedShop.name}</div>
+                    <div>{selectedShop.address}</div>
+                    <div>{selectedShop.url}</div>
+                    <div>{selectedShop.googleRating}</div>
+                    <div>{selectedShop.fbRating}</div>
+                    <img src={`${selectedShop.imageSrc}`} alt={selectedShop.name} />
+                </div>
+            )}
         </Wrapper>             
-        )}
     </>         
   );
 }
