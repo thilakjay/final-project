@@ -35,9 +35,10 @@ export const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = usePersistedState("user", null);
+    const [modal, setModal] = useState(false);
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, modal, setModal }}>
             {children}
         </UserContext.Provider>
     );

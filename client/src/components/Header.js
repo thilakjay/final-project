@@ -1,19 +1,29 @@
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
+import { UserContext } from "../context/context";
+import { useContext, useState } from "react";
+import LoginModal from "./LoginModal";
+import {RiArrowDropDownLine} from "react-icons/ri";
 
 const Header = () => {
+
+    const {user, setUser, modal, setModal} = useContext(UserContext);
+
     return (
         <HeaderSection>
-            <NavLink exact to="/"> 
+            <Link exact to="/"> 
                 <h1>CrèM-T-L</h1>
-            </NavLink>
+            </Link>
             <div className="align-right">
-                <NavLink exact to="/shop-locations"> 
+                <Link exact to="/shop-locations"> 
                     <div>Find a shop</div>
-                </NavLink>                
-                <NavLink exact to="/login"> 
-                    <div>Login</div>
-                </NavLink>
+                </Link>                
+                {/* <NavLink exact to="/login">  */}
+                <div onClick={() => {!user ? setModal(true) : setModal(false)}}>
+                    {user ? `Welcome, ${user.given_name} ${user.family_name}!` : `Login`}
+                </div>
+                {modal && <LoginModal />}
+                {/* </NavLink> */}
             </div>
         </HeaderSection>        
     );

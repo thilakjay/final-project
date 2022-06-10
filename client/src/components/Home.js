@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import IceCream from "./IceCream";
 import styled from "styled-components";
-import Filters from "../Filters";
+import Filters from "./Filters";
 import {motion, AnimatePresence} from "framer-motion";
 
 const Home = () => {
@@ -35,6 +35,7 @@ const Home = () => {
                     {filtered && filtered.map(iceCream => 
                         <IceCream key={iceCream._id} iceCream={iceCream}/>     
                     )}
+                    {/* If no ice creams, tell user to remove or clear all filters. */}
                     </AnimatePresence>
                 </GridDiv>
             </div>            
@@ -46,7 +47,7 @@ export default Home;
 
 const GridDiv = styled(motion.div)`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
     grid-column-gap: 1rem;
     /* grid-row-gap : 1rem; */
 `;

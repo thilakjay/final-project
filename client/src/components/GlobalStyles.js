@@ -60,7 +60,7 @@ export default createGlobalStyle`
   /*
     9. Create a root stacking context
   */
-  #root, #__next {
+  /* #root, #__next {
     isolation: isolate;
     --color-primary: #343A40;  
     --color-secondary:#1A1A1A ;
@@ -68,7 +68,7 @@ export default createGlobalStyle`
     --color-light: #E5E5E5;
     --color-complimentary: #DBF2E3;    
     --color-lightBlue: #C2D9E3
-  }
+  } */
 
   a {
     text-decoration: none;

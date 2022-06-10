@@ -40,9 +40,9 @@ const App = () => {
         <Route exact path="/signup">
           {/* signup page */}
         </Route>
-        <Route exact path="/login">
+        {/* <Route exact path="/login">
           <Login />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );

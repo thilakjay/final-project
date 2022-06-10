@@ -10,6 +10,7 @@ const ShopLocations = () => {
     const [selectedShop, setSelectedShop] = useState(null);
     const mapRef = useRef(null);
 
+    //make this stateless - regular object
     const [viewport, setViewport] = useState({
         longitude: -73.7004,
         latitude: 45.5336,
@@ -60,7 +61,7 @@ const ShopLocations = () => {
                             anchor="bottom"
                             longitude={selectedShop.coordinates[0]}
                             latitude={selectedShop.coordinates[1]}
-                            onClose={() => {
+                            onClose={() => {                              
                                 setSelectedShop(null);
                                 mapRef.current.easeTo({
                                     center: [viewport.longitude, viewport.latitude],
@@ -74,13 +75,13 @@ const ShopLocations = () => {
                             }}
                         >                            
                             <div>
-                                {selectedShop.name}
+                                <h3>{selectedShop.name}</h3>
                                 <Rating 
                                     size="small" 
                                     value={parseFloat(selectedShop.googleRating)} 
                                     precision={0.5} 
                                     readOnly />
-                                </div>
+                            </div>
                             <div>{selectedShop.address}</div>
                         </Popup>
                     )}
