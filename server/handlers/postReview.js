@@ -14,6 +14,8 @@ const postReview = async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     await client.connect();
     const db = client.db("final-project");
+
+    //add review to reviews arry and push it to index 0
     await db.collection("ice-creams").updateOne(
       { _id: id },
       {
@@ -25,6 +27,24 @@ const postReview = async (req, res) => {
         },
       }
     );
+    
+    //retrieve the newly updated document so we can calculate new rating
+    const iceCreamResult = await db.collection("ice-creams").findOne({_id: id});
+    
+    //calculate new average rating of ice cream
+    let sum = 0;
+    iceCreamResult.reviews.forEach(review => {
+      sum += review.userRating;
+    })
+
+    const newAvgRating = (sum/iceCreamResult.reviews.length).toFixed(1);
+    
+    //update the average rating in DB
+    await db.collection("ice-creams").updateOne(
+      { _id: id },
+      { $set: {rating: newAvgRating} }     
+    );
+
     res.status(200).json({ status: 200, message: "OK" });
     client.close();
   } catch (err) {

@@ -73,13 +73,4 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
-
-  a:active {
-    color: black;
-  }
-
-  a:visited {
-    color: black;
-  }
-
 `;

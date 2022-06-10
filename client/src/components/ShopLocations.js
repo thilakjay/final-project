@@ -63,15 +63,15 @@ const ShopLocations = () => {
                             latitude={selectedShop.coordinates[1]}
                             onClose={() => {                              
                                 setSelectedShop(null);
-                                mapRef.current.easeTo({
-                                    center: [viewport.longitude, viewport.latitude],
-                                    zoom: viewport.zoom,
-                                    speed: 0.2,
-                                    duration: 1000,
-                                    easing(t) {
-                                        return t;
-                                    }
-                                });
+                                // mapRef.current.easeTo({
+                                //     center: [viewport.longitude, viewport.latitude],
+                                //     zoom: viewport.zoom,
+                                //     speed: 0.2,
+                                //     duration: 1000,
+                                //     easing(t) {
+                                //         return t;
+                                //     }
+                                // });
                             }}
                         >                            
                             <div>

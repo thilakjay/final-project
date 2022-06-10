@@ -10,9 +10,9 @@ const LoginModal = () => {
     const {user, setUser, modal, setModal} = useContext(UserContext);
 
     const handleCallbackResponse = (response) => {
-        console.log("Encoded JWT ID token: " + response.credential);
+        // console.log("Encoded JWT ID token: " + response.credential);
         const userObject = jwt_decode(response.credential);
-        console.log(userObject);
+         // console.log(userObject);
         setUser(userObject);
     }
 
@@ -31,7 +31,7 @@ const LoginModal = () => {
 
     return (
         <>
-            {(user && modal) && (
+            {(!user && modal) && (
             <Modal className="modal">
                 <Overlay onClick={() => {setModal(!modal)}} className="overlay"></Overlay>
                     <div className="modal-content">
@@ -54,6 +54,7 @@ const Modal = styled.div`
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 3;
 
     .modal-content {
         display: flex;
@@ -70,6 +71,7 @@ const Modal = styled.div`
         max-width: 600px;
         min-width: 250px;
         padding: 20px;
+        z-index: 4;
     }
 `;
 

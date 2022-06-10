@@ -39,7 +39,13 @@ const batchImport = async () => {
       ];
 
       iceCream._id = _id;
-      iceCream.rating = (Math.round(Math.random() * 9) + 1) / 2;
+
+      let sum = 0;
+      iceCream.reviews.forEach(review => {
+        sum += review.userRating;
+      })
+      
+      iceCream.rating = (sum/iceCream.reviews.length).toFixed(1);
   });
 
   try {

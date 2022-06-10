@@ -31,12 +31,12 @@ const Home = () => {
                     setActiveFilters={setActiveFilters}
                 />
                 <GridDiv layout>
-                    <AnimatePresence>
+                    {/* <AnimatePresence> */}
                     {filtered && filtered.map(iceCream => 
                         <IceCream key={iceCream._id} iceCream={iceCream}/>     
                     )}
                     {/* If no ice creams, tell user to remove or clear all filters. */}
-                    </AnimatePresence>
+                    {/* </AnimatePresence> */}
                 </GridDiv>
             </div>            
         )}
