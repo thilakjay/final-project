@@ -34,7 +34,7 @@ const Home = () => {
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
-    };
+    }
 
     return (
         <>
@@ -46,7 +46,6 @@ const Home = () => {
                     // activeFilters={activeFilters} 
                     // setActiveFilters={setActiveFilters}
                 />
-                
                 <GridDiv layout>
                     {/* <AnimatePresence> */}
                     {currentPosts && currentPosts.map(iceCream => 
@@ -55,7 +54,6 @@ const Home = () => {
                     {/* If no ice creams, tell user to remove or clear all filters. */}
                     {/* </AnimatePresence> */}
                 </GridDiv>
-                
                 <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
             </Wrapper>            
         )}
@@ -67,17 +65,15 @@ export default Home;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+    /* justify-content: center; */
 `;
 
 const GridDiv = styled(motion.div)`
     display: grid;
     justify-content: center;
-    /* align-items: center; */
     grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     grid-template-rows: repeat(auto-fit, minmax(250px, 300px));
     grid-column-gap: 2rem;
-    margin: 0px;
+    margin: 50px;
     /* grid-row-gap : 1rem; */
 `;

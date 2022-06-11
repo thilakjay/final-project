@@ -4,7 +4,7 @@ import filterData from "./filterUtils";
 
 const Filters = ({iceCreams, setFiltered}) => {
     const [tagsList, setTagsList] = useState([]);
-    const [toggleFilter, setToggleFilter] = useState(false);
+    // const [toggleFilter, setToggleFilter] = useState(false);
     const [filterOn, setFilterOn] = useState(filterData);
     
     useEffect(() => {
@@ -60,7 +60,7 @@ const Filters = ({iceCreams, setFiltered}) => {
             <Button onClick={(e) => handleFilter(e,"international")}>International</Button> */}
             
             <h2>Please select your filter(s):</h2>
-            <Button className="button-17" onClick={() => {
+            <Button onClick={() => {
                 setFilterOn(filterOn.map(elem => {
                     return {...elem, filter: false}
                 }));
@@ -69,13 +69,17 @@ const Filters = ({iceCreams, setFiltered}) => {
             </Button>
 
             {filterOn.map((filter, i) => 
-                <Button className="button-17" filterToggle={filter.filter} onClick={() => {
+                <Button key={i} filterToggle={filter.filter} onClick={() => {
+                    console.log(filter.filter);
                     //refactor later to another function (toggleStateHandler)
                     let copiedFilter = [...filterOn];
                     copiedFilter[i].filter = !copiedFilter[i].filter;
                     // setFilterOn([...filterOn, filter.filter = !copiedFilter]);
                     setFilterOn(copiedFilter);
-                    handleFilter(filter.name)}}>{filter.label}</Button>
+                    handleFilter(filter.name)}}
+                >
+                  {filter.label}
+                </Button>
             )}
         </Wrapper>
     );
