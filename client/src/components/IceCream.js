@@ -23,5 +23,10 @@ const Image = styled.img`
     height: 75%;
     object-fit: cover;
     border-radius: 1rem;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.25);
+    }
     /* margin-bottom: 0rem; */
 `;

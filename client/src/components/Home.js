@@ -6,8 +6,8 @@ import {motion, AnimatePresence} from "framer-motion";
 
 const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
-    const [filtered, setFiltered] = useState(null); //for holding the filtered info
-    const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
+    const [filtered, setFiltered] = useState(null); //for holding the filtered results
+    // const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
 
     //fetching all ice creams from BE
     useEffect(() => {
@@ -23,12 +23,12 @@ const Home = () => {
     return (
         <>
         {iceCreams && (
-            <div>               
+            <Wrapper>               
                 <Filters 
                     iceCreams={iceCreams} 
                     setFiltered={setFiltered} 
-                    activeFilters={activeFilters} 
-                    setActiveFilters={setActiveFilters}
+                    // activeFilters={activeFilters} 
+                    // setActiveFilters={setActiveFilters}
                 />
                 <GridDiv layout>
                     {/* <AnimatePresence> */}
@@ -38,16 +38,25 @@ const Home = () => {
                     {/* If no ice creams, tell user to remove or clear all filters. */}
                     {/* </AnimatePresence> */}
                 </GridDiv>
-            </div>            
+            </Wrapper>            
         )}
         </>
     );
 }
 export default Home;
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+`;
+
 const GridDiv = styled(motion.div)`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-    grid-column-gap: 1rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    grid-template-rows: repeat(auto-fit, minmax(250px, 300px));
+    grid-column-gap: 2rem;
+    margin: 50px;
     /* grid-row-gap : 1rem; */
 `;
