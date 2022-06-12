@@ -6,8 +6,8 @@
         "coordinates": [-73.82375, 45.43026],
         "url": "https://www.wildwillys.ca/",
         "imageSrc": "wildwillys-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.9"       
+        "googleRating": 4.7,
+        "fbRating": 4.9      
     },
     {
         "_id": 2,
@@ -16,8 +16,8 @@
         "coordinates": [-73.75861, 45.55278],
         "url": "http://bouza.ca/index.php",
         "imageSrc": "bouza-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "5"
+        "googleRating": 4.7,
+        "fbRating": 5
     },
     {
         "_id": 3,
@@ -26,8 +26,8 @@
         "coordinates": [-73.64292, 45.53184],
         "url": "https://www.instagram.com/meethamtl/",
         "imageSrc": "meetha-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.8"
+        "googleRating": 4.7,
+        "fbRating": 4.8
     },
     {
         "_id": 4,
@@ -36,8 +36,8 @@
         "coordinates": [-73.63553, 45.46021],
         "url": "https://calemmontreal.ca/",
         "imageSrc": "calem-shop.jpg",
-        "googleRating": "4.6",
-        "fbRating": "4.6"
+        "googleRating": 4.6,
+        "fbRating": 4.6
     },
     {
         "_id": 5,
@@ -46,8 +46,8 @@
         "coordinates": [-73.60599, 45.54344],
         "url": "https://iconoglace.ca/en/",
         "imageSrc": "iconoglace-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.7"
+        "googleRating": 4.7,
+        "fbRating": 4.7
     },
     {
         "_id": 6,
@@ -56,8 +56,8 @@
         "coordinates": [-73.60038, 45.53487],
         "url": "https://larmoireaglaces.com/en/",
         "imageSrc": "larmoireaglace-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.5"
+        "googleRating": 4.7,
+        "fbRating": 4.5
     },
     {
         "_id": 7,
@@ -66,8 +66,8 @@
         "coordinates": [-73.990593, 40.74012],
         "url": "https://kemcoba.com/",
         "imageSrc": "kemcoba-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.8"
+        "googleRating": 4.7,
+        "fbRating": 4.8
     },
     {
         "_id": 8,
@@ -76,8 +76,8 @@
         "coordinates": [-73.59507, 45.52319],
         "url": "https://www.dallarose.ca/",
         "imageSrc": "dallarose-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.9"
+        "googleRating": 4.7,
+        "fbRating": 4.9
     },
     {
         "_id": 9,
@@ -86,8 +86,8 @@
         "coordinates": [-73.57361, 45.52003],
         "url": "https://www.unicone.ca/",
         "imageSrc": "unicone-shop.jpg",
-        "googleRating": "4.7",
-        "fbRating": "4.7"
+        "googleRating": 4.7,
+        "fbRating": 4.7
     },
     {
         "_id": 10,
@@ -96,9 +96,100 @@
         "coordinates": [-73.55687, 45.51980],
         "url": "https://www.sachere.com/",
         "imageSrc": "sachere-shop.jpg",
-        "googleRating": "4.8",
-        "fbRating": "5"
-    }
+        "googleRating": 4.8,
+        "fbRating": 5
+    },
+    {
+        "_id": 11,
+        "name": "Crèmerie Meu Meu",
+        "address": "4458 Saint Denis St, Montreal, Quebec H2J 2L1",
+        "coordinates": [-73.58288, 45.52338],
+        "url": "https://www.tripadvisor.ca/Restaurant_Review-g155032-d3581151-Reviews-Cremerie_Meu_Meu-Montreal_Quebec.html",
+        "imageSrc": "meumeu-shop.jpg",
+        "googleRating": 4.5,
+        "fbRating": 5
+    },
+    {
+        "_id": 11,
+        "name": "Hoche Glacé",
+        "address": "2225 Av. Bennett, Montréal, QC H1V 2T4",
+        "coordinates": [-73.54113, 45.55612],
+        "url": "https://hocheglace.com/",
+        "imageSrc": "hoche-shop.jpg",
+        "googleRating": 4.6,
+        "fbRating": 5
+    },
+    {
+        "_id": 12,
+        "name": "Ripples",
+        "address": "3971 St Laurent Blvd, Montreal, Quebec H2W 1Y4",
+        "coordinates": [-73.57832, 45.51682],
+        "url": "https://www.ripplesicecream.com/",
+        "imageSrc": "ripples-shop.jpg",
+        "googleRating": 4.6,
+        "fbRating": 5
+    },
+     {
+        "_id": 13,
+        "name": "Le Blueboy: Artisan Glacier",
+        "address": "150 Mont-Royal Ave E, Montreal, Quebec H2T 1P1",
+        "coordinates": [-73.58492, 45.52173],
+        "url": "https://www.facebook.com/LeBlueboy/",
+        "imageSrc": "blueboy-shop.jpg",
+        "googleRating": 4.4,
+        "fbRating": 4.9
+    },
+    {
+        "_id": 14,
+        "name": "Mlle Catherine",
+        "address": "423 Pl. Jacques-Cartier, Montréal, QC H2Y 3B1",
+        "coordinates": [-73.55287, 45.50818],
+        "url": "https://www.mllecatherine.ca/",
+        "imageSrc": "mlle-shop.jpg",
+        "googleRating": 4.5,
+        "fbRating": 4.9
+    },
+    {
+        "_id": 15,
+        "name": "Havre aux Glaces",
+        "address": "145 Saint-Catherine St W, Montreal, Quebec H2X 3X5",
+        "coordinates": [-73.56548, 45.51101],
+        "url": "https://havreauxglaces.ca/",
+        "imageSrc": "havre-shop.jpg",
+        "googleRating": 4.5,
+        "fbRating": 4.9
+    },
+    {
+        "_id": 16,
+        "name": "Crèmerie Bo-Bec",
+        "address": "1300 Avenue Laurier E, Montréal, QC H2J 1H3",
+        "coordinates": [-73.58459, 45.53597],
+        "url": "https://www.facebook.com/profile.php?id=100054360978910",
+        "imageSrc": "bo-bec-shop.jpg",
+        "googleRating": 4.4,
+        "fbRating": 4.9
+    },
+    {
+        "_id": 17,
+        "name": "Crèmerie SWIRL",
+        "address": "230 Rue Rachel E, Montréal, QC H2W 1E3",
+        "coordinates": [-73.57961, 45.52322],
+        "url": "https://swirlmtl.com/",
+        "imageSrc": "swirl-shop.jpg",
+        "googleRating": 4.8,
+        "fbRating": 4.9
+    },
+    {
+        "_id": 17,
+        "name": "Les Givrés Villeray",
+        "address": "334 Rue de Castelnau E, Montréal, QC H2R 1P8",
+        "coordinates": [-73.61784, 45.54107],
+        "url": "https://www.lesgivres.ca/",
+        "imageSrc": "lesgivres-shop.jpg",
+        "googleRating": 4.6,
+        "fbRating": 4.9
+    }                                  
+    
 ]
 
 
