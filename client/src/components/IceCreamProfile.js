@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Rating } from "@mui/material";
 import { useContext } from "react";
 import { UserContext } from "../context/context";
+import LoginModal from "./LoginModal";
 
 const IceCreamProfile = () => {
   const [iceCream, setIceCream] = useState(null);
@@ -11,7 +12,7 @@ const IceCreamProfile = () => {
   const [rating, setRating] = useState(null);
   const [shop, setShop] = useState(null);
 
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, modal, setModal } = useContext(UserContext);
 
   const { _id } = useParams();
 
@@ -43,8 +44,12 @@ const IceCreamProfile = () => {
       });
   };
 
-  const submitReview = (review) => {
-    console.log(user);
+  const handleSubmit = (review) => {
+    if(!user) {
+      setModal(true);
+      return <LoginModal />;  
+    }
+
     fetch(`/api/ice-creams/${_id}`, {
       method: "POST",
       headers: {
@@ -74,7 +79,7 @@ const IceCreamProfile = () => {
 
     if (textAreaRef.current.textLength <= 110) {
       submitRef.current.disabled = false;
-      submitRef.current.style.backgroundColor = "hotpink";
+      // submitRef.current.style.backgroundColor = "hotpink";
       charCount.current.style.color = "darkgray";
     } else if (
       textAreaRef.current.textLength > 110 &&
@@ -82,10 +87,10 @@ const IceCreamProfile = () => {
     ) {
       charCount.current.style.color = "goldenrod";
       submitRef.current.disabled = false;
-      submitRef.current.style.backgroundColor = "hotpink";
+      // submitRef.current.style.backgroundColor = "hotpink";
     } else if (textAreaRef.current.textLength > 150) {
       submitRef.current.disabled = true;
-      submitRef.current.style.backgroundColor = "hsl(266, 92%, 95%)"; //change colour later
+      // submitRef.current.style.backgroundColor = "rgb(255,	105, 180, 0.5)"; //change colour later
       charCount.current.style.color = "red";
     }
   };
@@ -109,7 +114,7 @@ const IceCreamProfile = () => {
               <div>{shop.address}</div>
               <a href={shop.url}>{shop.url}</a>
               <TextAreaWrapper>
-                <div></div>
+                {/* <div></div> */}
                 <TextArea
                   ref={textAreaRef}
                   wrap="hard"
@@ -117,6 +122,7 @@ const IceCreamProfile = () => {
                   onChange={(e) => {
                     handleTextAreaChange(e);
                   }}
+                  required
                 />
               </TextAreaWrapper>
               <BottomAreaWrapper>
@@ -132,11 +138,12 @@ const IceCreamProfile = () => {
                 </CharacterCount>
                 <Button
                   ref={submitRef}
-                  disabled={user ? false : true}
+                  // disabled={user ? false : true}
                   onClick={(e) => {
+                    console.log(user);
                     // e.preventDefault();
                     // e.stopPropagation();
-                    submitReview(reviewMessage);
+                    handleSubmit(reviewMessage);                 
                   }}
                 >
                   Submit
@@ -147,8 +154,9 @@ const IceCreamProfile = () => {
 
           <ReviewsWrapper>
             <h2>Reviews</h2>
+            <div className="reviews-container">
             {iceCream.reviews.map((review, i) => (
-              <ReviewContainer key={i}>
+              <div className="review-container" key={i}>
                 <div className="user">{review.name}</div>
                 <div className="review">{review.review}</div>
                 <div className="rating">
@@ -159,8 +167,9 @@ const IceCreamProfile = () => {
                     readOnly
                   />
                 </div>
-              </ReviewContainer>
+              </div>
             ))}
+            </div>
           </ReviewsWrapper>
         </Wrapper>
       )}
@@ -189,7 +198,7 @@ const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid hotpink;
+  /* border: 1px solid hotpink; */
   width: 500px;
   height: 500px;
 `;
@@ -198,9 +207,11 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   width: 500px;
   height: 500px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 
   .headingAndRating {
     display: flex;
@@ -212,18 +223,21 @@ const InfoContainer = styled.div`
 const Image = styled.img`
   width: 400px;
   max-height: 500px;
+  border-radius: 5px;
 `;
 
 const TextAreaWrapper = styled.div``;
 
 const TextArea = styled.textarea`
   display: flex;
-  border: 1px solid lightgray;
+  border: 1px solid pink;
+  border-radius: 3px;
   resize: none;
   outline: none;
-  width: 100%;
-  margin: 15px;
+  width: 250px;
   height: 150px;
+  margin: 10px;
+  padding: 5px;
   font-size: 18px;
   flex-wrap: wrap;
 `;
@@ -249,33 +263,72 @@ const Button = styled.button`
   border-radius: 15px;
   padding: 5px 15px;
   cursor: pointer;
+
+  &:disabled {
+    background-color: rgb(255,	105, 180, 0.5);
+  }
 `;
 
 const ReviewsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border: 1px solid red;
   width: 80%;
+
+  h2 {
+    border-top: 3px solid pink;
+    padding: 20px 0;
+  }
+
+  .reviews-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* border: 1px solid red; */
+    width: 100%;
+  }
+
+  .review-container {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 80%;
+    gap: 2rem;
+
+    .user {
+      width: 15%;
+      font-weight: bold;
+    }
+
+    .review {
+      width: 60%;
+      font-style: italic;
+    }
+
+    .userRating {
+      width: 20%;
+    }
+}
+
 `;
 
-const ReviewContainer = styled.div`
-  display: flex;
-  /* border: 1px solid red; */
-  width: 80%;
-  gap: 10px;
+// const ReviewContainer = styled.div`
+//   display: flex;
+//   /* border: 1px solid red; */
+//   width: 80%;
+//   gap: 10px;
 
-  .user {
-    width: 20%;
-    font-weight: bold;
-  }
+//   .user {
+//     width: 20%;
+//     font-weight: bold;
+//   }
 
-  .review {
-    width: 60%;
-    font-style: italic;
-  }
+//   .review {
+//     width: 60%;
+//     font-style: italic;
+//   }
 
-  .userRating {
-    width: 20%;
-  }
-`;
+//   .userRating {
+//     width: 20%;
+//   }
+// `;

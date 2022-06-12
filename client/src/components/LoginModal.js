@@ -35,10 +35,16 @@ const LoginModal = () => {
             <Modal className="modal">
                 <Overlay onClick={() => {setModal(!modal)}} className="overlay"></Overlay>
                     <div className="modal-content">
-                        <div id="signInDiv" />
-                        <CgCloseO fill="black" color="gray" size={25} onClick={() => {setModal(!modal)}} />
-                        {/* <CloseDiv className="close-modal" onClick={() => {setModal(!modal)}}></CloseDiv> */}
-                    </div>                       
+                        <CgCloseO 
+                            className="close-icon" 
+                            fill="black" color="hotpink" 
+                            size={25} 
+                            onClick={() => {setModal(!modal)}} 
+                        />
+                        <h2></h2>
+                        <div id="signInDiv" />                      
+                    </div>
+                        {/* <CloseDiv className="close-modal" onClick={() => {setModal(!modal)}}></CloseDiv> */}                      
             </Modal>
             )}
         </>
@@ -58,6 +64,7 @@ const Modal = styled.div`
 
     .modal-content {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
@@ -66,21 +73,35 @@ const Modal = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1.4;
-        background: white;
-        border-radius: 3px; 
+        height: 400px;
         max-width: 600px;
         min-width: 250px;
+        background-image: url("/images/login-splash.jpg");     
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
         padding: 20px;
-        z-index: 4;
+        z-index: 5;
+    }
+
+    h2 {
+        color: hotpink;
+    }
+
+    .close-icon {
+        position: relative;
+        top: -15px;
+        left: 105px;
+        cursor: pointer;
     }
 `;
 
 const Overlay = styled(Modal)`
-    background: rgba(49,49,49,0.8);
+    background: rgba(49,49,49,0.4);
 `;
 
-const CloseDiv = styled.div`
-    position: relative;
-    display: flex;
-    /* top: 10px; */
-`;
+// const CloseDiv = styled.div`
+//     position: relative;
+//     display: flex;
+//     /* top: 10px; */
+// `;
