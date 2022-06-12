@@ -5,7 +5,6 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
 
     for(let i=1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pageNumbers.push(i);
-        // console.log(pageNumbers);
     }
 
     return (
@@ -59,10 +58,11 @@ const Nav = styled.nav`
     }
     .page-link:focus {
         z-index: 3;
-        color: #0a58ca;
+        color: hotpink;
+        font-weight: bold;
         background-color: #e9ecef;
         outline: 0;
-        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        box-shadow: 0 0 0 0.25rem pink;
     }
 
     .page-item:not(:first-child) .page-link {

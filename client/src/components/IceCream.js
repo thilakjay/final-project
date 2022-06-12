@@ -23,10 +23,10 @@ const Image = styled.img`
     height: 75%;
     object-fit: cover;
     border-radius: 1rem;
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
 
     &:hover {
-        transform: scale(1.25);
+        transform: scale(1.20);
     }
     /* margin-bottom: 0rem; */
 `;

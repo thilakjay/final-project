@@ -2,27 +2,26 @@ import { useEffect, useState } from "react";
 import IceCream from "./IceCream";
 import styled from "styled-components";
 import Filters from "./Filters";
-import {motion, AnimatePresence} from "framer-motion";
+import {motion} from "framer-motion";
 import Pagination from "./Pagination";
 
 const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered results
-    // const [activeFilters, setActiveFilters] = useState(""); //keeping track of what the current filters are
 
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
 
     //fetching all ice creams from BE
     useEffect(() => {
         const fetchIceCreams = async () => {
-            setLoading(true);
+            // setLoading(true);
             const data = await fetch("/api/ice-creams");   
             const json = await data.json();
             setIceCreams(json.data);
             setFiltered(json.data);
-            setLoading(false);
+            // setLoading(false);
         };    
         fetchIceCreams();
     }, []);
@@ -43,16 +42,13 @@ const Home = () => {
                 <Filters 
                     iceCreams={iceCreams} 
                     setFiltered={setFiltered} 
-                    // activeFilters={activeFilters} 
-                    // setActiveFilters={setActiveFilters}
                 />
                 <GridDiv layout>
-                    {/* <AnimatePresence> */}
-                    {currentPosts && currentPosts.map(iceCream => 
-                        <IceCream key={iceCream._id} iceCream={iceCream}/>     
-                    )}
-                    {/* If no ice creams, tell user to remove or clear all filters. */}
-                    {/* </AnimatePresence> */}
+                    {currentPosts ? (currentPosts.map(iceCream => 
+                        <IceCream key={iceCream._id} iceCream={iceCream}/>
+                    )) 
+                    : (<h3>No ice creams listed under those filters. Please clear or remove a filter to view more ice creams </h3>)    
+                    }
                 </GridDiv>
                 <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
             </Wrapper>            

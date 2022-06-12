@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
@@ -27,9 +26,31 @@ const ShopLocations = () => {
         fetchShops();
     }, []);    
 
+    const centerOnMap = (lng, lat, zoom) => {
+        mapRef.current.easeTo({
+            center: [lng, lat],
+            zoom: zoom,
+            speed: 0.2,
+            duration: 1000,
+            easing(t) {
+                return t;
+            }
+        });        
+    };
+
     return (
         <Wrapper>
         <MapContainer>
+            <nav>
+                <ul>
+                    <li><div onClick={() => centerOnMap(-73.8413, 45.4563, 13)}>West Island</div></li>
+                    <li><div onClick={() => centerOnMap(-73.6303, 45.4722, 13)}>CDN/NDG</div></li>
+                    <li><div onClick={() => centerOnMap(-73.6281, 45.5351, 13)}>Parc Ex./Villeray</div></li>
+                    <li><div onClick={() => centerOnMap(-73.5851, 45.5233, 13)}>Plateau</div></li>
+                    <li><div onClick={() => centerOnMap(-73.5983, 45.52417, 13)}>Mile End</div></li>
+                    <li><div onClick={() => centerOnMap(-73.7435, 45.5743, 12)}>Laval</div></li>
+                </ul>
+            </nav>
             <Map
                 ref={mapRef}
                 initialViewState={viewport}
@@ -92,6 +113,7 @@ const ShopLocations = () => {
 
         
         <ShopContainer>
+                            
         {!selectedShop ? <h1>Click a shop for more info</h1> : (
         <>
             <h1>{selectedShop.name}</h1>
@@ -113,8 +135,20 @@ const Wrapper = styled.div`
 
 const MapContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50vw;
     border: 2px solid hotpink;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        gap: 20px;
+    }
+
+    div {
+        cursor: pointer;
+    }
 `;
 
 const ShopContainer = styled.div`
