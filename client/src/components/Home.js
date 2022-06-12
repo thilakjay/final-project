@@ -44,12 +44,16 @@ const Home = () => {
                     setFiltered={setFiltered} 
                 />
                 <GridDiv layout>
-                    {currentPosts ? (currentPosts.map(iceCream => 
+                    {currentPosts && (currentPosts.map(iceCream => 
                         <IceCream key={iceCream._id} iceCream={iceCream}/>
-                    )) 
-                    : (<h3>No ice creams listed under those filters. Please clear or remove a filter to view more ice creams </h3>)    
-                    }
+                    ))}
                 </GridDiv>
+                {!filtered.length && (
+                        <div className="no-ice-creams">
+                            <h3>Woops! What a mess... Please remove a filter to see more ice creams.</h3>
+                            <img src="images\no-ice-creams.jpg" alt="No ice cream results" />
+                        </div>
+                )}
                 <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
             </Wrapper>            
         )}
@@ -61,7 +65,13 @@ export default Home;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+
+    .no-ice-creams {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const GridDiv = styled(motion.div)`
