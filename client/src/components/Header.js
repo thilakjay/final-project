@@ -17,11 +17,11 @@ const Header = () => {
 
     return (
         <HeaderSection>
-            <Link exact to="/"> 
+            <Link to="/"> 
                 <h1>crèMTL</h1>
             </Link>
             <div className="align-right">
-                <Link exact to="/shop-locations"> 
+                <Link to="/shop-locations"> 
                     <div>Find a shop</div>
                 </Link>                
                 <div className="user-menu-container" onClick={() => {!user ? setModal(true) : setModal(false)}}>

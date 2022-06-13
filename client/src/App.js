@@ -9,7 +9,7 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
 // import Login from "./components/Login";
-import FindShop from "./components/FindShop";
+// import FindShop from "./components/FindShop";
 import ShopLocations from "./components/ShopLocations";
 
 const App = () => {

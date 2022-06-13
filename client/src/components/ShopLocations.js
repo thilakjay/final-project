@@ -1,5 +1,5 @@
 import Map, { Marker, Popup, GeolocateControl } from 'react-map-gl';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import {MdOutlineIcecream} from "react-icons/md";
 import { Rating } from "@mui/material";
@@ -8,19 +8,22 @@ import useQuery from '../hooks/useQuery';
 const ShopLocations = () => {
     const [shops, setShops] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
+
+    const TOKEN = "pk.eyJ1IjoidGhpamF5IiwiYSI6ImNsNDVyb29wOTAweTkzam9yMjloNmQzd2UifQ.AgrQeRna5mWtP7Bd6HXYYQ";
+    
     const mapRef = useRef(null);
     let query = useQuery();
-    console.log(query.get("lng"));
-    console.log(query.get("lat"));
-    console.log(query.get("_id"));
 
+    //sets initial GPS coordinates based on if a query exists or not
+    const initialShopId = query.get("_id") ? query.get("_id") : null;
     const initialLng = query.get("lng") ? query.get("lng") : -73.7004;
-    const initialLat = query.get("lat") ? query.get("lat") : -45.5336;
+    const initialLat = query.get("lat") ? query.get("lat") : 45.5336;
+    const initialZoom = initialShopId ? 15 : 10;
 
     const initialViewportState = {
         longitude: initialLng,
         latitude: initialLat,
-        zoom: 10
+        zoom: initialZoom
     };
 
     //fetching all shops from BE
@@ -29,6 +32,7 @@ const ShopLocations = () => {
             const data = await fetch("/api/shops");
             const json = await data.json();
             setShops(json.data);
+            setSelectedShop(json.data.find(shop => shop._id == initialShopId));
         };
         fetchShops();
     }, []);    
@@ -70,6 +74,7 @@ const ShopLocations = () => {
                 initialViewState={initialViewportState}
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
+                mapboxAccessToken={TOKEN}
             >
                 <GeolocateControl />
 

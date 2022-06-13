@@ -5,6 +5,7 @@ import { Rating } from "@mui/material";
 import { useContext } from "react";
 import { UserContext } from "../context/context";
 import LoginModal from "./LoginModal";
+import ErrorMessage from "./ErrorMessage";
 import {GrMapLocation} from "react-icons/gr";
 
 const IceCreamProfile = () => {
@@ -12,6 +13,7 @@ const IceCreamProfile = () => {
   const [reviewMessage, setReviewMessage] = useState("");
   const [rating, setRating] = useState(null);
   const [shop, setShop] = useState(null);
+  const [error, setError] = useState(null);
 
   const { user, setUser, modal, setModal } = useContext(UserContext);
 
@@ -40,15 +42,12 @@ const IceCreamProfile = () => {
         setShop(data.data.shop);
       })
       .catch((error) => {
-        console.log("Error message from /api/me/home-feed:", error);
-        // setErrorMessage("A home feed error has occured.");
-        // setErrorStatus(true);
+        console.log("Error caught:", error);
       });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(reviewMessage);
 
     if(!user) {
       setModal(true);
@@ -69,19 +68,24 @@ const IceCreamProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+
+        if(data.status === 400) {
+          setError(data);
+          console.log(data);
+          return;
+        }
+
         handleAfterPublishReview();
+        setReviewMessage("");  
+        textAreaRef.current.value = "";
       })
       .catch((error) => {
-        console.log("Error message from /api/ice-creams/  :", error);
-        // setErrorMessage("Oops, a minor hiccup.. our bad! Please refresh to view your review.");
-        // setErrorStatus(true);
+        console.log("Error caught:", error);
       });
-
-    setReviewMessage("");  
-    textAreaRef.current.value = "";
   };
 
   const handleTextAreaChange = (e) => {
+    setError(null);
     setReviewMessage(e.target.value.trim());
 
     if (textAreaRef.current.textLength <= 110) {
@@ -125,7 +129,8 @@ const IceCreamProfile = () => {
               <div className="map-icon-container">
                 View in map: 
                 <GrMapLocation size={23} 
-                  onClick={() => history.push(`/shop-locations?lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
+                  onClick={() => 
+                    history.push(`/shop-locations?_id=${shop._id}&lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
               </div>
               <a href={shop.url}>{shop.url}</a>
               <FormWrapper id="form" onSubmit={handleSubmit}>
@@ -136,18 +141,23 @@ const IceCreamProfile = () => {
                   onChange={(e) => {
                     handleTextAreaChange(e);
                   }}
-                  required
+                  error={error && error.error === "no-review"}
                 ></TextArea>
-                {/* <div className="required"></div> */}
+
+                {/* error message component loads when error thrown from BE */}
+                {error && <ErrorMessage error={error} />}
+
                 <BottomAreaWrapper>
-                  <Rating
-                    value={rating}
-                    precision={0.5}
-                    onChange={(e,newRating) => {
-                      setRating(newRating);
-                    }}
-                    required
-                  />
+                    <StyledRating           
+                      value={rating}
+                      precision={0.5}
+                      onChange={(e,newRating) => {
+                        setError(null);
+                        setRating(newRating);
+                      }}
+                      error={error && error.error === "no-rating"}
+                    />                    
+
                   <CharacterCount ref={charCount}>
                     {150 - reviewMessage.length}
                   </CharacterCount>
@@ -199,8 +209,6 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 50px;
   margin: 50px 0;
-  /* border: 2px black solid; */
-  /* height: 95vh; */
 `;
 
 const ImageAndInfoWrapper = styled.div`
@@ -213,7 +221,6 @@ const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid hotpink; */
   width: 500px;
   height: 500px;
 `;
@@ -226,7 +233,6 @@ const InfoContainer = styled.div`
   gap: 0.5rem;
   width: 500px;
   height: 500px;
-  /* border: 1px solid green; */
 
   .headingAndRating {
     display: flex;
@@ -248,27 +254,18 @@ const InfoContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 400px;
+  max-width: 400px;
   max-height: 500px;
   border-radius: 5px;
 `;
 
 const FormWrapper = styled.form`
-
-  /* &:required {
-      position: relative;
-      content: "Please leave a commit before submitting.";
-      top: -100px;
-      left: -205px;
-      font-size: 12px;
-      color: red;
-      font-weight: bold;
-    } */
+  position: relative;
 `;
 
 const TextArea = styled.textarea`
   display: flex;
-  border: 1px solid pink;
+  border: ${p => p.error ? "5px solid red" : "1px solid pink"};
   border-radius: 3px;
   resize: none;
   outline: none;
@@ -277,18 +274,14 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 5px;
   font-size: 18px;
-  flex-wrap: wrap;
-
+  flex-wrap: wrap;  
 `;
 const BottomAreaWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
-  /* margin: 10px; */
   padding: 10px;
-  /* border-bottom: 15px solid lightgray; */
-  /* width: 100%; */
 `;
 
 const CharacterCount = styled.span`
@@ -325,13 +318,11 @@ const ReviewsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    /* border: 1px solid red; */
     width: 100%;
   }
 
   .review-container {
     display: flex;
-    /* border: 1px solid red; */
     width: 80%;
     gap: 2rem;
 
@@ -349,26 +340,8 @@ const ReviewsWrapper = styled.div`
       width: 20%;
     }
 }
-
 `;
 
-// const ReviewContainer = styled.div`
-//   display: flex;
-//   /* border: 1px solid red; */
-//   width: 80%;
-//   gap: 10px;
-
-//   .user {
-//     width: 20%;
-//     font-weight: bold;
-//   }
-
-//   .review {
-//     width: 60%;
-//     font-style: italic;
-//   }
-
-//   .userRating {
-//     width: 20%;
-//   }
-// `;
+const StyledRating = styled(Rating)`
+  border: ${p => p.error ? "5px solid red" : "none"};
+`;
