@@ -44,7 +44,9 @@ const IceCreamProfile = () => {
       });
   };
 
-  const handleSubmit = (review) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     if(!user) {
       setModal(true);
       return <LoginModal />;  
@@ -58,7 +60,7 @@ const IceCreamProfile = () => {
       },
       body: JSON.stringify({
         name: user.name,
-        review: review,
+        review: reviewMessage,
         userRating: rating,
       }),
     })
@@ -71,11 +73,13 @@ const IceCreamProfile = () => {
         // setErrorMessage("Oops, a minor hiccup.. our bad! Please refresh to view your review.");
         // setErrorStatus(true);
       });
+
+    setReviewMessage("");  
     textAreaRef.current.value = "";
   };
 
   const handleTextAreaChange = (e) => {
-    setReviewMessage(e.target.value);
+    setReviewMessage(e.target.value.trim());
 
     if (textAreaRef.current.textLength <= 110) {
       submitRef.current.disabled = false;
@@ -106,15 +110,17 @@ const IceCreamProfile = () => {
 
             <InfoContainer>
               <div className="headingAndRating">
-                <h2>{iceCream.flavour}</h2>
+                <h1>{iceCream.flavour}</h1>
                 <Rating value={iceCream.rating} precision={0.5} readOnly />
               </div>
+              <h2 className="icecream-description">
+              "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito.""
+              </h2>
               <div>CrèM-T-L Rating: {iceCream.rating}</div>
               <div>Shop Name: {shop.name}</div>
               <div>{shop.address}</div>
               <a href={shop.url}>{shop.url}</a>
-              <TextAreaWrapper>
-                {/* <div></div> */}
+              <FormWrapper id="form" onSubmit={handleSubmit}>
                 <TextArea
                   ref={textAreaRef}
                   wrap="hard"
@@ -123,32 +129,32 @@ const IceCreamProfile = () => {
                     handleTextAreaChange(e);
                   }}
                   required
-                />
-              </TextAreaWrapper>
-              <BottomAreaWrapper>
-                <Rating
-                  value={rating}
-                  precision={0.5}
-                  onChange={(e, newRating) => {
-                    setRating(newRating);
-                  }}
-                />
-                <CharacterCount ref={charCount}>
-                  {150 - reviewMessage.length}
-                </CharacterCount>
-                <Button
-                  ref={submitRef}
-                  // disabled={user ? false : true}
-                  onClick={(e) => {
-                    console.log(user);
-                    // e.preventDefault();
-                    // e.stopPropagation();
-                    handleSubmit(reviewMessage);                 
-                  }}
-                >
-                  Submit
-                </Button>
-              </BottomAreaWrapper>
+                ></TextArea>
+                {/* <div className="required"></div> */}
+                <BottomAreaWrapper>
+                  <Rating
+                    value={rating}
+                    precision={0.5}
+                    onChange={(e,newRating) => {
+                      setRating(newRating);
+                    }}
+                    required
+                  />
+                  <CharacterCount ref={charCount}>
+                    {150 - reviewMessage.length}
+                  </CharacterCount>
+                  <Button
+                    form="form"
+                    ref={submitRef}
+                    // onClick={(e) => {
+                    //   e.preventDefault();
+                    //   handleSubmit(reviewMessage);                 
+                    // }}
+                  >
+                    Submit
+                  </Button>
+              </BottomAreaWrapper>                
+              </FormWrapper>
             </InfoContainer>
           </ImageAndInfoWrapper>
 
@@ -184,6 +190,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 50px 0;
   /* border: 2px black solid; */
   /* height: 95vh; */
 `;
@@ -196,7 +203,7 @@ const ImageAndInfoWrapper = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   /* border: 1px solid hotpink; */
   width: 500px;
@@ -218,6 +225,11 @@ const InfoContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  .icecream-description {
+    font-style: italic;
+    text-align: center;
+  }
 `;
 
 const Image = styled.img`
@@ -226,7 +238,18 @@ const Image = styled.img`
   border-radius: 5px;
 `;
 
-const TextAreaWrapper = styled.div``;
+const FormWrapper = styled.form`
+
+  /* &:required {
+      position: relative;
+      content: "Please leave a commit before submitting.";
+      top: -100px;
+      left: -205px;
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+    } */
+`;
 
 const TextArea = styled.textarea`
   display: flex;
@@ -240,6 +263,7 @@ const TextArea = styled.textarea`
   padding: 5px;
   font-size: 18px;
   flex-wrap: wrap;
+
 `;
 const BottomAreaWrapper = styled.div`
   display: flex;
@@ -273,6 +297,7 @@ const ReviewsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin-bottom: 30px;
 
   h2 {
     border-top: 3px solid pink;

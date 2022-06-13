@@ -10,6 +10,34 @@ const options = {
 const postReview = async (req, res) => {
   const { id } = req.params;
 
+  if (!id) {
+    return res.status(400).json({
+        status: 400,
+        message: "Invalid Ice Cream ID",
+    });
+  }  
+
+  if (!req.params.name) {
+    return res.status(400).json({
+        status: 400,
+        message: "Cannot publish post - user's name not provided.",
+    });
+  } 
+
+  if (!req.params.review) {
+    return res.status(400).json({
+        status: 400,
+        message: "Cannot publish post - no review provided",
+    });
+  }  
+  
+  if (!req.params.rating) {
+    return res.status(400).json({
+        status: 400,
+        message: "Cannot publish post - no rating provided",
+    });
+  }
+
   try {
     const client = new MongoClient(MONGO_URI, options);
     await client.connect();

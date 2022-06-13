@@ -11,6 +11,13 @@ const options = {
 const getIceCream = async (req, res) => {
     const {id} = req.params;
 
+    if (!id) {
+        return res.status(400).json({
+            status: 400,
+            message: "Invalid Ice Cream ID",
+        });
+    }  
+
     try {
         const client = new MongoClient(MONGO_URI, options);
         await client.connect();

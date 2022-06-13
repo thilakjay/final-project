@@ -9,12 +9,11 @@ const ShopLocations = () => {
     const [selectedShop, setSelectedShop] = useState(null);
     const mapRef = useRef(null);
 
-    //make this stateless - regular object
-    const [viewport, setViewport] = useState({
+    const initialViewportState = {
         longitude: -73.7004,
         latitude: 45.5336,
         zoom: 10
-    });
+    };
 
     //fetching all shops from BE
     useEffect(() => {
@@ -26,6 +25,7 @@ const ShopLocations = () => {
         fetchShops();
     }, []);    
 
+    //puts shop location on center of map
     const centerOnMap = (lng, lat, zoom) => {
         mapRef.current.easeTo({
             center: [lng, lat],
@@ -53,7 +53,7 @@ const ShopLocations = () => {
             </nav>
             <Map
                 ref={mapRef}
-                initialViewState={viewport}
+                initialViewState={initialViewportState}
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
             >
@@ -64,19 +64,20 @@ const ShopLocations = () => {
                     latitude={shop.coordinates[1]} 
                     onClick={(e) => {
                         e.originalEvent.stopPropagation();
-                        mapRef.current.easeTo({
-                            center: [shop.coordinates[0], shop.coordinates[1]],
-                            zoom: 13,
-                            speed: 0.2,
-                            duration: 1000,
-                            easing(t) {
-                                return t;
-                            }
-                        });
+                        centerOnMap(shop.coordinates[0], shop.coordinates[1], 14);
+                        // mapRef.current.easeTo({
+                        //     center: [shop.coordinates[0], shop.coordinates[1]],
+                        //     zoom: 14,
+                        //     speed: 0.2,
+                        //     duration: 1000,
+                        //     easing(t) {
+                        //         return t;
+                        //     }
+                        // });
                         setSelectedShop(shop);
                     }}
                 >
-                    <MdOutlineIcecream size={25} fill="purple" style={{cursor: "pointer"}}/>
+                    <MdOutlineIcecream size={25} fill="red" style={{cursor: "pointer"}}/>
                     {selectedShop && (
                         <Popup 
                             anchor="bottom"
@@ -95,11 +96,11 @@ const ShopLocations = () => {
                                 // });
                             }}
                         >                            
-                            <div>
+                            <div style={{display: "flex", gap: "5px", minWidth: "300px"}}>
                                 <h3>{selectedShop.name}</h3>
                                 <Rating 
                                     size="small" 
-                                    value={parseFloat(selectedShop.googleRating)} 
+                                    value={selectedShop.googleRating} 
                                     precision={0.5} 
                                     readOnly />
                             </div>
@@ -114,7 +115,12 @@ const ShopLocations = () => {
         
         <ShopContainer>
                             
-        {!selectedShop ? <h1>Click a shop for more info</h1> : (
+        {!selectedShop ? (
+        <>
+            <h1>Click a shop for more info</h1>
+            <img className="ice-cream-cartoon" src="\images\icecream-shop-cartoon.png" />
+        </>
+        ) : (
         <>
             <h1>{selectedShop.name}</h1>
             <div>{selectedShop.address}</div>
@@ -131,6 +137,7 @@ export default ShopLocations;
 
 const Wrapper = styled.div`
     display: flex;
+    margin: 1rem;
 `;
 
 const MapContainer = styled.div`
@@ -138,11 +145,13 @@ const MapContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
 
     ul {
         display: flex;
         list-style-type: none;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
         gap: 20px;
     }
 
@@ -157,9 +166,14 @@ const ShopContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 
     img {
-        width: 400px;
+        width: 40vw;
+        max-height: 60vh;
+    }
+
+    .ice-cream-cartoon {
+        width: 20vw;
     }
 `;

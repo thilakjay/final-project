@@ -25,8 +25,8 @@ export default createGlobalStyle`
   html, body {
     height: 100%;
     /* padding: 10px; */
-    /* font-family: 'PT Sans', sans-serif; */
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #5F2743;
     /* background-color: #7DE2FE; */
   }
   /*

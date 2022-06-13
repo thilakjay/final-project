@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <HeaderSection>
             <Link exact to="/"> 
-                <h1>CrèM-T-L</h1>
+                <h1>crèMTL</h1>
             </Link>
             <div className="align-right">
                 <Link exact to="/shop-locations"> 

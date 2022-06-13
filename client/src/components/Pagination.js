@@ -41,7 +41,10 @@ const Nav = styled.nav`
         text-decoration: none;
         background-color: #fff;
         border: 1px solid hotpink;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, 
+            background-color 0.15s ease-in-out, 
+            border-color 0.15s ease-in-out, 
+            box-shadow 0.15s ease-in-out;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -60,7 +63,7 @@ const Nav = styled.nav`
         z-index: 3;
         color: hotpink;
         font-weight: bold;
-        background-color: #e9ecef;
+        background-color: #FEDAEC;
         outline: 0;
         box-shadow: 0 0 0 0.25rem pink;
     }
