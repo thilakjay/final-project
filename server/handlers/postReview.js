@@ -17,21 +17,23 @@ const postReview = async (req, res) => {
     });
   }  
 
-  if (!req.params.name) {
+  if (!req.body.name) {
     return res.status(400).json({
         status: 400,
+        // err: 
         message: "Cannot publish post - user's name not provided.",
     });
   } 
 
-  if (!req.params.review) {
+  if (!req.body.review) {
     return res.status(400).json({
         status: 400,
+        // err: "missing-review"
         message: "Cannot publish post - no review provided",
     });
   }  
   
-  if (!req.params.rating) {
+  if (!req.body.userRating) {
     return res.status(400).json({
         status: 400,
         message: "Cannot publish post - no rating provided",

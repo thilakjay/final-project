@@ -8,7 +8,7 @@ import GlobalStyles from "./components/GlobalStyles";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import FindShop from "./components/FindShop";
 import ShopLocations from "./components/ShopLocations";
 
@@ -31,15 +31,15 @@ const App = () => {
         <Route exact path="/user/">
           {/* landing page/main page */}
         </Route>
-        <Route exact path="/find-shop">
+        {/* <Route exact path="/find-shop">
           <FindShop />
-        </Route>
-        <Route exact path="/shop-locations">
+        </Route> */}
+        <Route path="/shop-locations">
         <ShopLocations />
         </Route>
-        <Route exact path="/signup">
+        {/* <Route exact path="/signup"> */}
           {/* signup page */}
-        </Route>
+        {/* </Route> */}
         {/* <Route exact path="/login">
           <Login />
         </Route> */}

@@ -1,17 +1,25 @@
-import Map, { Marker, Popup } from 'react-map-gl';
+import Map, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import {MdOutlineIcecream} from "react-icons/md";
 import { Rating } from "@mui/material";
+import useQuery from '../hooks/useQuery';
 
 const ShopLocations = () => {
     const [shops, setShops] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
     const mapRef = useRef(null);
+    let query = useQuery();
+    console.log(query.get("lng"));
+    console.log(query.get("lat"));
+    console.log(query.get("_id"));
+
+    const initialLng = query.get("lng") ? query.get("lng") : -73.7004;
+    const initialLat = query.get("lat") ? query.get("lat") : -45.5336;
 
     const initialViewportState = {
-        longitude: -73.7004,
-        latitude: 45.5336,
+        longitude: initialLng,
+        latitude: initialLat,
         zoom: 10
     };
 
@@ -43,7 +51,13 @@ const ShopLocations = () => {
         <MapContainer>
             <nav>
                 <ul>
-                    <li><div onClick={() => centerOnMap(-73.8413, 45.4563, 13)}>West Island</div></li>
+                    <li>
+                        <img 
+                            src="\images\mtl-logo-transparent.png" alt="MTL"
+                            onClick={() => centerOnMap(-73.7004, 45.5336, 10)}
+                        />
+                    </li>
+                    <li><div onClick={() => centerOnMap(-73.8413, 45.4563, 12)}>West Island</div></li>
                     <li><div onClick={() => centerOnMap(-73.6303, 45.4722, 13)}>CDN/NDG</div></li>
                     <li><div onClick={() => centerOnMap(-73.6281, 45.5351, 13)}>Parc Ex./Villeray</div></li>
                     <li><div onClick={() => centerOnMap(-73.5851, 45.5233, 13)}>Plateau</div></li>
@@ -57,6 +71,8 @@ const ShopLocations = () => {
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
             >
+                <GeolocateControl />
+
             {shops && shops.map(shop => (
                 <Marker 
                     key={shop._id} 
@@ -64,7 +80,7 @@ const ShopLocations = () => {
                     latitude={shop.coordinates[1]} 
                     onClick={(e) => {
                         e.originalEvent.stopPropagation();
-                        centerOnMap(shop.coordinates[0], shop.coordinates[1], 14);
+                        centerOnMap(shop.coordinates[0], shop.coordinates[1], 15);
                         // mapRef.current.easeTo({
                         //     center: [shop.coordinates[0], shop.coordinates[1]],
                         //     zoom: 14,
@@ -83,18 +99,7 @@ const ShopLocations = () => {
                             anchor="bottom"
                             longitude={selectedShop.coordinates[0]}
                             latitude={selectedShop.coordinates[1]}
-                            onClose={() => {                              
-                                setSelectedShop(null);
-                                // mapRef.current.easeTo({
-                                //     center: [viewport.longitude, viewport.latitude],
-                                //     zoom: viewport.zoom,
-                                //     speed: 0.2,
-                                //     duration: 1000,
-                                //     easing(t) {
-                                //         return t;
-                                //     }
-                                // });
-                            }}
+                            onClose={() => {setSelectedShop(null)}}
                         >                            
                             <div style={{display: "flex", gap: "5px", minWidth: "300px"}}>
                                 <h3>{selectedShop.name}</h3>
@@ -145,7 +150,6 @@ const MapContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    /* border: 2px solid hotpink; */
 
     ul {
         display: flex;
@@ -153,11 +157,16 @@ const MapContainer = styled.div`
         font-weight: bold;
         margin-bottom: 0.5rem;
         gap: 20px;
+
+        li {
+            cursor: pointer;
+        }
+
+        img {
+            width: 100px;
+        }
     }
 
-    div {
-        cursor: pointer;
-    }
 `;
 
 const ShopContainer = styled.div`
@@ -171,6 +180,7 @@ const ShopContainer = styled.div`
     img {
         width: 40vw;
         max-height: 60vh;
+        border-radius: 5px;
     }
 
     .ice-cream-cartoon {

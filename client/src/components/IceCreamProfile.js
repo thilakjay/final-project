@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Rating } from "@mui/material";
 import { useContext } from "react";
 import { UserContext } from "../context/context";
 import LoginModal from "./LoginModal";
+import {GrMapLocation} from "react-icons/gr";
 
 const IceCreamProfile = () => {
   const [iceCream, setIceCream] = useState(null);
@@ -15,6 +16,7 @@ const IceCreamProfile = () => {
   const { user, setUser, modal, setModal } = useContext(UserContext);
 
   const { _id } = useParams();
+  const history = useHistory();
 
   const submitRef = useRef(null);
   const textAreaRef = useRef(null);
@@ -46,6 +48,7 @@ const IceCreamProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(reviewMessage);
 
     if(!user) {
       setModal(true);
@@ -113,12 +116,17 @@ const IceCreamProfile = () => {
                 <h1>{iceCream.flavour}</h1>
                 <Rating value={iceCream.rating} precision={0.5} readOnly />
               </div>
+              <div>crèMTL Rating: {iceCream.rating}</div>
               <h2 className="icecream-description">
-              "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito.""
+              "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito."
               </h2>
-              <div>CrèM-T-L Rating: {iceCream.rating}</div>
               <div>Shop Name: {shop.name}</div>
               <div>{shop.address}</div>
+              <div className="map-icon-container">
+                View in map: 
+                <GrMapLocation size={23} 
+                  onClick={() => history.push(`/shop-locations?lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
+              </div>
               <a href={shop.url}>{shop.url}</a>
               <FormWrapper id="form" onSubmit={handleSubmit}>
                 <TextArea
@@ -229,6 +237,13 @@ const InfoContainer = styled.div`
   .icecream-description {
     font-style: italic;
     text-align: center;
+  }
+
+  .map-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
   }
 `;
 
