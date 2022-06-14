@@ -6,7 +6,7 @@ const IceCream = ({iceCream}) => {
     return (
         
         <motion.div  
-        //each item is given an animation when entering or removed from grid
+        //each item is given an animation when entering or being removed from grid
             layout
             initial={{opacity: 0}} 
             animate={{opacity: 1}} 

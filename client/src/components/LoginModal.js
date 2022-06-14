@@ -39,9 +39,8 @@ const LoginModal = () => {
                             size={25} 
                             onClick={() => {setModal(!modal)}} 
                         />
-                        <h2>{loginMessage}</h2>
-                        {/* google login button is rendered here */}
-                        <div id="signInDiv" />                      
+                        <h2>{loginMessage}</h2>                      
+                        <div id="signInDiv" /> {/* google login button is rendered here */}                     
                     </div>                     
             </Modal>
             )}
@@ -84,15 +83,15 @@ const Modal = styled.div`
 
     h2 {
         position: relative;
-        top: -160px;
+        top: -150px;
         color: white;
         text-align: center;
     }
 
     .close-icon {
         position: relative;
-        top: -15px;
-        left: 105px;
+        top: -17px;
+        left: 110px;
         cursor: pointer;
     }
 `;

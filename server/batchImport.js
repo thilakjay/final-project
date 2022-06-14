@@ -1,4 +1,4 @@
-const { createReadStream } = require("fs");
+// const { createReadStream } = require("fs");
 const { MongoClient } = require("mongodb");
 const shops = require("./data/shops.json");
 const iceCreams = require("./data/ice-creams.json");
@@ -15,7 +15,7 @@ const options = {
 const { v4: uuidv4 } = require("uuid");
 
 const batchImport = async () => {
-  //adds a random rating and _id to each flavour of ice cream
+  //adds a random rating, pre-set reviews, and _id to each flavour of ice cream
   iceCreams.forEach(iceCream => {
       const _id = uuidv4();
       iceCream.reviews = [
@@ -51,10 +51,13 @@ const batchImport = async () => {
   try {
     const client = new MongoClient(MONGO_URI, options);
     await client.connect();
+
     const db = client.db("final-project");
     await db.collection("shops").insertMany(shops);
     await db.collection("ice-creams").insertMany(iceCreams);
+    
     client.close();
+
   } catch (err) {
     console.log(err.message);
   }

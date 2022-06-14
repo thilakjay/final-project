@@ -46,7 +46,6 @@ const Header = () => {
                      </DropDownDiv>   
                     )}
                 </div>
-
                 {modal && <LoginModal />}
             </div>
         </HeaderSection>        

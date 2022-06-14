@@ -47,7 +47,8 @@ const postReview = async (req, res) => {
     await client.connect();
     const db = client.db("final-project");
 
-    //add review to reviews array and push it to index 0
+    //add review to reviews object and push it to index 0 of array
+    //so that it shows as most recent review in FE
     await db.collection("ice-creams").updateOne(
       { _id: id },
       {

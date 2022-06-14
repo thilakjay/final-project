@@ -32,11 +32,6 @@ const Nav = styled.nav`
         display: flex;
         padding-left: 0;
         list-style: none;
-
-        /* @media screen and (max-width: 600px) {
-            padding: 5px 10px;
-            flex-wrap: wrap;
-        } */
     }
 
     .page-link {
