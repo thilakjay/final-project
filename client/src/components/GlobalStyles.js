@@ -2,10 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
-/* @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@300;500;600&display=swap'); */
-
-
-
 /* https://www.joshwcomeau.com/css/custom-css-reset/
 
 1. Use a more-intuitive box-sizing model.

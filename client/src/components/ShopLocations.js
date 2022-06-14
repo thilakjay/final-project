@@ -9,9 +9,8 @@ const ShopLocations = () => {
     const [shops, setShops] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
 
-    //for access to mapbox map
-    const TOKEN = "pk.eyJ1IjoidGhpamF5IiwiYSI6ImNsNDVyb29wOTAweTkzam9yMjloNmQzd2UifQ.AgrQeRna5mWtP7Bd6HXYYQ";
-    // const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
+    //for access to mapbox API
+    const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
     
     const mapRef = useRef(null);
     let query = useQuery();

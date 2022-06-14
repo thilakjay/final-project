@@ -59,7 +59,7 @@ const HeaderSection = styled.header`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    margin-top: 0px; //!important removed
+    margin-top: 0px;
     color: white;
     background-color: hotpink;
     padding: 20px 80px;
