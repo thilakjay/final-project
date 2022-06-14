@@ -1,34 +1,4 @@
-import { createContext, useState, useEffect, useReducer, useContext } from "react";
-
-// export const FilterContext = createContext();
-
-// export const FilterProvider = ({children}) => {
-
-//     const [state, dispatch] = useReducer(reducer, {
-//         bySoft: false,
-//         byHard: false,
-//         byGelato: false,
-//         byVegan: false,
-//         byFruit: false,
-//         byConfection: false,
-//         byNut: false,
-//         bySpice: false,
-//         byLocal: false,
-//         byInternational: false,
-//         byRating: 0
-//     });
-    
-//     return (
-//         <FilterContext.Provider
-//             value={{
-//                 state,
-//                 dispatch
-//             }}
-//         >
-//             {children}
-//         </FilterContext.Provider>
-//     );
-// }
+import { createContext, useState, useEffect } from "react";
 
 //context to pass user logged-in status across App.
 export const UserContext = createContext(null);
@@ -36,9 +6,10 @@ export const UserContext = createContext(null);
 export const UserProvider = ({ children }) => {
     const [user, setUser] = usePersistedState("user", null);
     const [modal, setModal] = useState(false);
+    const [loginMessage, setLoginMessage] = useState("");
 
     return (
-        <UserContext.Provider value={{ user, setUser, modal, setModal }}>
+        <UserContext.Provider value={{ user, setUser, modal, setModal, loginMessage, setLoginMessage }}>
             {children}
         </UserContext.Provider>
     );
@@ -47,13 +18,13 @@ export const UserProvider = ({ children }) => {
 //custom hook for keeping track of the user that is logged in
 const usePersistedState = (localStorageName, initialValue) => {
     const [state, setState] = useState(() => {
-    const storedValue = window.localStorage.getItem(localStorageName);
+        const storedValue = window.localStorage.getItem(localStorageName);
 
-    return storedValue !== null ? JSON.parse(storedValue) : initialValue;
+        return storedValue !== null ? JSON.parse(storedValue) : initialValue;
     });
 
     useEffect(() => {
-    window.localStorage.setItem(localStorageName, JSON.stringify(state));
+        window.localStorage.setItem(localStorageName, JSON.stringify(state));
     }, [state]);
     
     return [state, setState];

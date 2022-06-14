@@ -26,12 +26,17 @@ export default Pagination;
 const Nav = styled.nav`
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
 
     .pagination {
         display: flex;
         padding-left: 0;
         list-style: none;
+
+        /* @media screen and (max-width: 600px) {
+            padding: 5px 10px;
+            flex-wrap: wrap;
+        } */
     }
 
     .page-link {
@@ -71,6 +76,10 @@ const Nav = styled.nav`
     .page-item:not(:first-child) .page-link {
         margin-left: -1px;
         padding: 15px 20px;
+
+        @media screen and (max-width: 600px) {
+            padding: 5px 10px;
+        } 
     }
 
     .page-item.active .page-link {
@@ -94,6 +103,10 @@ const Nav = styled.nav`
         border-top-left-radius: 0.25rem;
         border-bottom-left-radius: 0.25rem;
         padding: 15px 20px;
+
+        @media screen and (max-width: 600px) {
+            padding: 5px 10px;
+        }        
     }
 
     .page-item:last-child .page-link {

@@ -104,7 +104,7 @@
         "name": "Crèmerie Meu Meu",
         "address": "4458 Saint Denis St, Montreal, Quebec H2J 2L1",
         "coordinates": [-73.58288, 45.52338],
-        "url": "https://www.tripadvisor.ca/Restaurant_Review-g155032-d3581151-Reviews-Cremerie_Meu_Meu-Montreal_Quebec.html",
+        "url": "https://www.yelp.ca/biz/cr%C3%A8merie-meu-meu-montr%C3%A9al-4",
         "imageSrc": "meumeu-shop.jpg",
         "googleRating": 4.5,
         "fbRating": 5
@@ -131,7 +131,7 @@
     },
      {
         "_id": 14,
-        "name": "Le Blueboy: Artisan Glacier",
+        "name": "Le Blueboy",
         "address": "150 Mont-Royal Ave E, Montreal, Quebec H2T 1P1",
         "coordinates": [-73.58492, 45.52173],
         "url": "https://www.facebook.com/LeBlueboy/",

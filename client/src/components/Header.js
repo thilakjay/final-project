@@ -4,10 +4,11 @@ import { UserContext } from "../context/context";
 import { useContext, useState } from "react";
 import LoginModal from "./LoginModal";
 import {RiArrowDropDownLine} from "react-icons/ri";
+import {IoIceCreamOutline} from "react-icons/io5";
 
 const Header = () => {
 
-    const {user, setUser, modal, setModal} = useContext(UserContext);
+    const {user, setUser, modal, setModal, setLoginMessage} = useContext(UserContext);
     const [toggleUserMenu, setToggleUserMenu] = useState(false);
 
     const handleLogout = () => {
@@ -17,14 +18,20 @@ const Header = () => {
 
     return (
         <HeaderSection>
-            <Link to="/"> 
+            <StyledLink to="/"> 
                 <h1>crèMTL</h1>
-            </Link>
+                <IoIceCreamOutline size={40} color="white"/>
+            </StyledLink>
             <div className="align-right">
                 <Link to="/shop-locations"> 
                     <div>Find a shop</div>
                 </Link>                
-                <div className="user-menu-container" onClick={() => {!user ? setModal(true) : setModal(false)}}>
+                <div 
+                    className="user-menu-container" 
+                    onClick={() => {
+                        setLoginMessage("Welcome!");
+                        !user ? setModal(true) : setModal(false)}
+                    }>
                     {user ? (<div 
                                 onClick={() => {setToggleUserMenu(!toggleUserMenu)}} 
                                 className="user-menu"
@@ -57,6 +64,11 @@ const HeaderSection = styled.header`
     background-color: hotpink;
     padding: 20px 80px;
 
+    @media screen and (max-width: 600px) {
+        background-color: lightblue;
+        padding: 20px 20px;
+    } 
+
     a {
         color: white;
     }
@@ -81,11 +93,17 @@ const HeaderSection = styled.header`
     }
 `;
 
+const StyledLink = styled(Link)`
+    display: flex;
+    align-self: center;
+    justify-content: center;
+`;
+
 const DropDownDiv = styled.div`
     position: absolute;
     border: 1px white solid;
-    padding: 0px 10px;
+    padding: 1px 10px;
     border-radius: 3px;
-    right: 150px;
+    right: 110px;
     cursor: pointer;
 `;

@@ -7,7 +7,7 @@ import {CgCloseO} from "react-icons/cg";
 
 const LoginModal = () => {
 
-    const {user, setUser, modal, setModal} = useContext(UserContext);
+    const {user, setUser, modal, setModal, loginMessage} = useContext(UserContext);
 
     const handleCallbackResponse = (response) => {
         //converts JWT token into a readable object
@@ -20,13 +20,13 @@ const LoginModal = () => {
         google.accounts.id.initialize({
             client_id: "166656954368-au0gh49iog78r9eor2p2m7ocl2navur2.apps.googleusercontent.com",
             callback: handleCallbackResponse
-        }) 
+        }); 
 
         google.accounts.id.renderButton(
             document.getElementById("signInDiv"),
             {theme: "outline", size: "large"}
-        )
-    }, [])
+        );
+    }, []);
 
     return (
         <>
@@ -40,7 +40,8 @@ const LoginModal = () => {
                             size={25} 
                             onClick={() => {setModal(!modal)}} 
                         />
-                        <h2></h2>
+                        <h2>{loginMessage}</h2>
+                        {/* google login button is rendered here */}
                         <div id="signInDiv" />                      
                     </div>                     
             </Modal>
@@ -49,6 +50,10 @@ const LoginModal = () => {
     );
 }
 export default LoginModal;
+
+const Overlay = styled(Modal)`
+    background: rgba(49,49,49,0.4);
+`;
 
 const Modal = styled.div`
     width: 100vw;
@@ -67,13 +72,13 @@ const Modal = styled.div`
         align-items: center;
         gap: 20px;
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1.4;
         height: 400px;
-        max-width: 600px;
-        min-width: 250px;
+        max-width: 250px;
+        /* min-width: 250px; */
         background-image: url("/images/login-splash.jpg");     
         background-repeat: no-repeat;
         background-position: center;
@@ -83,7 +88,10 @@ const Modal = styled.div`
     }
 
     h2 {
-        color: hotpink;
+        position: relative;
+        top: -160px;
+        color: white;
+        text-align: center;
     }
 
     .close-icon {
@@ -94,6 +102,3 @@ const Modal = styled.div`
     }
 `;
 
-const Overlay = styled(Modal)`
-    background: rgba(49,49,49,0.4);
-`;

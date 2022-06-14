@@ -15,7 +15,7 @@ const IceCreamProfile = () => {
   const [shop, setShop] = useState(null);
   const [error, setError] = useState(null);
 
-  const { user, setUser, modal, setModal } = useContext(UserContext);
+  const { user, setUser, modal, setModal, loginMessage, setLoginMessage } = useContext(UserContext);
 
   const { _id } = useParams();
   const history = useHistory();
@@ -28,18 +28,6 @@ const IceCreamProfile = () => {
   useEffect(() => {
     fetchIceCream();
   }, []);
-
-  // const handleAfterPublishReview = () => {
-  //   fetch(`/api/ice-creams/${_id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setIceCream(data.data.iceCream);
-  //       setShop(data.data.shop);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error caught:", error);
-  //     });
-  // };
 
   //fetch data on a specific ice cream
   const fetchIceCream = async () => {
@@ -54,53 +42,17 @@ const IceCreamProfile = () => {
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if(!user) {
-  //     setModal(true);
-  //     return <LoginModal />;  
-  //   }
-
-  //   fetch(`/api/ice-creams/${_id}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: user.name,
-  //       review: reviewMessage,
-  //       userRating: rating,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-
-  //       if(data.status === 400) {
-  //         setError(data);
-  //         console.log(data);
-  //         return;
-  //       }
-
-  //       fetchIceCream();
-  //       setReviewMessage("");  
-  //       textAreaRef.current.value = "";
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error caught:", error);
-  //     });
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     //if user submits post without first logging in, modal pops up to prompt login
     if(!user) {
+      setLoginMessage("Please sign in to comment.");
       setModal(true);
-      return <LoginModal />;  
+      return; 
     }
 
+    //post review data
     try{
       const data = await fetch(`/api/ice-creams/${_id}`, {
         method: "POST",
@@ -114,6 +66,7 @@ const IceCreamProfile = () => {
           userRating: rating,
         }),
       })
+
       const json = await data.json();
       
       //catches error and error object is saved in state for use with error component 
@@ -121,8 +74,8 @@ const IceCreamProfile = () => {
         setError(json);
         return;
       }
-      //fetches ice cream data again to reload page with updated info
-      fetchIceCream(); 
+      
+      fetchIceCream();  //fetches ice cream data again to reload page with updated info
       setReviewMessage("");  
       textAreaRef.current.value = "";     
 
@@ -131,7 +84,7 @@ const IceCreamProfile = () => {
       };
   };
 
-  //to keep track of user comment input and character count limits
+  //to keep track of user input and character count limits
   const handleTextAreaChange = (e) => {
     setError(null);
     setReviewMessage(e.target.value.trim());
@@ -164,20 +117,24 @@ const IceCreamProfile = () => {
               <div className="headingAndRating">
                 <h1>{iceCream.flavour}</h1>
                 <Rating value={iceCream.rating} precision={0.5} readOnly />
+                <div>crèMTL Rating: {iceCream.rating}</div>
               </div>
-              <div>crèMTL Rating: {iceCream.rating}</div>
-              <h2 className="icecream-description">
-              "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito."
-              </h2>
-              <div>Shop Name: {shop.name}</div>
-              <div>{shop.address}</div>
-              <div className="map-icon-container">
-                View in map: 
-                <GrMapLocation size={23} 
-                  onClick={() => 
-                    history.push(`/shop-locations?_id=${shop._id}&lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
+
+              <h3 className="icecream-description">
+                "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito."
+              </h3>
+
+              <div className="shop-info">
+                <div>Shop: {shop.name}</div>
+                {/* <div>{shop.address}</div> */}
+                <div className="map-icon-container">
+                  View in map: 
+                  <GrMapLocation size={23} 
+                    onClick={() => 
+                      history.push(`/shop-locations?_id=${shop._id}&lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
+                </div>
+                {/* <a href={shop.url}>{shop.url}</a> */}
               </div>
-              <a href={shop.url}>{shop.url}</a>
               <FormWrapper id="form" onSubmit={handleSubmit}>
                 <TextArea
                   ref={textAreaRef}
@@ -216,7 +173,7 @@ const IceCreamProfile = () => {
               </FormWrapper>
             </InfoContainer>
           </ImageAndInfoWrapper>
-
+        
           <ReviewsWrapper>
             <h2>Reviews</h2>
             <div className="reviews-container">
@@ -264,6 +221,7 @@ const ImageContainer = styled.div`
   align-items: center;
   width: 500px;
   height: 500px;
+
 `;
 
 const InfoContainer = styled.div`
@@ -271,7 +229,7 @@ const InfoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1.2rem;
   width: 500px;
   height: 500px;
 
@@ -290,6 +248,13 @@ const InfoContainer = styled.div`
     text-align: center;
   }
 
+  .shop-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .map-icon-container {
     display: flex;
     align-items: center;
@@ -299,8 +264,8 @@ const InfoContainer = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 400px;
-  max-height: 500px;
+  max-width: 30vw;
+  max-height: 50vh;
   border-radius: 5px;
 `;
 
@@ -321,6 +286,7 @@ const TextArea = styled.textarea`
   font-size: 18px;
   flex-wrap: wrap;  
 `;
+
 const BottomAreaWrapper = styled.div`
   display: flex;
   justify-content: flex-end;

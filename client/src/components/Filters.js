@@ -52,8 +52,11 @@ const Filters = ({iceCreams, setFiltered, paginate}) => {
 
             {/* creates a button for each filter tag */}
             {filterOn.map((filter, i) => 
-                <Button key={i} filterToggle={filter.filter} onClick={() => {
-                    //refactor later to another function (toggleStateHandler)
+                <Button 
+                  key={i} 
+                  filterToggle={filter.filter} 
+                  onClick={() => {
+                    //sets toggle function on each button
                     let copiedFilter = [...filterOn];
                     copiedFilter[i].filter = !copiedFilter[i].filter;
                     setFilterOn(copiedFilter);
@@ -82,7 +85,10 @@ const Button = styled.button`
   background-color: #fff;
   border-radius: 24px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-shadow: 
+    rgba(0, 0, 0, .2) 0 3px 5px -1px,
+    rgba(0, 0, 0, .14) 0 6px 10px 0,
+    rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
   color: #FAAFBA;
   cursor: pointer;
@@ -100,7 +106,10 @@ const Button = styled.button`
   position: relative;
   text-align: center;
   text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  transition: 
+    box-shadow 280ms cubic-bezier(.4, 0, .2, 1),
+    opacity 15ms linear 30ms,
+    transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
