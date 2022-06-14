@@ -20,77 +20,124 @@ const IceCreamProfile = () => {
   const { _id } = useParams();
   const history = useHistory();
 
+  //for manipulating text area and submit button dom elements
   const submitRef = useRef(null);
   const textAreaRef = useRef(null);
   const charCount = useRef(null);
 
   useEffect(() => {
-    const fetchIceCream = async () => {
-      const data = await fetch(`/api/ice-creams/${_id}`);
-      const json = await data.json();
-      setIceCream(json.data.iceCream);
-      setShop(json.data.shop);
-    };
     fetchIceCream();
   }, []);
 
-  const handleAfterPublishReview = () => {
-    fetch(`/api/ice-creams/${_id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setIceCream(data.data.iceCream);
-        setShop(data.data.shop);
-      })
-      .catch((error) => {
-        console.log("Error caught:", error);
-      });
-  };
+  // const handleAfterPublishReview = () => {
+  //   fetch(`/api/ice-creams/${_id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setIceCream(data.data.iceCream);
+  //       setShop(data.data.shop);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error caught:", error);
+  //     });
+  // };
 
-  const handleSubmit = (e) => {
+  //fetch data on a specific ice cream
+  const fetchIceCream = async () => {
+    try {
+      const data = await fetch(`/api/ice-creams/${_id}`);
+      const json = await data.json();
+      setIceCream(json.data.iceCream);
+      setShop(json.data.shop);      
+    }
+    catch (error) {
+      console.log("Error caught:", error);
+    }
+  }
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if(!user) {
+  //     setModal(true);
+  //     return <LoginModal />;  
+  //   }
+
+  //   fetch(`/api/ice-creams/${_id}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name: user.name,
+  //       review: reviewMessage,
+  //       userRating: rating,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+
+  //       if(data.status === 400) {
+  //         setError(data);
+  //         console.log(data);
+  //         return;
+  //       }
+
+  //       fetchIceCream();
+  //       setReviewMessage("");  
+  //       textAreaRef.current.value = "";
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error caught:", error);
+  //     });
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //if user submits post without first logging in, modal pops up to prompt login
     if(!user) {
       setModal(true);
       return <LoginModal />;  
     }
 
-    fetch(`/api/ice-creams/${_id}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: user.name,
-        review: reviewMessage,
-        userRating: rating,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-
-        if(data.status === 400) {
-          setError(data);
-          console.log(data);
-          return;
-        }
-
-        handleAfterPublishReview();
-        setReviewMessage("");  
-        textAreaRef.current.value = "";
+    try{
+      const data = await fetch(`/api/ice-creams/${_id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: user.name,
+          review: reviewMessage,
+          userRating: rating,
+        }),
       })
-      .catch((error) => {
+      const json = await data.json();
+      
+      //catches error and error object is saved in state for use with error component 
+      if(json.status === 400) {
+        setError(json);
+        return;
+      }
+      //fetches ice cream data again to reload page with updated info
+      fetchIceCream(); 
+      setReviewMessage("");  
+      textAreaRef.current.value = "";     
+
+    }catch(error) {
         console.log("Error caught:", error);
-      });
+      };
   };
 
+  //to keep track of user comment input and character count limits
   const handleTextAreaChange = (e) => {
     setError(null);
     setReviewMessage(e.target.value.trim());
 
     if (textAreaRef.current.textLength <= 110) {
       submitRef.current.disabled = false;
-      // submitRef.current.style.backgroundColor = "hotpink";
       charCount.current.style.color = "darkgray";
     } else if (
       textAreaRef.current.textLength > 110 &&
@@ -98,10 +145,8 @@ const IceCreamProfile = () => {
     ) {
       charCount.current.style.color = "goldenrod";
       submitRef.current.disabled = false;
-      // submitRef.current.style.backgroundColor = "hotpink";
     } else if (textAreaRef.current.textLength > 150) {
       submitRef.current.disabled = true;
-      // submitRef.current.style.backgroundColor = "rgb(255,	105, 180, 0.5)"; //change colour later
       charCount.current.style.color = "red";
     }
   };
@@ -164,10 +209,6 @@ const IceCreamProfile = () => {
                   <Button
                     form="form"
                     ref={submitRef}
-                    // onClick={(e) => {
-                    //   e.preventDefault();
-                    //   handleSubmit(reviewMessage);                 
-                    // }}
                   >
                     Submit
                   </Button>
@@ -238,6 +279,10 @@ const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h1 {
+      text-align: center;
+    }
   }
 
   .icecream-description {

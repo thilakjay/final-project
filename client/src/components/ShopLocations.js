@@ -9,7 +9,9 @@ const ShopLocations = () => {
     const [shops, setShops] = useState(null);
     const [selectedShop, setSelectedShop] = useState(null);
 
+    //for access to mapbox map
     const TOKEN = "pk.eyJ1IjoidGhpamF5IiwiYSI6ImNsNDVyb29wOTAweTkzam9yMjloNmQzd2UifQ.AgrQeRna5mWtP7Bd6HXYYQ";
+    // const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
     
     const mapRef = useRef(null);
     let query = useQuery();
@@ -78,6 +80,7 @@ const ShopLocations = () => {
             >
                 <GeolocateControl />
 
+            {/* add a marker & popup at each shop's GPS coordinates */}
             {shops && shops.map(shop => (
                 <Marker 
                     key={shop._id} 
@@ -86,15 +89,6 @@ const ShopLocations = () => {
                     onClick={(e) => {
                         e.originalEvent.stopPropagation();
                         centerOnMap(shop.coordinates[0], shop.coordinates[1], 15);
-                        // mapRef.current.easeTo({
-                        //     center: [shop.coordinates[0], shop.coordinates[1]],
-                        //     zoom: 14,
-                        //     speed: 0.2,
-                        //     duration: 1000,
-                        //     easing(t) {
-                        //         return t;
-                        //     }
-                        // });
                         setSelectedShop(shop);
                     }}
                 >
@@ -121,10 +115,8 @@ const ShopLocations = () => {
             ))}
             </Map>
         </MapContainer>
-
-        
-        <ShopContainer>
-                            
+    
+        <ShopContainer>                                
         {!selectedShop ? (
         <>
             <h1>Click a shop for more info</h1>

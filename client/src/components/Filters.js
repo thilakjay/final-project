@@ -1,14 +1,13 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import filterData from "./filterUtils";
 
-const Filters = ({iceCreams, setFiltered}) => {
+const Filters = ({iceCreams, setFiltered, paginate}) => {
     const [tagsList, setTagsList] = useState([]);
-    // const [toggleFilter, setToggleFilter] = useState(false);
     const [filterOn, setFilterOn] = useState(filterData);
     
     useEffect(() => {
-        //I don't understand this fully, ask Andrew about this
+        //algorithm for filling an array with items that match the filtered tags
         let targetNumberOfMatches = tagsList.length;
         let filtered = [];
 
@@ -25,56 +24,38 @@ const Filters = ({iceCreams, setFiltered}) => {
     }, [tagsList, iceCreams]);
 
     const handleFilter = (filterTag) => {
-        //adds a filter tag if it's not already included as a filter
+        //adds a filter if it's not already included as a filter
         if(!tagsList.includes(filterTag)){
             setTagsList([...tagsList, filterTag]);
         }else { 
             //removes the filter tag from array if tag already exists
-            const newTagList = tagsList.filter(tag => tag !== filterTag);
-            setTagsList(newTagList);
-      
+            const newTagsList = tagsList.filter(tag => tag !== filterTag);
+            setTagsList(newTagsList);      
         }
+        //set back to page 1 every time a filter is added or removed
+        paginate(1);
     }
 
     return (
-        <Wrapper>
-            {/* <Button onClick={() => {
-                setFiltered(iceCreams);
-                setTagsList([])}}>Clear All</Button>
-            <Button onClick={(e) => {
-                                handleFilter(e,"soft");
-                                setFilterOn(!filterOn);
-                    }}
-            >
-                        Soft-Serve
-            </Button>
-            <Button onClick={(e) => handleFilter(e,"hard")}>Hard/Scoop</Button>
-            <Button onClick={(e) => handleFilter(e,"gelato")}>Gelato</Button>
-            <Button onClick={(e) => handleFilter(e,"vegan")}>Vegan</Button>
-            <Button onClick={(e) => handleFilter(e,"fruit")}>Fruity</Button>
-            <Button onClick={(e) => handleFilter(e,"confection")}>Confections</Button>
-            <Button onClick={(e) => handleFilter(e,"nut")}>Nutty</Button>
-            <Button onClick={(e) => handleFilter(e,"spice")}>Spiced</Button>
-            <Button onClick={(e) => handleFilter(e,"tea")}>Tea</Button>
-            <Button onClick={(e) => handleFilter(e,"local")}>Local</Button>
-            <Button onClick={(e) => handleFilter(e,"international")}>International</Button> */}
-            
-            <h2>Please select your filter(s):</h2>
+        <Wrapper>            
+            <h3>Please select your filter(s):</h3>
+            {/* clears filters and resets it to include all ice creams */}
             <Button onClick={() => {
                 setFilterOn(filterOn.map(elem => {
                     return {...elem, filter: false}
                 }));
                 setFiltered(iceCreams);
-                setTagsList([])}}>Clear All
+                setTagsList([])}}
+            >
+              Clear All
             </Button>
 
+            {/* creates a button for each filter tag */}
             {filterOn.map((filter, i) => 
                 <Button key={i} filterToggle={filter.filter} onClick={() => {
-                    console.log(filter.filter);
                     //refactor later to another function (toggleStateHandler)
                     let copiedFilter = [...filterOn];
                     copiedFilter[i].filter = !copiedFilter[i].filter;
-                    // setFilterOn([...filterOn, filter.filter = !copiedFilter]);
                     setFilterOn(copiedFilter);
                     handleFilter(filter.name)}}
                 >
@@ -90,25 +71,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     margin: 0 25px;
 `;
 
 const Button = styled.button`
-    /* .filterOn {
-        background-color: blue;
-        color: white;
-    } */
-
-    /* transition: 200ms ease;
-    background-color: ${({filterToggle}) => filterToggle ? "black" : ""};
-    color: ${({filterToggle}) => filterToggle ? "white" : ""}; */
-
-    /* <!-- HTML !--> */
-/* <button class="" role="button">Button 17</button> */
-
-/* CSS */
-
   align-items: center;
   appearance: none;
   background-color: #fff;
@@ -120,7 +88,6 @@ const Button = styled.button`
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
   font-size: 14px;
   font-weight: 500;
   height: 48px;

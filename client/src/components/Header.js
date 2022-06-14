@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UserContext } from "../context/context";
 import { useContext, useState } from "react";
 import LoginModal from "./LoginModal";
@@ -52,10 +52,10 @@ const HeaderSection = styled.header`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    margin-top: 0px !important;
+    margin-top: 0px; //!important removed
     color: white;
     background-color: hotpink;
-    padding: 20px 20px;
+    padding: 20px 80px;
 
     a {
         color: white;
@@ -69,8 +69,7 @@ const HeaderSection = styled.header`
     .align-right {
         display: flex;
         justify-content: space-between;
-        gap: 100px;
-        margin-right: 100px;
+        gap: 120px;
     }
 
     .user-menu-container {

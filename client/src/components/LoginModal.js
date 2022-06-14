@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { UserContext } from "../context/context";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
@@ -10,9 +10,8 @@ const LoginModal = () => {
     const {user, setUser, modal, setModal} = useContext(UserContext);
 
     const handleCallbackResponse = (response) => {
-        // console.log("Encoded JWT ID token: " + response.credential);
+        //converts JWT token into a readable object
         const userObject = jwt_decode(response.credential);
-         // console.log(userObject);
         setUser(userObject);
     }
 
@@ -43,8 +42,7 @@ const LoginModal = () => {
                         />
                         <h2></h2>
                         <div id="signInDiv" />                      
-                    </div>
-                        {/* <CloseDiv className="close-modal" onClick={() => {setModal(!modal)}}></CloseDiv> */}                      
+                    </div>                     
             </Modal>
             )}
         </>
@@ -99,9 +97,3 @@ const Modal = styled.div`
 const Overlay = styled(Modal)`
     background: rgba(49,49,49,0.4);
 `;
-
-// const CloseDiv = styled.div`
-//     position: relative;
-//     display: flex;
-//     /* top: 10px; */
-// `;

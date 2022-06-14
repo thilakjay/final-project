@@ -9,19 +9,16 @@ const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered results
 
-    // const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
 
     //fetching all ice creams from BE
     useEffect(() => {
-        const fetchIceCreams = async () => {
-            // setLoading(true);
+        const fetchIceCreams = async () => {         
             const data = await fetch("/api/ice-creams");   
             const json = await data.json();
             setIceCreams(json.data);
             setFiltered(json.data);
-            // setLoading(false);
         };    
         fetchIceCreams();
     }, []);
@@ -42,6 +39,7 @@ const Home = () => {
                 <Filters 
                     iceCreams={iceCreams} 
                     setFiltered={setFiltered} 
+                    paginate={paginate}
                 />
                 <GridDiv layout>
                     {currentPosts && (currentPosts.map(iceCream => 
@@ -81,5 +79,4 @@ const GridDiv = styled(motion.div)`
     grid-template-rows: repeat(auto-fit, minmax(250px, 300px));
     grid-column-gap: 2rem;
     margin: 50px;
-    /* grid-row-gap : 1rem; */
 `;
