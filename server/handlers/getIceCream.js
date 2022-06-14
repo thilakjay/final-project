@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const path = require("path");
+// const path = require("path");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
@@ -8,6 +8,8 @@ const options = {
   useUnifiedTopology: true,
 };
 
+
+//retrieves info on specific ice cream item
 const getIceCream = async (req, res) => {
     const {id} = req.params;
 
@@ -23,7 +25,10 @@ const getIceCream = async (req, res) => {
         await client.connect();
         const db = client.db("final-project");
         
+        //gets ice cream item
         const iceCreamResult = await db.collection("ice-creams").findOne({_id: id});
+
+        //get shop ID associated to ice cream item
         const shopIdQuery = {_id: iceCreamResult.shopId}; 
         const shopResult = await db.collection("shops").findOne(shopIdQuery)
 

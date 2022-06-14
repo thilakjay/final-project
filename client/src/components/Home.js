@@ -23,7 +23,7 @@ const Home = () => {
         fetchIceCreams();
     }, []);
 
-    //Get current posts
+    //Get posts on current page
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = filtered && filtered.slice(indexOfFirstPost, indexOfLastPost)

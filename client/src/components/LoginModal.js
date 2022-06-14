@@ -51,10 +51,6 @@ const LoginModal = () => {
 }
 export default LoginModal;
 
-const Overlay = styled(Modal)`
-    background: rgba(49,49,49,0.4);
-`;
-
 const Modal = styled.div`
     width: 100vw;
     height: 100vh;
@@ -100,5 +96,9 @@ const Modal = styled.div`
         left: 105px;
         cursor: pointer;
     }
+`;
+
+const Overlay = styled(Modal)`
+    background: rgba(49,49,49,0.4);
 `;
 

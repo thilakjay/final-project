@@ -8,6 +8,7 @@ const options = {
   useUnifiedTopology: true,
 };
 
+//gets all ice cream items
 const getIceCreams = async (req, res) => {
   try {
     const client = new MongoClient(MONGO_URI, options);

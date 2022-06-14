@@ -8,6 +8,7 @@ const options = {
   useUnifiedTopology: true,
 };
 
+//gets all shop info
 const getShops = async (req, res) => {
   try {
     const client = new MongoClient(MONGO_URI, options);

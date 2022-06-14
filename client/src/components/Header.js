@@ -19,8 +19,8 @@ const Header = () => {
     return (
         <HeaderSection>
             <StyledLink to="/"> 
-                <h1>crèMTL</h1>
                 <IoIceCreamOutline size={40} color="white"/>
+                <h1>crèMTL</h1>
             </StyledLink>
             <div className="align-right">
                 <Link to="/shop-locations"> 

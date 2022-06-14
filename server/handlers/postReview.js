@@ -7,6 +7,7 @@ const options = {
   useUnifiedTopology: true,
 };
 
+//posts review of ice cream item
 const postReview = async (req, res) => {
   const { id } = req.params;
 
@@ -46,7 +47,7 @@ const postReview = async (req, res) => {
     await client.connect();
     const db = client.db("final-project");
 
-    //add review to reviews arry and push it to index 0
+    //add review to reviews array and push it to index 0
     await db.collection("ice-creams").updateOne(
       { _id: id },
       {
