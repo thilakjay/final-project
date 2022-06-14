@@ -51,7 +51,7 @@
     {
         "flavour":"Coconut",
         "description": "",
-        "tags": ["coconut, hard"],
+        "tags": ["coconut", "hard"],
         "imageSrc": "wild-willys/coconut.jpg",
         "shopId": 1
     },
