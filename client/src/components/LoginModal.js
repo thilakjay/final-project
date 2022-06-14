@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { UserContext } from "../context/context";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
@@ -74,7 +73,7 @@ const Modal = styled.div`
         line-height: 1.4;
         height: 400px;
         max-width: 250px;
-        /* min-width: 250px; */
+        min-width: 250px;
         background-image: url("/images/login-splash.jpg");     
         background-repeat: no-repeat;
         background-position: center;

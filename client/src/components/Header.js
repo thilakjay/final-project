@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <HeaderSection>
             <StyledLink to="/"> 
-                <IoIceCreamOutline size={40} color="white"/>
+                <IoIceCreamOutline size={55} color="white"/>
                 <h1>crèMTL</h1>
             </StyledLink>
             <div className="align-right">
@@ -63,7 +63,9 @@ const HeaderSection = styled.header`
     color: white;
     background-color: hotpink;
     padding: 20px 80px;
+    font-size: 20px;
 
+    /* for some responsiveness */
     @media screen and (max-width: 600px) {
         background-color: lightblue;
         padding: 20px 20px;
@@ -97,6 +99,10 @@ const StyledLink = styled(Link)`
     display: flex;
     align-self: center;
     justify-content: center;
+
+    h1 {
+        font-size: 40px; 
+    }
 `;
 
 const DropDownDiv = styled.div`

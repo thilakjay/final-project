@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 
 const IceCream = ({iceCream}) => {
     return (
-        <motion.div 
+        
+        <motion.div  
+        //each item is given an animation when entering or removed from grid
             layout
             initial={{opacity: 0}} 
             animate={{opacity: 1}} 
@@ -28,5 +30,4 @@ const Image = styled.img`
     &:hover {
         transform: scale(1.20);
     }
-    /* margin-bottom: 0rem; */
 `;

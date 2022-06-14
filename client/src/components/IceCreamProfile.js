@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Rating } from "@mui/material";
 import { useContext } from "react";
 import { UserContext } from "../context/context";
-import LoginModal from "./LoginModal";
 import ErrorMessage from "./ErrorMessage";
 import {GrMapLocation} from "react-icons/gr";
 
@@ -69,7 +68,7 @@ const IceCreamProfile = () => {
 
       const json = await data.json();
       
-      //catches error and error object is saved in state for use with error component 
+      //catches error and error object is saved in state for use with <errorMessage> 
       if(json.status === 400) {
         setError(json);
         return;
@@ -126,14 +125,12 @@ const IceCreamProfile = () => {
 
               <div className="shop-info">
                 <div>Shop: {shop.name}</div>
-                {/* <div>{shop.address}</div> */}
                 <div className="map-icon-container">
                   View in map: 
                   <GrMapLocation size={23} 
                     onClick={() => 
                       history.push(`/shop-locations?_id=${shop._id}&lng=${shop.coordinates[0]}&lat=${shop.coordinates[1]}`)}/>
                 </div>
-                {/* <a href={shop.url}>{shop.url}</a> */}
               </div>
               <FormWrapper id="form" onSubmit={handleSubmit}>
                 <TextArea
