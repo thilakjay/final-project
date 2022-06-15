@@ -14,8 +14,9 @@ const LoginModal = () => {
         setUser(userObject);
     }
 
+    // the 'global google' comment below is required for the google authorization to work.
     useEffect(() => {
-        /* global google */
+        /* global google */ 
         google.accounts.id.initialize({
             client_id: "166656954368-au0gh49iog78r9eor2p2m7ocl2navur2.apps.googleusercontent.com",
             callback: handleCallbackResponse
