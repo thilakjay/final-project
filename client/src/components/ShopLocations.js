@@ -1,9 +1,10 @@
-import Map, { Marker, Popup, GeolocateControl } from 'react-map-gl';
+import Map, { Marker, Popup, GeolocateControl, MapboxEvent } from 'react-map-gl';
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import {MdOutlineIcecream} from "react-icons/md";
 import { Rating } from "@mui/material";
 import useQuery from '../hooks/useQuery';
+import Loader from './Loader';
 
 const ShopLocations = () => {
     const [shops, setShops] = useState(null);

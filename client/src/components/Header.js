@@ -1,20 +1,47 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/context";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import LoginModal from "./LoginModal";
 import {RiArrowDropDownLine} from "react-icons/ri";
 import {IoIceCreamOutline} from "react-icons/io5";
+import { useEffect } from "react";
+
 
 const Header = () => {
 
-    const {user, setUser, modal, setModal, setLoginMessage} = useContext(UserContext);
+    const {
+            user, 
+            setUser, 
+            modal, 
+            setModal, 
+            setLoginMessage,
+            setFavourites
+        } = useContext(UserContext);
+        
     const [toggleUserMenu, setToggleUserMenu] = useState(false);
+
+    const dropDown = useRef(null);
 
     const handleLogout = () => {
         setUser(null);
         setToggleUserMenu(false);
+        setFavourites(null);
     }
+
+    const handleDropDownClick = (e) => {
+        if(!e.target.closest(`.${dropDown.current.className}`) && toggleUserMenu) {
+            setToggleUserMenu(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("click", handleDropDownClick);
+
+        return(() => {
+            document.removeEventListener("click", handleDropDownClick);
+        })
+    });
 
     return (
         <HeaderSection>
@@ -28,6 +55,7 @@ const Header = () => {
                 </Link>                
                 <div 
                     className="user-menu-container" 
+                    // ref={dropDown}
                     onClick={() => {
                         setLoginMessage("Welcome!");
                         !user ? setModal(true) : setModal(false)}
@@ -35,15 +63,29 @@ const Header = () => {
                     {user ? (<div 
                                 onClick={() => {setToggleUserMenu(!toggleUserMenu)}} 
                                 className="user-menu"
+                                ref={dropDown}
                              >
                                 Welcome, {user.given_name} {user.family_name}! <RiArrowDropDownLine size={25}/>
                             </div>) 
                           :  (<div>Login</div>)
                     }
                     {user && toggleUserMenu && (
-                     <DropDownDiv>
-                        <div onClick={handleLogout}>Logout</div>
-                     </DropDownDiv>   
+                    //  <DropDownDiv>                      
+                    //     <div onClick={handleLogout}>Logout</div>
+                    //  </DropDownDiv>   
+                    <DropDownDiv>
+                        <ul>
+                            <li>
+                                <Link to="/shop-locations">Find a shop</Link>
+                            </li>
+                            <li>
+                            <Link to="/favourites">Favourites</Link>
+                            </li>   
+                            <li>
+                                <div onClick={handleLogout}>Logout</div>
+                            </li>                                                      
+                        </ul>    
+                    </DropDownDiv>  
                     )}
                 </div>
                 {modal && <LoginModal />}
@@ -106,9 +148,23 @@ const StyledLink = styled(Link)`
 
 const DropDownDiv = styled.div`
     position: absolute;
-    border: 1px white solid;
-    padding: 1px 10px;
+    border: 4px pink solid;
+    background-color: hotpink;
     border-radius: 3px;
     right: 110px;
     cursor: pointer;
+    z-index: 2;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            padding: 5px 8px;
+            &:hover {
+                background-color: pink;
+                transition: 200ms ease-in-out;
+            }
+        }
+    }
 `;

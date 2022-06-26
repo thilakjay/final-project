@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { UserContext } from "../context/context";
 import ErrorMessage from "./ErrorMessage";
 import {GrMapLocation} from "react-icons/gr";
+import AddToFavourites from "./AddToFavourites";
+import Loader from "./Loader";
 
 const IceCreamProfile = () => {
   const [iceCream, setIceCream] = useState(null);
@@ -105,11 +107,12 @@ const IceCreamProfile = () => {
 
   return (
     <>
-      {iceCream && shop && (
         <Wrapper>
+      {!(iceCream && shop) ? <Loader /> : (
+        <>
           <ImageAndInfoWrapper>
-            <ImageContainer>
-              <Image src={`/images/icecreams/${iceCream.imageSrc}`} alt={iceCream.flavour} />
+            <ImageContainer>   
+                <Image src={`/images/icecreams/${iceCream.imageSrc}`} alt={iceCream.flavour} />
             </ImageContainer>
 
             <InfoContainer>
@@ -122,6 +125,10 @@ const IceCreamProfile = () => {
               <h3 className="icecream-description">
                 "Una descrizione del gusto del gelato va qui. Da aggiungere in seguito."
               </h3>
+
+              <div>
+                <AddToFavourites iceCream={iceCream}/>
+              </div>
 
               <div className="shop-info">
                 <div>Shop: {shop.name}</div>
@@ -190,8 +197,9 @@ const IceCreamProfile = () => {
             ))}
             </div>
           </ReviewsWrapper>
-        </Wrapper>
+          </>    
       )}
+        </Wrapper>
     </>
   );
 };
@@ -213,12 +221,12 @@ const ImageAndInfoWrapper = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 500px;
   height: 500px;
-
 `;
 
 const InfoContainer = styled.div`

@@ -4,13 +4,14 @@ import styled from "styled-components";
 import Filters from "./Filters";
 import {motion} from "framer-motion";
 import Pagination from "./Pagination";
+import Loader from "./Loader";
 
 const Home = () => {
     const [iceCreams, setIceCreams] = useState(null); //for holding all fetched info
     const [filtered, setFiltered] = useState(null); //for holding the filtered results
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(10);
+    const [postsPerPage, setPostsPerPage] = useState(12);
 
     //fetching all ice creams from BE
     useEffect(() => {
@@ -33,9 +34,9 @@ const Home = () => {
     }
 
     return (
-        <>
-        {iceCreams && (
-            <Wrapper>               
+        <Wrapper>               
+            {!iceCreams ? <div className="loading-state"><Loader /></div> : (
+            <>
                 <Filters 
                     iceCreams={iceCreams} 
                     setFiltered={setFiltered} 
@@ -53,9 +54,9 @@ const Home = () => {
                         </div>
                 )}
                 <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
-            </Wrapper>            
-        )}
-        </>
+            </>
+            )}
+        </Wrapper>            
     );
 }
 export default Home;
@@ -63,6 +64,14 @@ export default Home;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
+ 
+    .loading-state {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
 
     .no-ice-creams {
         display: flex;

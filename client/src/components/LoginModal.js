@@ -6,13 +6,40 @@ import {CgCloseO} from "react-icons/cg";
 
 const LoginModal = () => {
 
-    const {user, setUser, modal, setModal, loginMessage} = useContext(UserContext);
+    const {
+            user, 
+            setUser, 
+            modal, 
+            setModal, 
+            loginMessage,
+            setFavourites
+        } = useContext(UserContext);
 
-    const handleCallbackResponse = (response) => {
+    const handleCallbackResponse = async (response) => {
         //converts JWT token into a readable object
         const userObject = jwt_decode(response.credential);
-        setUser(userObject);
-    }
+        // console.log(userObject);
+        // setUser(userObject);
+    
+        try{
+            const data = await fetch(`/api/verify-user`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(userObject),
+            })
+    
+            const json = await data.json();
+            setUser(json.data);
+            setFavourites(json.data.favourites);
+            console.log(json.data);
+    
+        }catch(error) {
+            console.log("Error caught:", error);
+        };
+    };
 
     // the 'global google' comment below is required for the google authorization to work.
     useEffect(() => {

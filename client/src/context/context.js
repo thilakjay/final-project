@@ -5,11 +5,22 @@ export const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = usePersistedState("user", null);
+    const [favourites, setFavourites] = useState(null);
     const [modal, setModal] = useState(false);
     const [loginMessage, setLoginMessage] = useState("");
-
+    
     return (
-        <UserContext.Provider value={{ user, setUser, modal, setModal, loginMessage, setLoginMessage }}>
+        <UserContext.Provider 
+            value={{ 
+                user, 
+                setUser, 
+                modal, 
+                setModal, 
+                loginMessage, 
+                setLoginMessage,
+                favourites,
+                setFavourites 
+            }}>
             {children}
         </UserContext.Provider>
     );

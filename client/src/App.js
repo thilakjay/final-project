@@ -7,8 +7,8 @@ import GlobalStyles from "./components/GlobalStyles";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import IceCreamProfile from "./components/IceCreamProfile";
-
 import ShopLocations from "./components/ShopLocations";
+import Favourites from "./components/Favourites";
 
 const App = () => {
   return (
@@ -23,8 +23,11 @@ const App = () => {
           <IceCreamProfile />
         </Route>
         <Route path="/shop-locations">
-        <ShopLocations />
-        </Route>
+          <ShopLocations />
+        </Route>s
+        <Route exact path="/favourites">
+          <Favourites />
+        </Route>        
       </Switch>
     </Router>
   );
