@@ -84,7 +84,7 @@ const AddToFavourites = ({iceCream}) => {
                     <div>
                         {favourite ? "Remove From Favourites" : "Add To Favourites"}
                     </div>
-                    <FaHeart             
+                    <FaHeart className="heart-icon"           
                         size={20} 
                         fill={favourite ? "hotpink" : "pink"}
                     />
@@ -110,8 +110,19 @@ const StyledButton = styled.button`
     background: transparent;
     cursor: pointer;
     text-align: left;
-
-    &:active {
+    /* &:active {
         color: inherit;   
-    } 
+    }  */
+
+    .heart-icon {
+        transition: 300ms ease;
+        transform: scale(1);
+    }
+
+    &:hover {
+        .heart-icon {
+            transition: 300ms ease;
+            transform: scale(1.25); 
+        }
+    }
 `;

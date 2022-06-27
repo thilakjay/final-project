@@ -1,10 +1,9 @@
-import Map, { Marker, Popup, GeolocateControl, MapboxEvent } from 'react-map-gl';
+import Map, { Marker, Popup, GeolocateControl, NavigationControl } from 'react-map-gl';
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import {MdOutlineIcecream} from "react-icons/md";
 import { Rating } from "@mui/material";
 import useQuery from '../hooks/useQuery';
-import Loader from './Loader';
 
 const ShopLocations = () => {
     const [shops, setShops] = useState(null);
@@ -55,6 +54,7 @@ const ShopLocations = () => {
     return (
         <Wrapper>
         <MapContainer>
+            {/* navigation menu above map */}
             <nav>
                 <ul>
                     <li>
@@ -77,10 +77,11 @@ const ShopLocations = () => {
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
                 mapboxAccessToken={TOKEN}
-            >
+            >   
+                <NavigationControl />
                 <GeolocateControl />
 
-            {/* add a marker & popup at each shop's GPS coordinates */}
+            {/* add a marker @ each shop location */}
             {shops && shops.map(shop => (
                 <Marker 
                     key={shop._id} 
@@ -91,7 +92,8 @@ const ShopLocations = () => {
                         centerOnMap(shop.coordinates[0], shop.coordinates[1], 15);
                         setSelectedShop(shop);
                     }}
-                >
+                >   
+                    {/* add an ice cream cone icon and popup modal at each marker */}
                     <MdOutlineIcecream size={25} fill="red" style={{cursor: "pointer"}}/>
                     {selectedShop && (
                         <Popup 
@@ -178,6 +180,7 @@ const ShopContainer = styled.div`
         width: 40vw;
         max-height: 60vh;
         border-radius: 5px;
+        margin-top: 10px;
     }
 
     .ice-cream-cartoon {

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../context/context";
 import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
@@ -9,14 +9,9 @@ const Favourites = () => {
 
     const {
         user, 
-        setUser, 
-        setModal, 
-        setLoginMessage,
         favourites,
         setFavourites
     } = useContext(UserContext); 
-
-    const [loaded, setLoaded] = useState(null);
 
     useEffect(() => {
         fetchFavourites();
@@ -75,7 +70,7 @@ const Favourites = () => {
                         <Link to={`/ice-creams/${elem._id}`}><img src={`/images/icecreams/${elem.imageSrc}`} alt={elem.flavour} /></Link>
                         {elem.flavour}
                         <Rating value={elem.rating} precision={0.5} size="small" readOnly />
-                        <button onClick={() => removeFavourite(elem)}>Remove</button>
+                        <StyledButton onClick={() => removeFavourite(elem)}>Remove</StyledButton>
                     </ImageContainer>   
                 )}
                 {favourites && favourites.length === 0 && (
@@ -99,7 +94,6 @@ const Heading = styled.h1`
 
 const Wrapper = styled.div`
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -121,11 +115,24 @@ const ImageContainer = styled.div`
     align-items: center;
     width: 20vw;
     height: 32vh;
-    gap: 10px;
 
     img {
-            width: 12vw;
-            height: 30vh;
-            border-radius: 3px;
-        }
+        width: 12vw;
+        height: 30vh;
+        border-radius: 3px;
+    }
+`;
+
+const StyledButton = styled.button`
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 10px;
+    background-color: hotpink;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        color: pink;
+    }
 `;
