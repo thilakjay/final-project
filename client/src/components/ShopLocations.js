@@ -76,7 +76,7 @@ const ShopLocations = () => {
                 initialViewState={initialViewportState}
                 style={{width: "50vw", height: "80vh"}}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
-                mapboxAccessToken={TOKEN}
+                mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             >   
                 <NavigationControl />
                 <GeolocateControl />
