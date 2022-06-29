@@ -79,7 +79,7 @@ const AddToFavourites = ({iceCream}) => {
 
     return (
             <>
-            {!loaded ? <EllipsisLoader /> : (            
+            {!loaded && user ? <EllipsisLoader /> : (            
                 <StyledButton onClick={(e) => {handleClickResponse(e)}}>
                     <div>
                         {favourite ? "Remove From Favourites" : "Add To Favourites"}
