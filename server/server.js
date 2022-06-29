@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 const { getIceCreams } = require("./handlers/getIceCreams");
 const { getIceCream } = require("./handlers/getIceCream");
@@ -22,5 +23,16 @@ app.post("/api/get-favourite", getFavourite);
 app.post("/api/get-favourites", getFavourites);
 app.post("/api/remove-favourite", removeFavourite);
 
-app.listen(8000);
+
+// for deployment
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    // app.get('*', (req, res) => {
+    //     res.sendFile('client/build/index.html');
+    // });
+}
+
+app.listen(PORT, console.log(`Server is starting at ${PORT}`));
 
