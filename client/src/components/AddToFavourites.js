@@ -18,7 +18,7 @@ const AddToFavourites = ({iceCream}) => {
 
     useEffect(() => {
         fetchFavourite();
-  }, []);          
+  }, [user]);          
     
   //fetch data on a specific ice cream
   const fetchFavourite = async () => {
